@@ -48,7 +48,7 @@ public class CSquadContorller : MonoBehaviour
 
         _squadMembers.Clear();
 
-        float spawnPointY = MAP_HIGHT_MAX - Random.Range(0f, 1f);
+        float spawnPointY = MAP_HIGHT_MAX - Random.Range(0f, 2f);
 
         for (int i = 0; i < squadDataPreset.SquadSize; i++)
         {
@@ -58,7 +58,7 @@ public class CSquadContorller : MonoBehaviour
 
             _squadMembers.Add(unit);
 
-            spawnPointY -= Random.Range(0.3f, 1f);
+            spawnPointY -= Random.Range(0.3f, 0.7f);
         }
 
         ExceptionCheck();

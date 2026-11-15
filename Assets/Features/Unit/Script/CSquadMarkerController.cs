@@ -46,9 +46,9 @@ public class CSquadMarkerController : MonoBehaviour
 			return;
 		}
 
-		int ranNum = Random.Range(0, _squad.SquadMembers.Count);
+		//int ranNum = Random.Range(0, _squad.SquadMembers.Count);
 
-		_squadLeader = _squad.SquadMembers[ranNum];
+		_squadLeader = _squad.SquadMembers[0];
 		enabled = true;
 	}
 

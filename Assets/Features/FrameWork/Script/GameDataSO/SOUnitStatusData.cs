@@ -11,5 +11,4 @@ public class SOUnitStatusData : SOGameData
     public float MovementSpeed => _movementSpeed;
     #endregion
 
-
 }
