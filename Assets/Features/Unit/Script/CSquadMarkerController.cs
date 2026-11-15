@@ -11,9 +11,13 @@ public class CSquadMarkerController : MonoBehaviour
 
 	#region private var
 	private CUnitController _squadLeader;
-    #endregion
+	#endregion
 
-    private void Awake()
+	#region property
+	public CSquadContorller Squad => _squad;
+	#endregion
+
+	private void Awake()
     {
 		ExceptionCheck();
     }

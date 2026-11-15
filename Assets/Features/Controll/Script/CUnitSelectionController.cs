@@ -10,6 +10,8 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
     [SerializeField] private LayerMask _selectableLayer;
     [SerializeField] private string _mousePositionActionName = "MousePosition";
     [SerializeField] private string _mouseClickActionName = "MouseClick";
+    [SerializeField] private string _unitTag = "Unit";
+    [SerializeField] private string _makerTag = "SquadMarker";
     #endregion
 
     #region private var
@@ -19,11 +21,12 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
     private Vector2 _mousePosition;
     private bool _isBinded = false;
 
-    private List<CUnitController> _selectedUnits = new List<CUnitController>();
+    private List<CSquadContorller> _selectedSquad = new List<CSquadContorller>();
+    private HashSet<CSquadContorller> _selectedSquadHash = new HashSet<CSquadContorller>();
     #endregion
 
     #region property
-    public IReadOnlyList<CUnitController> SelectedUnits => _selectedUnits;
+    public IReadOnlyList<CSquadContorller> SelectedSquad => _selectedSquad;
     #endregion
 
     private void Start()
@@ -102,7 +105,6 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
         if (_mouseClickAction == null)
         {
-            //Debug.LogError("Mouse click action is not assigned.");
             return;
         }
 
@@ -168,21 +170,50 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
         Collider2D[] selectedColliders = Physics2D.OverlapAreaAll(_mouseStartPosition, _mousePosition, _selectableLayer);
 
-        _selectedUnits.Clear();
+        _selectedSquad.Clear();
+        _selectedSquadHash.Clear();
         
         for (int i = 0; i < selectedColliders.Length; i++)
         {
-            CUnitController unit = selectedColliders[i].GetComponent<CUnitController>();
-
-            if (unit == null)
+            if (selectedColliders[i].CompareTag(_unitTag))
             {
-                continue;
+                CUnitController unit = selectedColliders[i].GetComponent<CUnitController>();
+
+                if (unit == null)
+                {
+                    continue;
+                }
+
+                if(_selectedSquadHash.Contains(unit.Squad))
+                {
+                    continue;
+                }
+
+                _selectedSquad.Add(unit.Squad);
+                _selectedSquadHash.Add(unit.Squad);
             }
 
-            _selectedUnits.Add(unit);
+            else if(selectedColliders[i].CompareTag(_makerTag))
+            {
+                CSquadMarkerController marker = selectedColliders[i].GetComponent<CSquadMarkerController>();
+
+                if(marker == null)
+                {
+                    continue;
+                }
+
+                if(_selectedSquadHash.Contains(marker.Squad))
+                {
+                    continue;
+                }
+
+                _selectedSquad.Add(marker.Squad);
+                _selectedSquadHash.Add(marker.Squad);
+
+            }
         }
 
-        Debug.Log($"Selected {_selectedUnits.Count} objects.");
+        Debug.Log($"Selected {_selectedSquad.Count} Squads.");
     }
 
     private void OnMousePosPerfomed(InputAction.CallbackContext context)

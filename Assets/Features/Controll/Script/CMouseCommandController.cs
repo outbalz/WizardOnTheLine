@@ -160,22 +160,22 @@ public class CMouseCommandController : MonoBehaviour
             return;
         }
 
-        IReadOnlyList<CUnitController> selectedUnit = CUnitSelectionController.Instance.SelectedUnits;
+        IReadOnlyList<CSquadContorller> selecedSquad = CUnitSelectionController.Instance.SelectedSquad;
+
         Vector2 mousePosition = _mousePositionAction.Value;
         Vector3 worldPosition = _camera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, _camera.nearClipPlane));
         worldPosition.z = 0f;
 
-        for (int i = 0; i < selectedUnit.Count; i++)
+        SOderContext oder = new SOderContext();
+
+        oder.oderType = SOderContext.EOderType.Move;
+        oder.targetPos = worldPosition;
+
+        for (int i = 0; i < selecedSquad.Count; i++)
         {
-            CUnitController unit = selectedUnit[i];
-
-            if (unit == null)
-            {
-                continue;
-            }
-
-            unit.Movement.GiveMoveOder(worldPosition.x);
+            selecedSquad[i].GiveOder(oder);
         }
+
     }
 
 }

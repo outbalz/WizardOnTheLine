@@ -1,6 +1,19 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+public struct SOderContext
+{
+    public enum EOderType
+    {
+        Move,
+        AttackMove,
+        Stop,
+        Retreat
+    }
+
+    public EOderType oderType;
+    public Vector3 targetPos;
+}
 public class CSquadContorller : MonoBehaviour
 {
     #region const
@@ -64,5 +77,31 @@ public class CSquadContorller : MonoBehaviour
         ExceptionCheck();
     }
 
+    public bool GiveOder(SOderContext context)
+    {
+
+        switch (context.oderType)
+        {
+            case SOderContext.EOderType.Move:
+                for (int i = 0; i < _squadMembers.Count; i++)
+                {
+                    _squadMembers[i].Movement.GiveMoveOder(context.targetPos.x);
+                }
+
+                return true;
+            case SOderContext.EOderType.AttackMove:
+                break;
+            case SOderContext.EOderType.Stop:
+                break;
+            case SOderContext.EOderType.Retreat:
+                break;
+            default:
+                break;
+        }
+
+        return false;
+    }
+
 
 }
+
