@@ -35,6 +35,16 @@ public class CUnitMovementController : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        CancelMoveOder();
+    }
+
+    private void OnDestroy()
+    {
+        CancelMoveOder();
+    }
+
     private void MoveTo(Vector3 targetPosition)
     {
         float speed = _stat.MovementSpeed;
@@ -71,20 +81,20 @@ public class CUnitMovementController : MonoBehaviour
         float distance = targtX - transform.position.x;
         float direction = (distance > 0) ? 1 : -1;
 
-        if (distance <= speed * Time.deltaTime)
+        if (Mathf.Abs(distance) <= speed * Time.deltaTime)
         {
             transform.position = new Vector3(targtX, transform.position.y, transform.position.z);
             return;
         }
 
-        transform.position = new Vector3(transform.position.x * direction + speed * Time.deltaTime, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + direction * speed * Time.deltaTime, transform.position.y, transform.position.z);
 
     }
 
     private async UniTask MoveToAsync(float targtX, CancellationToken ct)
     {
         float distance = targtX - transform.position.x;
-        while (distance > 0.01f)
+        while (Mathf.Abs(distance) > 0.01f)
         {
             if(ct.IsCancellationRequested)
             {

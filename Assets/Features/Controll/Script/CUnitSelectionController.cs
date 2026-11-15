@@ -19,7 +19,7 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
     private Vector2 _mousePosition;
     private bool _isBinded = false;
 
-    private List<CUnitController> _selectedUnits;
+    private List<CUnitController> _selectedUnits = new List<CUnitController>();
     #endregion
 
     #region property
@@ -73,7 +73,7 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
         else
         {
-            Debug.LogError($"Mouse click action '{_mouseClickActionName}' not found.");
+            Debug.LogError($"Mouse click action '{_mouseClickActionName}' not found in InputActionMap.");
         }
     }
 
@@ -167,7 +167,22 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
 
         Collider2D[] selectedColliders = Physics2D.OverlapAreaAll(_mouseStartPosition, _mousePosition, _selectableLayer);
-        Debug.Log($"Selected {selectedColliders.Length} objects.");
+
+        _selectedUnits.Clear();
+        
+        for (int i = 0; i < selectedColliders.Length; i++)
+        {
+            CUnitController unit = selectedColliders[i].GetComponent<CUnitController>();
+
+            if (unit == null)
+            {
+                continue;
+            }
+
+            _selectedUnits.Add(unit);
+        }
+
+        Debug.Log($"Selected {_selectedUnits.Count} objects.");
     }
 
     private void OnMousePosPerfomed(InputAction.CallbackContext context)
