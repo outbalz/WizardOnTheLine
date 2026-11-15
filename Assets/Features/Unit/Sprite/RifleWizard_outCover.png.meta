@@ -67,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,7 +105,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -133,12 +133,12 @@ TextureImporter:
       name: RifleWizard_outCover_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 134
-        width: 93
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: RifleWizard_outCover_1
       rect:
         serializedVersion: 2
-        x: 162
-        y: 136
-        width: 93
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,12 +177,12 @@ TextureImporter:
       name: RifleWizard_outCover_2
       rect:
         serializedVersion: 2
-        x: 311
-        y: 137
-        width: 93
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: RifleWizard_outCover_3
       rect:
         serializedVersion: 2
-        x: 460
-        y: 137
-        width: 93
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 450
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,12 +221,12 @@ TextureImporter:
       name: RifleWizard_outCover_4
       rect:
         serializedVersion: 2
-        x: 609
-        y: 139
-        width: 93
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -243,12 +243,12 @@ TextureImporter:
       name: RifleWizard_outCover_5
       rect:
         serializedVersion: 2
-        x: 759
-        y: 138
-        width: 93
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 750
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -265,12 +265,12 @@ TextureImporter:
       name: RifleWizard_outCover_6
       rect:
         serializedVersion: 2
-        x: 8
-        y: 16
-        width: 93
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -287,12 +287,12 @@ TextureImporter:
       name: RifleWizard_outCover_7
       rect:
         serializedVersion: 2
-        x: 158
-        y: 14
-        width: 93
-        height: 99
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -309,12 +309,12 @@ TextureImporter:
       name: RifleWizard_outCover_8
       rect:
         serializedVersion: 2
-        x: 307
-        y: 13
-        width: 93
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -331,12 +331,12 @@ TextureImporter:
       name: RifleWizard_outCover_9
       rect:
         serializedVersion: 2
-        x: 456
-        y: 13
-        width: 94
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 450
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -353,12 +353,12 @@ TextureImporter:
       name: RifleWizard_outCover_10
       rect:
         serializedVersion: 2
-        x: 606
-        y: 15
-        width: 94
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -375,7 +375,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: accec570b09016747a66c2227bc01c1c
     internalID: 0
     vertices: []
     indices: 
@@ -383,7 +383,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.25,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       RifleWizard_outCover_0: -1458355673418742383
       RifleWizard_outCover_1: -2925508423745225902

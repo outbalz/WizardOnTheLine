@@ -70,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -108,7 +108,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,12 +136,12 @@ TextureImporter:
       name: RifleWizard_weaponFireCover_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 134
-        width: 110
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -158,12 +158,12 @@ TextureImporter:
       name: RifleWizard_weaponFireCover_1
       rect:
         serializedVersion: 2
-        x: 163
-        y: 135
-        width: 107
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -180,12 +180,12 @@ TextureImporter:
       name: RifleWizard_weaponFireCover_2
       rect:
         serializedVersion: 2
-        x: 270
-        y: 192
-        width: 26
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: RifleWizard_weaponFireCover_3
       rect:
         serializedVersion: 2
-        x: 313
-        y: 134
-        width: 106
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 450
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: RifleWizard_weaponFireCover_4
       rect:
         serializedVersion: 2
-        x: 421
-        y: 192
-        width: 23
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 120
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -246,12 +246,12 @@ TextureImporter:
       name: RifleWizard_weaponFireCover_5
       rect:
         serializedVersion: 2
-        x: 463
-        y: 134
-        width: 107
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -268,12 +268,12 @@ TextureImporter:
       name: RifleWizard_weaponFireCover_6
       rect:
         serializedVersion: 2
-        x: 571
-        y: 192
-        width: 23
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -290,12 +290,12 @@ TextureImporter:
       name: RifleWizard_weaponFireCover_7
       rect:
         serializedVersion: 2
-        x: 613
-        y: 134
-        width: 133
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -312,12 +312,12 @@ TextureImporter:
       name: RifleWizard_weaponFireCover_8
       rect:
         serializedVersion: 2
-        x: 13
-        y: 14
-        width: 109
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 450
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -330,77 +330,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: RifleWizard_weaponFireCover_9
-      rect:
-        serializedVersion: 2
-        x: 163
-        y: 15
-        width: 109
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f67dcb4eb5083d590800000000000000
-      internalID: -7650630209804380305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RifleWizard_weaponFireCover_10
-      rect:
-        serializedVersion: 2
-        x: 313
-        y: 15
-        width: 110
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 24c53266ea362df40800000000000000
-      internalID: 5751769274794597442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RifleWizard_weaponFireCover_11
-      rect:
-        serializedVersion: 2
-        x: 463
-        y: 15
-        width: 110
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bbbefd8bdfb9861e0800000000000000
-      internalID: -2204340503567144005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 75a685ee0df48ff4db4bbace3d1574cd
     internalID: 0
     vertices: []
     indices: 
@@ -408,12 +342,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.25,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       RifleWizard_weaponFireCover_0: 3728112425948601505
       RifleWizard_weaponFireCover_1: -5405327530911619313
-      RifleWizard_weaponFireCover_10: 5751769274794597442
-      RifleWizard_weaponFireCover_11: -2204340503567144005
       RifleWizard_weaponFireCover_2: 2969465120197368858
       RifleWizard_weaponFireCover_3: 452186710383966427
       RifleWizard_weaponFireCover_4: -4325066285894529338
@@ -421,7 +355,6 @@ TextureImporter:
       RifleWizard_weaponFireCover_6: -6207721692295972552
       RifleWizard_weaponFireCover_7: -4222721424383704888
       RifleWizard_weaponFireCover_8: -2886997830048796928
-      RifleWizard_weaponFireCover_9: -7650630209804380305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

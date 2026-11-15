@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -99,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,12 +127,12 @@ TextureImporter:
       name: RifleWizard_idle_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 15
-        width: 94
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: RifleWizard_idle_1
       rect:
         serializedVersion: 2
-        x: 156
-        y: 15
-        width: 94
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: RifleWizard_idle_2
       rect:
         serializedVersion: 2
-        x: 306
-        y: 15
-        width: 94
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: RifleWizard_idle_3
       rect:
         serializedVersion: 2
-        x: 457
-        y: 15
-        width: 93
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 450
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -215,12 +215,12 @@ TextureImporter:
       name: RifleWizard_idle_4
       rect:
         serializedVersion: 2
-        x: 606
-        y: 15
-        width: 94
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: RifleWizard_idle_5
       rect:
         serializedVersion: 2
-        x: 757
-        y: 15
-        width: 93
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 750
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: RifleWizard_idle_6
       rect:
         serializedVersion: 2
-        x: 906
-        y: 15
-        width: 94
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 900
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: RifleWizard_idle_7
       rect:
         serializedVersion: 2
-        x: 1056
-        y: 15
-        width: 94
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1050
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +303,12 @@ TextureImporter:
       name: RifleWizard_idle_8
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 15
-        width: 94
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1200
+        y: 0
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d403713eb6c93e2478bf91d309ed0e13
     internalID: 0
     vertices: []
     indices: 
@@ -333,7 +333,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.25,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       RifleWizard_idle_0: 5700585456990615643
       RifleWizard_idle_1: -3521758113164332996
