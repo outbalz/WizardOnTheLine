@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: b4648ce5604f19a46a0e1d270f41440a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -353054677916899506
+    second: RifleWizard_move_0
+  - first:
+      213: 7216814781299780846
+    second: RifleWizard_move_1
+  - first:
+      213: -4959171941986619279
+    second: RifleWizard_move_2
+  - first:
+      213: 8589320351502738924
+    second: RifleWizard_move_3
+  - first:
+      213: -6146705962053873641
+    second: RifleWizard_move_4
+  - first:
+      213: -1923573866547105105
+    second: RifleWizard_move_5
+  - first:
+      213: -5359261648913746466
+    second: RifleWizard_move_6
+  - first:
+      213: 7530075269525331732
+    second: RifleWizard_move_7
+  - first:
+      213: 2315975517432177963
+    second: RifleWizard_move_8
+  - first:
+      213: 7003528079709694165
+    second: RifleWizard_move_9
+  - first:
+      213: -5326343501151481001
+    second: RifleWizard_move_10
+  - first:
+      213: -31968986606316136
+    second: RifleWizard_move_11
+  - first:
+      213: 8493670620652733299
+    second: RifleWizard_move_12
+  - first:
+      213: 7657437568761495693
+    second: RifleWizard_move_13
+  - first:
+      213: 5405559243791124294
+    second: RifleWizard_move_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RifleWizard_move_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 136
+        width: 93
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e47297814a2b91bf0800000000000000
+      internalID: -353054677916899506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_1
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 137
+        width: 93
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eec6929aec6472460800000000000000
+      internalID: 7216814781299780846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_2
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 137
+        width: 93
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170bdc1c46b7d2bb0800000000000000
+      internalID: -4959171941986619279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_3
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 137
+        width: 93
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5aa5df955633770800000000000000
+      internalID: 8589320351502738924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_4
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 135
+        width: 93
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710d0018e7382baa0800000000000000
+      internalID: -6146705962053873641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_5
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 134
+        width: 93
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa23c3982c71e45e0800000000000000
+      internalID: -1923573866547105105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_6
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 134
+        width: 93
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed53f16cce310a5b0800000000000000
+      internalID: -5359261648913746466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_7
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 136
+        width: 93
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41fd204cf83308860800000000000000
+      internalID: 7530075269525331732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 14
+        width: 93
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b25eb09667ff32020800000000000000
+      internalID: 2315975517432177963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_9
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 14
+        width: 93
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d8e195aea7813160800000000000000
+      internalID: 7003528079709694165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_10
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 13
+        width: 93
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 753d72e4ec60516b0800000000000000
+      internalID: -5326343501151481001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_11
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 13
+        width: 93
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8955085406c6e8ff0800000000000000
+      internalID: -31968986606316136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_12
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 13
+        width: 93
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3738d279d649fd570800000000000000
+      internalID: 8493670620652733299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_13
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 14
+        width: 93
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8082cfd5eea44a60800000000000000
+      internalID: 7657437568761495693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_move_14
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 15
+        width: 93
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647cf7a0e77640b40800000000000000
+      internalID: 5405559243791124294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RifleWizard_move_0: -353054677916899506
+      RifleWizard_move_1: 7216814781299780846
+      RifleWizard_move_10: -5326343501151481001
+      RifleWizard_move_11: -31968986606316136
+      RifleWizard_move_12: 8493670620652733299
+      RifleWizard_move_13: 7657437568761495693
+      RifleWizard_move_14: 5405559243791124294
+      RifleWizard_move_2: -4959171941986619279
+      RifleWizard_move_3: 8589320351502738924
+      RifleWizard_move_4: -6146705962053873641
+      RifleWizard_move_5: -1923573866547105105
+      RifleWizard_move_6: -5359261648913746466
+      RifleWizard_move_7: 7530075269525331732
+      RifleWizard_move_8: 2315975517432177963
+      RifleWizard_move_9: 7003528079709694165
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
