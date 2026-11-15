@@ -21,7 +21,7 @@ public class CUnitStatusHandler : MonoBehaviour
         {
             if(!TryGetComponent<CUnitController>(out _unitController))
             {
-                Debug.LogWarning($"{this}/ _unitController is null");
+                Debug.LogWarning($"{this}/ _unitController is not assigned and not found on the GameObject {gameObject.name}");
                 enabled = false;
                 return;
             }
@@ -29,7 +29,7 @@ public class CUnitStatusHandler : MonoBehaviour
 
         if (_unitStatusDataSO == null)
         {
-            Debug.LogWarning($"{this}/ _unitStatusDataSO is null");
+            Debug.LogWarning($"{this}/ _unitStatusDataSO is not assigned");
             enabled = false;
             return;
         }
@@ -41,7 +41,7 @@ public class CUnitStatusHandler : MonoBehaviour
 
         if (_unitController.Modifier == null)
         {
-            Debug.LogWarning($"{this}/ _unitController.Modifier is null");
+            Debug.LogWarning($"{this}/ _unitController.Modifier is not assigned.");
             return result;
         }
 
