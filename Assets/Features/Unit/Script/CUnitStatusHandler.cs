@@ -4,13 +4,13 @@ using UnityEngine;
 public class CUnitStatusHandler : MonoBehaviour
 {
 	#region inspector
-	[SerializeField] CUnitStatusDataSO _unitStatusDataSO;
+	[SerializeField] SOUnitStatusData _unitStatusDataSO;
     [SerializeField] CUnitController _unitController;
     #endregion
 
     #region property
     public event Action OnStatChange;
-    public CUnitStatusDataSO UnitStatusDataSO => _unitStatusDataSO;
+    public SOUnitStatusData UnitStatusDataSO => _unitStatusDataSO;
 
     public float MovementSpeed => GetStatusValue(_unitStatusDataSO.MovementSpeed, "MovementSpeed");
     #endregion

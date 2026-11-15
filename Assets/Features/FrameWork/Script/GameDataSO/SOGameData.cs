@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CGameDataSO : ScriptableObject
+public abstract class SOGameData : ScriptableObject
 {
     #region inspector
     [SerializeField] protected string _id = "id";

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "CUnitStatusDataSO", menuName = "Scriptable Objects/CUnitStatusDataSO")]
-public class CUnitStatusDataSO : CGameDataSO
+[CreateAssetMenu(fileName = "UnitStatusDataSO_", menuName = "Scriptable Objects/GameData/UnitStatusDataSO")]
+public class SOUnitStatusData : SOGameData
 {
 	#region inspector
 	[SerializeField] float _movementSpeed;
