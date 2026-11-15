@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CUnitSelectionController : MonoBehaviour
+public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 {
     #region inspector
     [SerializeField] private Camera _camera;
@@ -17,6 +18,12 @@ public class CUnitSelectionController : MonoBehaviour
     private Vector2 _mouseStartPosition;
     private Vector2 _mousePosition;
     private bool _isBinded = false;
+
+    private List<CUnitController> _selectedUnits;
+    #endregion
+
+    #region property
+    public IReadOnlyList<CUnitController> SelectedUnits => _selectedUnits;
     #endregion
 
     private void Start()
@@ -66,7 +73,7 @@ public class CUnitSelectionController : MonoBehaviour
 
         else
         {
-            Debug.LogError($"Mouse click action '{_mouseClickActionName}' not found or is not of type CInputVectorActionData.");
+            Debug.LogError($"Mouse click action '{_mouseClickActionName}' not found.");
         }
     }
 
@@ -80,9 +87,10 @@ public class CUnitSelectionController : MonoBehaviour
         UnbindAction();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         UnbindAction();
+        base.OnDestroy();
     }
 
     private void BindAction()
