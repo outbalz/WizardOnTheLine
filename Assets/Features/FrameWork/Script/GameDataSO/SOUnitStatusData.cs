@@ -4,7 +4,7 @@
 public class SOUnitStatusData : SOGameData
 {
 	#region inspector
-	[SerializeField] float _movementSpeed;
+	[SerializeField, Min(0f)] float _movementSpeed = 2.5f;
     #endregion
 
     #region property

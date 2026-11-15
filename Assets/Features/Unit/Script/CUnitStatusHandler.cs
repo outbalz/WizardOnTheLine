@@ -4,8 +4,8 @@ using UnityEngine;
 public class CUnitStatusHandler : MonoBehaviour
 {
 	#region inspector
-	[SerializeField] SOUnitStatusData _unitStatusDataSO;
-    [SerializeField] CUnitController _unitController;
+	[SerializeField] private SOUnitStatusData _unitStatusDataSO;
+    [SerializeField] private CUnitController _unitController;
     #endregion
 
     #region property
@@ -17,11 +17,28 @@ public class CUnitStatusHandler : MonoBehaviour
 
     private void Awake()
     {
+        ExceptionCheck();
+    }
+
+    public void InitializeStat(SOUnitStatusData data)
+    {
+        if (data == null)
+        {
+            Debug.LogWarning("SOUnitStatusData is null.");
+            return; 
+        }
+
+        _unitStatusDataSO = data;
+        ExceptionCheck();
+    }
+
+    private void ExceptionCheck()
+    {
         if (_unitController == null)
         {
-            if(!TryGetComponent<CUnitController>(out _unitController))
+            if (!TryGetComponent<CUnitController>(out _unitController))
             {
-                Debug.LogWarning($"{this}/ _unitController is not assigned and not found on the GameObject {gameObject.name}");
+                Debug.LogWarning($"{this}/ _unitController is not assigned and not found on the GameObject {gameObject.name}.");
                 enabled = false;
                 return;
             }
@@ -29,7 +46,7 @@ public class CUnitStatusHandler : MonoBehaviour
 
         if (_unitStatusDataSO == null)
         {
-            Debug.LogWarning($"{this}/ _unitStatusDataSO is not assigned");
+            Debug.LogWarning($"{this}/ _unitStatusDataSO is not assigned.");
             enabled = false;
             return;
         }

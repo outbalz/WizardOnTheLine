@@ -1,0 +1,68 @@
+﻿using UnityEngine;
+
+public class CSquadMarkerController : MonoBehaviour
+{
+	#region inspector
+	[SerializeField] private SpriteRenderer _renderer;
+	[SerializeField] private Color32 _color;
+	[SerializeField] private CSquadContorller _squad;
+	[SerializeField] private float _offsetY;
+	#endregion
+
+	#region private var
+	private CUnitController _squadLeader;
+    #endregion
+
+    private void Awake()
+    {
+		ExceptionCheck();
+    }
+
+    private void ExceptionCheck()
+	{
+		if(_renderer == null)
+		{
+			if(!TryGetComponent<SpriteRenderer>(out _renderer))
+			{
+                Debug.LogWarning($"{this}/ SpriteRenderer is not assigned and not found on the GameObject {gameObject.name}.");
+                enabled = false;
+                return;
+            }
+		}
+
+		if(_squad == null)
+		{
+			Debug.LogWarning($"{this}/ SpriteRenderer is not assigned.");
+			enabled = false;
+			return;
+		}
+	}
+
+    public void AssignSquadLeader()
+	{
+		if (_squad.SquadMembers.Count <= 0)
+		{
+			enabled = false;
+			return;
+		}
+
+		int ranNum = Random.Range(0, _squad.SquadMembers.Count);
+
+		_squadLeader = _squad.SquadMembers[ranNum];
+		enabled = true;
+	}
+
+    private void Update()
+    {
+        if(_squadLeader == null || _squadLeader.gameObject.activeSelf == false)
+		{
+			AssignSquadLeader();
+			return;
+		}
+
+		Vector3 leaderPos = _squadLeader.transform.position;
+		leaderPos.y += _offsetY;
+
+		transform.position = leaderPos;
+    }
+}
