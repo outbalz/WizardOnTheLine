@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class CFactory<TFactoy, TReuslt> : CSingleton<TFactoy> where TFactoy : MonoBehaviour where TReuslt : MonoBehaviour
 {
-	#region 인스팩터
+	#region inspector
 	[SerializeField] protected TReuslt _prefab;
 	#endregion
 
@@ -20,7 +20,7 @@ public abstract class CFactory<TFactoy, TReuslt> : CSingleton<TFactoy> where TFa
 	{
         if (_prefab == null)
         {
-            Debug.LogWarning("팩토리 프리펩 누락");
+            Debug.LogWarning("factory prefab is not assigned in the inspector.");
             enabled = false;
             return;
         }

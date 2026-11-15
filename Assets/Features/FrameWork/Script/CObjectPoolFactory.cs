@@ -5,7 +5,7 @@ using UnityEngine;
 public class CObjectPoolFactory<TFactoy, TPool, TReuslt> : CFactory<TFactoy, TReuslt> 
     where TFactoy : MonoBehaviour where TReuslt : MonoBehaviour where TPool : MonoBehaviour
 {
-    #region MyRegion
+    #region inspector
     [SerializeField] protected CObjectPool<TPool, TReuslt> _pool;
     #endregion
 
@@ -20,7 +20,7 @@ public class CObjectPoolFactory<TFactoy, TPool, TReuslt> : CFactory<TFactoy, TRe
     {
         if(_pool == null)
         {
-            Debug.LogWarning("오브젝트 풀 누락 누락");
+            Debug.LogWarning("Object pool is not assigned in the inspector.");
             enabled = false;
             return;
         }

@@ -5,14 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class CObjectPool<TPool, TReuslt> : CSingleton<TPool> where TPool : MonoBehaviour where TReuslt : MonoBehaviour
 {
-    #region 인스팩터
+    #region inspector
     [SerializeField] protected TReuslt _prefab;
 	[SerializeField] protected int _prewarmCount;
     [SerializeField] protected Transform _poolRoot;
     #endregion
 
-    #region 내부변수
-	protected readonly Queue<TReuslt> _pool = new Queue<TReuslt>();
+    #region private var
+    protected readonly Queue<TReuslt> _pool = new Queue<TReuslt>();
 	protected readonly List<TReuslt> _liveList = new List<TReuslt>();
     #endregion
 
@@ -27,7 +27,7 @@ public class CObjectPool<TPool, TReuslt> : CSingleton<TPool> where TPool : MonoB
     {
         if (_prefab == null)
         {
-            Debug.LogWarning("오브젝트풀 프리펩 누락");
+            Debug.LogWarning("Object prefab is not assigned in the inspector.");
             enabled = false;
             return;
         }

@@ -59,7 +59,7 @@ public class CInputDispatcher : CSingleton<CInputDispatcher>
     private bool _isReady = false;
     #endregion
 
-    #region poperty
+    #region property
     public readonly Dictionary<string, CInputActionData> InputActionMap = new Dictionary<string, CInputActionData>();
     #endregion
 
@@ -95,7 +95,7 @@ public class CInputDispatcher : CSingleton<CInputDispatcher>
     {
         if(data.Reference == null)
         {
-            Debug.LogWarning("액션 레퍼런스 누락");
+            Debug.LogWarning("Action Reference is missing.");
             return;
         }
 
@@ -110,7 +110,7 @@ public class CInputDispatcher : CSingleton<CInputDispatcher>
     {
         if(data.Reference == null)
         {
-            Debug.LogWarning("액션 레퍼런스 누락");
+            Debug.LogWarning("Action Reference is missing.");
             return;
         }
 
