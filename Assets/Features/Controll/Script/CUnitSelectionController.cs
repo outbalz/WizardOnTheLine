@@ -178,40 +178,74 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
         _selectedSquad.Clear();
         _selectedSquadHash.Clear();
 
-        if(selectionSize < 0.1f)
+        Collider2D[] selectedColliders;
+
+        if (selectionSize < 0.1f)
         {
-            Collider2D selectedCollider = Physics2D.OverlapPoint(_mouseStartPosition, _selectableLayer);
+            selectedColliders = Physics2D.OverlapPointAll(_mouseStartPosition, _selectableLayer);
 
+            float minY = float.MaxValue;
+            CSquadContorller minYSquad = null;
+            bool isSquadMarkerSelected = false;
 
-            if (selectedCollider == null)
+            for (int i = 0; i < selectedColliders.Length; i++)
             {
-                Debug.Log($"Selected {_selectedSquad.Count} Squads.");
-                return;
-            }
 
-            if (selectedCollider.CompareTag(_unitTag))
-            {
-                CUnitController unit = selectedCollider.GetComponent<CUnitController>();
-
-                if (unit != null && !_selectedSquadHash.Contains(unit.Squad))
+                if (selectedColliders[i] == null)
                 {
-                    unit.Squad.SelectSquad(true);
-                    _selectedSquad.Add(unit.Squad);
-                    _selectedSquadHash.Add(unit.Squad);
+                    continue;
+                }
+
+                if (selectedColliders[i].transform.position.y < minY)
+                {
+                    if (selectedColliders[i].CompareTag(_makerTag))
+                    {
+                        CSquadMarkerController marker = selectedColliders[i].GetComponent<CSquadMarkerController>();
+
+                        if (marker != null)
+                        {
+                            minY = marker.transform.position.y;
+                            minYSquad = marker.Squad;
+                            isSquadMarkerSelected = true;
+                        }
+                    }
+
+
                 }
             }
 
-            else if(selectedCollider.CompareTag(_makerTag))
+            if (!isSquadMarkerSelected)
             {
-                CSquadMarkerController marker = selectedCollider.GetComponent<CSquadMarkerController>();
-
-                if (marker != null && !_selectedSquadHash.Contains(marker.Squad))
+                for (int i = 0; i < selectedColliders.Length; i++)
                 {
-                    marker.Squad.SelectSquad(true);
-                    _selectedSquad.Add(marker.Squad);
-                    _selectedSquadHash.Add(marker.Squad);
-                }
 
+                    if (selectedColliders[i] == null)
+                    {
+                        continue;
+                    }
+
+                    if (selectedColliders[i].transform.position.y < minY)
+                    {
+                        if (selectedColliders[i].CompareTag(_unitTag))
+                        {
+                            CUnitController unit = selectedColliders[i].GetComponent<CUnitController>();
+
+                            if (unit != null)
+                            {
+                                minY = unit.transform.position.y;
+                                minYSquad = unit.Squad;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            if (minYSquad != null)
+            {
+                minYSquad.SelectSquad(true);
+                _selectedSquad.Add(minYSquad);
+                _selectedSquadHash.Add(minYSquad);
             }
 
             Debug.Log($"Selected {_selectedSquad.Count} Squads.");
@@ -220,7 +254,7 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
 
 
-        Collider2D[] selectedColliders = Physics2D.OverlapAreaAll(_mouseStartPosition, _mousePosition, _selectableLayer);
+        selectedColliders = Physics2D.OverlapAreaAll(_mouseStartPosition, _mousePosition, _selectableLayer);
         
         for (int i = 0; i < selectedColliders.Length; i++)
         {
@@ -265,6 +299,7 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
         }
 
         Debug.Log($"Selected {_selectedSquad.Count} Squads.");
+        return;
     }
 
     private void OnMousePosPerfomed(InputAction.CallbackContext context)

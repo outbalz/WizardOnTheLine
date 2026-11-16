@@ -23,6 +23,7 @@ public class CSquadContorller : MonoBehaviour
 
     #region inspector
     [SerializeField] private CSquadMarkerController _markerController;
+    [SerializeField] private float _squadRadiusX;
 	#endregion
 
 	#region private var
@@ -61,13 +62,16 @@ public class CSquadContorller : MonoBehaviour
 
         _squadMembers.Clear();
 
-        float spawnPointY = MAP_HIGHT_MAX - Random.Range(0f, 2f);
+        float spawnPointY = MAP_HIGHT_MAX - Random.Range(0f, 1.8f);
 
         for (int i = 0; i < squadDataPreset.SquadSize; i++)
         {
             CUnitController unit = CUnitFactory.Instance.Creat(this, squadDataPreset.UnitDatas[i]);
 
-            unit.transform.position = new Vector3(unit.transform.position.x, spawnPointY, unit.transform.position.z);
+            float spawnPointX = unit.transform.position.x;
+            spawnPointX += Random.Range(-_squadRadiusX, _squadRadiusX);
+
+            unit.transform.position = new Vector3(spawnPointX, spawnPointY, unit.transform.position.z);
 
             _squadMembers.Add(unit);
 
@@ -85,7 +89,10 @@ public class CSquadContorller : MonoBehaviour
             case SOderContext.EOderType.Move:
                 for (int i = 0; i < _squadMembers.Count; i++)
                 {
-                    _squadMembers[i].Movement.GiveMoveOder(context.targetPos.x);
+                    float targtX = context.targetPos.x;
+                    targtX += Random.Range(-_squadRadiusX, _squadRadiusX);
+
+                    _squadMembers[i].Movement.GiveMoveOder(targtX);
                 }
 
                 return true;

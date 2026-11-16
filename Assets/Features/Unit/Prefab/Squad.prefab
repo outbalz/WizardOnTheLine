@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CSquadContorller
   _markerController: {fileID: 4562893081271917400}
+  _squadRadiusX: 0.1
 --- !u!1 &6933441741196163509
 GameObject:
   m_ObjectHideFlags: 0
