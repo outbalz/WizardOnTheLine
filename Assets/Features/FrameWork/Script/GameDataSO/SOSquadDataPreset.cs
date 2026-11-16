@@ -5,11 +5,11 @@ using UnityEngine;
 public class SOSquadDataPreset : SOGameData
 {
     #region inspector
-    [SerializeField] private List<SOUnitStatusData> _unitData;
+    [SerializeField] private List<SOUnitData> _unitData;
     #endregion
 
     #region property
     public int SquadSize => _unitData.Count;
-    public IReadOnlyList<SOUnitStatusData> UnitDatas => _unitData;
+    public IReadOnlyList<SOUnitData> UnitDatas => _unitData;
     #endregion
 }

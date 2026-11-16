@@ -2,7 +2,7 @@
 
 public class CUnitFactory : CObjectPoolFactory<CUnitFactory, CUnitPool, CUnitController>
 {
-    public CUnitController Creat(CSquadContorller squad, SOUnitStatusData data)
+    public CUnitController Creat(CSquadContorller squad, SOUnitData data)
     {
         CUnitController unit = Creat(squad.transform);
         unit.transform.position = squad.transform.position;

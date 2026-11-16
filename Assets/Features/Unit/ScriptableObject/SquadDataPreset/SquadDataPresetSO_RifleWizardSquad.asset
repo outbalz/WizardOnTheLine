@@ -15,9 +15,10 @@ MonoBehaviour:
   _id: SquadDataPresetSO_RifleWizardSquad
   _name: SquadDataPresetSO_RifleWizardSquad
   _unitData:
-  - {fileID: 11400000, guid: 171489a6563c93f49ae126674dc8fc99, type: 2}
-  - {fileID: 11400000, guid: 171489a6563c93f49ae126674dc8fc99, type: 2}
-  - {fileID: 11400000, guid: 171489a6563c93f49ae126674dc8fc99, type: 2}
-  - {fileID: 11400000, guid: 171489a6563c93f49ae126674dc8fc99, type: 2}
-  - {fileID: 11400000, guid: 171489a6563c93f49ae126674dc8fc99, type: 2}
-  - {fileID: 11400000, guid: 171489a6563c93f49ae126674dc8fc99, type: 2}
+  - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}
+  - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}
+  - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}
+  - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}
+  - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}
+  - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}
+  - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}

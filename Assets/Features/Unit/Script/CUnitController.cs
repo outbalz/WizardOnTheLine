@@ -7,10 +7,14 @@ public class CUnitController : MonoBehaviour
 	[SerializeField] private CUnitStatusHandler _unitStatusHandler;
 	[SerializeField] private CUnitMovementController _unitMovementController;
 	[SerializeField] private CModifierHandler _modifierHandler;
-	#endregion
 
-	#region private var
-	private CSquadContorller _squad;
+	[Space]
+	[Header("UnitSelection")]
+	[SerializeField] private SpriteRenderer _selectionCircle;
+    #endregion
+
+    #region private var
+    private CSquadContorller _squad;
 	#endregion
 
 	#region property
@@ -20,7 +24,7 @@ public class CUnitController : MonoBehaviour
 	public CModifierHandler Modifier => _modifierHandler;
     #endregion
 
-    public void InitializeUnit(CSquadContorller squad, SOUnitStatusData data)
+    public void InitializeUnit(CSquadContorller squad, SOUnitData data)
     {
 		if (squad == null)
 		{
@@ -32,7 +36,7 @@ public class CUnitController : MonoBehaviour
 
 		ExceptionCheck();
 
-		_unitStatusHandler.InitializeStat(data);
+		_unitStatusHandler.InitializeStat(data.StatusData);
     }
 
 	private void ExceptionCheck()
