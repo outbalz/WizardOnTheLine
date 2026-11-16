@@ -5,6 +5,7 @@ public struct SOderContext
 {
     public enum EOderType
     {
+        None,
         Move,
         AttackMove,
         Stop,
@@ -34,6 +35,7 @@ public class CSquadContorller : MonoBehaviour
 
     #region property
     public SOPlayerData PlayerData => _playerData;
+    public float SquadRadiusX => _squadRadiusX;
     public IReadOnlyList<CUnitController> SquadMembers => _squadMembers;
     #endregion
 
@@ -99,10 +101,7 @@ public class CSquadContorller : MonoBehaviour
             case SOderContext.EOderType.Move:
                 for (int i = 0; i < _squadMembers.Count; i++)
                 {
-                    float targtX = context.targetPos.x;
-                    targtX += Random.Range(-_squadRadiusX, _squadRadiusX);
-
-                    _squadMembers[i].Movement.GiveMoveOder(targtX);
+                    _squadMembers[i].StateContoller.GiveOder(context);
                 }
 
                 return true;

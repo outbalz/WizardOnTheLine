@@ -7,6 +7,7 @@ public class CUnitController : MonoBehaviour
 	[SerializeField] private CUnitStatusHandler _unitStatusHandler;
 	[SerializeField] private CUnitMovementController _unitMovementController;
 	[SerializeField] private CModifierHandler _modifierHandler;
+	[SerializeField] private CUnitStateContoller _stateContoller;
 
 	[Space]
 	[Header("UnitSelection")]
@@ -19,6 +20,7 @@ public class CUnitController : MonoBehaviour
 
 	#region property
 	public CSquadContorller Squad => _squad;
+	public CUnitStateContoller StateContoller => _stateContoller;
 	public CUnitStatusHandler Status => _unitStatusHandler;
 	public CUnitMovementController Movement => _unitMovementController;
 	public CModifierHandler Modifier => _modifierHandler;
@@ -65,6 +67,16 @@ public class CUnitController : MonoBehaviour
 			if(!TryGetComponent<CUnitMovementController>(out _unitMovementController))
 			{
 				Debug.LogWarning($"{this}/ _unitMovementController is not assigned and not found on the GameObject {gameObject.name}.");
+				enabled = false;
+				return;
+			}
+		}
+
+		if(_stateContoller == null)
+		{
+			if(!TryGetComponent<CUnitStateContoller>(out _stateContoller))
+			{
+				Debug.LogWarning($"{this}/ _stateContoller is not assigned and not found on the GameObject {gameObject.name}.");
 				enabled = false;
 				return;
 			}

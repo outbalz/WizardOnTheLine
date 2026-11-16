@@ -462,6 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61b8a6488a5f9448992129239f738b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CSquadSpawner
+  _playerData: {fileID: 11400000, guid: d5f122946661f21479107ff8052b6c46, type: 2}
   _debugPrest: {fileID: 11400000, guid: 55f15897273b40445b54fb8eaf8dd5c6, type: 2}
 --- !u!4 &622344774
 Transform:

@@ -205,6 +205,7 @@ MonoBehaviour:
   _unitStatusHandler: {fileID: 2986833220964213656}
   _unitMovementController: {fileID: 6867744193411173796}
   _modifierHandler: {fileID: 8396585164198584801}
+  _stateContoller: {fileID: 4670785964344551259}
   _selectionCircle: {fileID: 2681603290514756602}
 --- !u!114 &6867744193411173796
 MonoBehaviour:
@@ -316,7 +317,7 @@ Animator:
   m_GameObject: {fileID: 5265820906656408960}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 35cbbdc25d17fd04ba11f18011e51dfb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

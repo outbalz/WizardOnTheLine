@@ -45,6 +45,7 @@ public class CUnitMovementController : MonoBehaviour
         CancelMoveOder();
     }
 
+    /*
     private void MoveTo(Vector3 targetPosition)
     {
         float speed = _stat.MovementSpeed;
@@ -59,7 +60,6 @@ public class CUnitMovementController : MonoBehaviour
 
         transform.position = transform.position + direction.normalized * speed * Time.deltaTime;
     }
-
     private async UniTask MoveToAsync(Vector3 targetPosition, CancellationToken ct)
     {
         while ((transform.position - targetPosition).sqrMagnitude > 0.1f)
@@ -74,6 +74,14 @@ public class CUnitMovementController : MonoBehaviour
         }
     }
 
+    public void GiveMoveOder(Vector3 target)
+    {
+        CancelMoveOder();
+        _cts = new CancellationTokenSource();
+
+        MoveToAsync(target, _cts.Token).Forget();
+    }
+    */
     private void MoveTo(float targtX)
     {
         float speed = _stat.MovementSpeed;
@@ -84,6 +92,8 @@ public class CUnitMovementController : MonoBehaviour
         if (Mathf.Abs(distance) <= speed * Time.deltaTime)
         {
             transform.position = new Vector3(targtX, transform.position.y, transform.position.z);
+            CancelMoveOder();
+            _unitController.StateContoller.OderComplet();
             return;
         }
 
@@ -98,21 +108,14 @@ public class CUnitMovementController : MonoBehaviour
         {
             if(ct.IsCancellationRequested)
             {
-                break;
+                return;
             }
 
             MoveTo(targtX);
             await UniTask.Yield();
         }
-    }
 
-
-    public void GiveMoveOder(Vector3 target)
-    {
-        CancelMoveOder();
-        _cts = new CancellationTokenSource();
-
-        MoveToAsync(target, _cts.Token).Forget();
+        _unitController.StateContoller.OderComplet();
     }
 
     public void GiveMoveOder(float targetX)
