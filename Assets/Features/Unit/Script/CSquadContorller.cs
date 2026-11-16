@@ -71,6 +71,7 @@ public class CSquadContorller : MonoBehaviour
             enabled = false;
             return;
         }
+        _playerData = playerData;
 
         _squadMembers.Clear();
 

@@ -137,6 +137,8 @@ public class CUnitStateContoller : MonoBehaviour
             case EUnitState.Idle:
                 _animator.SetBool(_isInCoverHash, true);
                 _isInCover = true;
+
+                FlipX(_unitController.Squad.PlayerData.IsFaceingLeft);
                 break;
             case EUnitState.Move:
                 _animator.SetBool(_isInCoverHash, false);
@@ -205,5 +207,10 @@ public class CUnitStateContoller : MonoBehaviour
     {
         _currentOder.oderType = SOderContext.EOderType.None;
         ChangeState(EUnitState.Idle);
+    }
+
+    public void FlipX(bool flipX)
+    {
+        _spriteRenderer.flipX = flipX;
     }
 }

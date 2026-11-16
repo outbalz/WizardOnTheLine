@@ -87,7 +87,19 @@ public class CUnitMovementController : MonoBehaviour
         float speed = _stat.MovementSpeed;
 
         float distance = targtX - transform.position.x;
-        float direction = (distance > 0) ? 1 : -1;
+        float direction = 1;
+
+        if(distance > 0)
+        {
+            direction = 1;
+            _unitController.StateContoller.FlipX(false);
+        }
+
+        else
+        {
+            direction = -1;
+            _unitController.StateContoller.FlipX(true);
+        }
 
         if (Mathf.Abs(distance) <= speed * Time.deltaTime)
         {

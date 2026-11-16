@@ -15,3 +15,41 @@ MonoBehaviour:
   _id: UnitStatusDataSO_RifleWizard
   _name: UnitStatusDataSO_RifleWizard
   _movementSpeed: 2.5
+  _weaponRange: 10
+  _weaponDamage: 10
+  _weaponAimTimeMin: 1
+  _weaponAimTimeMax: 1.8
+  _weaponCoolDown: 2
+  _weaponDamageFalloff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.008332316
+      value: 0.8857143
+      inSlope: 0.45106357
+      outSlope: 0.45106357
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.23774996
+      value: 0.99671304
+      inSlope: 0.44138622
+      outSlope: -0.6453933
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 0.5023809
+      inSlope: -0.648517
+      outSlope: -0.648517
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

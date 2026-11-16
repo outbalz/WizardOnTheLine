@@ -13,6 +13,9 @@ public class CUnitStatusHandler : MonoBehaviour
     public SOUnitStatusData UnitStatusDataSO => _unitStatusDataSO;
 
     public float MovementSpeed => GetStatusValue(_unitStatusDataSO.MovementSpeed, "MovementSpeed");
+    public float WeaponRange => GetStatusValue(_unitStatusDataSO.WeaponRange, "WeaponRange");
+    public float WeaponCoolDown => GetStatusValue(_unitStatusDataSO.WeaponCoolDown, "WeaponCoolDown");
+    public float WeaponAimTime => GetWeaponAimTime();
     #endregion
 
     private void Awake()
@@ -65,6 +68,22 @@ public class CUnitStatusHandler : MonoBehaviour
         result = _unitController.Modifier.GetModifiedValue(modifierName, baseVal);
 
         return result;
+    }
+
+    private float GetWeaponAimTime()
+    {
+        return UnityEngine.Random.Range
+            (
+                GetStatusValue(_unitStatusDataSO.WeaponAimTimeMin, "WeaponAimTime"),
+                GetStatusValue(_unitStatusDataSO.WeaponAimTimeMax, "WeaponAimTime")
+            );
+    }
+
+    public float GetWeaponDamage(float distance)
+    {
+        float baseVal = _unitStatusDataSO.GetWeaponDamageByDistance(distance);
+
+        return GetStatusValue(baseVal, "WeaponDamage");
     }
 
     public void InvokeOnStatChange()
