@@ -145,7 +145,13 @@ public class CUnitStateContoller : MonoBehaviour
                 if (_weaponCooldown <= 0)
                 {
                     _unitController.TargetFinder.GiveTagetSreachOder(EngageTarget);
-                    Debug.Log("!!");
+                }
+
+                else
+                {
+                    CancelTask();
+                    _cts = new CancellationTokenSource();
+                    CoolDownWeapon(_cts.Token).Forget();
                 }
 
                 break;
@@ -203,6 +209,11 @@ public class CUnitStateContoller : MonoBehaviour
     private void EngageTarget(ITargetable target)
     {
         if(target == null)
+        {
+            return;
+        }
+
+        if(_state == EUnitState.Move && _currentOder.oderType != SOderContext.EOderType.AttackMove)
         {
             return;
         }
@@ -275,7 +286,7 @@ public class CUnitStateContoller : MonoBehaviour
 
         ITargetable target = _unitController.TargetFinder.FindTarget();
 
-        if(target != null)
+        if(target != null && _currentOder.oderType != SOderContext.EOderType.Move)
         {
             ChangeState(EUnitState.Aim);
             CancelTask();
@@ -284,8 +295,16 @@ public class CUnitStateContoller : MonoBehaviour
             AimTarget(_cts.Token, target).Forget();
             return;
         }
-        
-        ChangeState(EUnitState.Idle);
+
+        if (_currentOder.oderType != SOderContext.EOderType.Move)
+        {
+            ChangeState(EUnitState.Idle);
+        }
+
+        else
+        {
+            ChangeState(EUnitState.Move);
+        }
 
         CancelTask();
         _cts = new CancellationTokenSource();
