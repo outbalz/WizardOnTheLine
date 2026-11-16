@@ -2,10 +2,14 @@
 
 public class CSquadSpawner : MonoBehaviour
 {
+    #region inspector
+    [SerializeField] private SOPlayerData _playerData;
+    #endregion
 
-    public void SpawnSquad(SOSquadDataPreset data)
+
+    public void SpawnSquad(SOSquadDataPreset data, SOPlayerData playerData)
     {
-        CSquadFactory.Instance.Creat(transform, data);
+        CSquadFactory.Instance.Creat(transform, data, playerData);
     }
 
     //for test====================
@@ -16,7 +20,7 @@ public class CSquadSpawner : MonoBehaviour
     [ContextMenu("SpawnSquad")]
     private void SpawnTest()
     {
-        SpawnSquad(_debugPrest);
+        SpawnSquad(_debugPrest, _playerData);
     }
     //=============================
 }

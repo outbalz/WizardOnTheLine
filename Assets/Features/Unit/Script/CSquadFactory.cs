@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class CSquadFactory : CObjectPoolFactory<CSquadFactory, CSquadPool, CSquadContorller>
 {
-    public CSquadContorller Creat(Transform tr, SOSquadDataPreset data)
+    public CSquadContorller Creat(Transform tr, SOSquadDataPreset data, SOPlayerData playerData)
     {
         CSquadContorller squad = Creat();
         squad.transform.position = tr.position;
-        squad.InitializeSquad(data);
+        squad.InitializeSquad(data, playerData);
 
         return squad;
     }
 
-    public CSquadContorller Creat(Vector3 pos, SOSquadDataPreset data)
+    public CSquadContorller Creat(Vector3 pos, SOSquadDataPreset data, SOPlayerData playerData)
     {
         CSquadContorller squad = Creat();
         squad.transform.position = pos;
-        squad.InitializeSquad(data);
+        squad.InitializeSquad(data, playerData);
 
         return squad;
     }

@@ -17,7 +17,8 @@ public struct SOderContext
 public class CSquadContorller : MonoBehaviour
 {
     #region const
-    private const float MAP_HIGHT_MAX = 0.35F;
+    private const float MAP_HIGHT_MAX = 0.6F;
+
     private const float MAP_HIGHT_MIN = -4.5F;
     #endregion
 
@@ -27,10 +28,12 @@ public class CSquadContorller : MonoBehaviour
 	#endregion
 
 	#region private var
+    private SOPlayerData _playerData;
 	private List<CUnitController> _squadMembers = new List<CUnitController>();
     #endregion
 
     #region property
+    public SOPlayerData PlayerData => _playerData;
     public IReadOnlyList<CUnitController> SquadMembers => _squadMembers;
     #endregion
 
@@ -52,11 +55,18 @@ public class CSquadContorller : MonoBehaviour
         }
     }
 
-    public void InitializeSquad(SOSquadDataPreset squadDataPreset)
+    public void InitializeSquad(SOSquadDataPreset squadDataPreset, SOPlayerData playerData)
     {
         if (squadDataPreset == null)
         {
             Debug.LogWarning("squadDataPreset is null.");
+            return;
+        }
+
+        if (playerData == null)
+        {
+            Debug.LogWarning("playerData is null.");
+            enabled = false;
             return;
         }
 
