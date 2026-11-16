@@ -156,6 +156,8 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
     private void OnClickCanceled(InputAction.CallbackContext context)
     {
+        float selectionSize = _selectBox.size.magnitude;
+
         _selectBox.gameObject.SetActive(false);
         _selectBox.size = Vector2.zero;
 
@@ -167,11 +169,58 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
         _mousePositionAction.OnPerformedAction -= OnMousePosPerfomed;
 
+        for (int i = 0; i < _selectedSquad.Count; i++)
+        {
+            _selectedSquad[i].SelectSquad(false);
+        }
 
-        Collider2D[] selectedColliders = Physics2D.OverlapAreaAll(_mouseStartPosition, _mousePosition, _selectableLayer);
 
         _selectedSquad.Clear();
         _selectedSquadHash.Clear();
+
+        if(selectionSize < 0.1f)
+        {
+            Collider2D selectedCollider = Physics2D.OverlapPoint(_mouseStartPosition, _selectableLayer);
+
+
+            if (selectedCollider == null)
+            {
+                Debug.Log($"Selected {_selectedSquad.Count} Squads.");
+                return;
+            }
+
+            if (selectedCollider.CompareTag(_unitTag))
+            {
+                CUnitController unit = selectedCollider.GetComponent<CUnitController>();
+
+                if (unit != null && !_selectedSquadHash.Contains(unit.Squad))
+                {
+                    unit.Squad.SelectSquad(true);
+                    _selectedSquad.Add(unit.Squad);
+                    _selectedSquadHash.Add(unit.Squad);
+                }
+            }
+
+            else if(selectedCollider.CompareTag(_makerTag))
+            {
+                CSquadMarkerController marker = selectedCollider.GetComponent<CSquadMarkerController>();
+
+                if (marker != null && !_selectedSquadHash.Contains(marker.Squad))
+                {
+                    marker.Squad.SelectSquad(true);
+                    _selectedSquad.Add(marker.Squad);
+                    _selectedSquadHash.Add(marker.Squad);
+                }
+
+            }
+
+            Debug.Log($"Selected {_selectedSquad.Count} Squads.");
+            return;
+        }
+
+
+
+        Collider2D[] selectedColliders = Physics2D.OverlapAreaAll(_mouseStartPosition, _mousePosition, _selectableLayer);
         
         for (int i = 0; i < selectedColliders.Length; i++)
         {
@@ -189,6 +238,7 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
                     continue;
                 }
 
+                unit.Squad.SelectSquad(true);
                 _selectedSquad.Add(unit.Squad);
                 _selectedSquadHash.Add(unit.Squad);
             }
@@ -207,6 +257,7 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
                     continue;
                 }
 
+                marker.Squad.SelectSquad(true);
                 _selectedSquad.Add(marker.Squad);
                 _selectedSquadHash.Add(marker.Squad);
 

@@ -69,4 +69,20 @@ public class CSquadMarkerController : MonoBehaviour
 
 		transform.position = leaderPos;
     }
+
+	public void SelectMarker(bool isSelected)
+	{
+		Color32 color = _color;
+
+		if (isSelected)
+		{
+			_renderer.color = color;
+		}
+
+		else
+		{
+			color.a = 150;
+			_renderer.color = color;
+		}
+	}
 }

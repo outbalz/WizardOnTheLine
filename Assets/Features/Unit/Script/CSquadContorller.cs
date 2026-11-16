@@ -102,6 +102,15 @@ public class CSquadContorller : MonoBehaviour
         return false;
     }
 
+    public void SelectSquad(bool isSelected)
+    {
+        for (int i = 0; i < _squadMembers.Count; i++)
+        {
+            _squadMembers[i].SelectUint(isSelected);
+        }
+
+        _markerController.SelectMarker(isSelected);
+    }
 
 }
 

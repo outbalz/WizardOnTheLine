@@ -154,7 +154,7 @@ MonoBehaviour:
   _renderer: {fileID: 3309915881417440172}
   _color:
     serializedVersion: 2
-    rgba: 2533359615
+    rgba: 4294967295
   _squad: {fileID: 4582756215149049931}
   _offsetY: 1.1
 --- !u!61 &6701571761532917269

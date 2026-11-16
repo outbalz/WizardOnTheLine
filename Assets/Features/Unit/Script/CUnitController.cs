@@ -70,4 +70,21 @@ public class CUnitController : MonoBehaviour
 			}
 		}
 	}
+
+	public void SelectUint(bool isSelected)
+	{
+		Color32 color = _selectionCircle.color;
+
+		if(isSelected)
+		{
+			color.a = 255;
+			_selectionCircle.color = color;
+		}
+
+		else
+		{
+			color.a = 50;
+			_selectionCircle.color = color;
+		}
+	}
 }
