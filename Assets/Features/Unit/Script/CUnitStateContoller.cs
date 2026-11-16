@@ -24,7 +24,12 @@ public class CUnitStateContoller : MonoBehaviour
     private SOderContext _currentOder;
 	private bool _isInCover = false;
     //private bool _isWaitingAnimation = false;
-    //private CancellationTokenSource _cts;
+    
+    //private ITargetable _target = null;
+
+    private CancellationTokenSource _cts;
+
+    private float _weaponCooldown;
 
 	private readonly int _isMoveingHash = Animator.StringToHash("bIsMoveing");
 	private readonly int _isInCoverHash = Animator.StringToHash("bIsInCover");
@@ -69,7 +74,6 @@ public class CUnitStateContoller : MonoBehaviour
 
     public bool GiveOder(SOderContext context)
     {
-        //CancelOder();
 
         switch (context.oderType)
         {
@@ -104,8 +108,7 @@ public class CUnitStateContoller : MonoBehaviour
         return false;
     }
 
-    /*
-    public void CancelOder()
+    public void CancelTask()
     {
         if(_cts ==  null)
         {
@@ -116,7 +119,6 @@ public class CUnitStateContoller : MonoBehaviour
         _cts.Dispose();
         _cts = null;
     }
-    */
 
     private void ChangeState(EUnitState state)
     {
@@ -139,11 +141,24 @@ public class CUnitStateContoller : MonoBehaviour
                 _isInCover = true;
 
                 FlipX(_unitController.Squad.PlayerData.IsFaceingLeft);
+
+                if (_weaponCooldown <= 0)
+                {
+                    _unitController.TargetFinder.GiveTagetSreachOder(EngageTarget);
+                    Debug.Log("!!");
+                }
+
                 break;
             case EUnitState.Move:
                 _animator.SetBool(_isInCoverHash, false);
                 _animator.SetBool(_isMoveingHash, true);
                 _isInCover = false;
+
+                if (_currentOder.oderType != SOderContext.EOderType.AttackMove)
+                {
+                    _unitController.TargetFinder.CancelSreach();
+                }
+
                 break;
             case EUnitState.Aim:
                 _animator.SetBool(_hasTagetHash, true);
@@ -164,22 +179,118 @@ public class CUnitStateContoller : MonoBehaviour
                 break;
             case EUnitState.Move:
                 _animator.SetBool(_isMoveingHash, false);
+                _animator.SetBool(_isInCoverHash, true);
                 break;
             case EUnitState.Aim:
                 if(state != EUnitState.Engage)
                 {
                     _animator.SetBool(_hasTagetHash, false);
+                    CancelTask();
                 }
                 break;
             case EUnitState.Engage:
                 if(state != EUnitState.Aim)
                 {
                     _animator.SetBool(_hasTagetHash, false);
+                    CancelTask();
                 }
                 break;
             default:
                 break;
         }
+    }
+
+    private void EngageTarget(ITargetable target)
+    {
+        if(target == null)
+        {
+            return;
+        }
+
+        //_target = target;
+        ChangeState(EUnitState.Aim);
+        CancelTask();
+        _cts = new CancellationTokenSource();
+        AimTarget(_cts.Token,target).Forget();
+    }
+
+    private async UniTask CoolDownWeapon(CancellationToken ct)
+    {
+        while (_weaponCooldown > 0)
+        {
+            if (ct.IsCancellationRequested)
+            {
+                return;
+            }
+
+            _weaponCooldown -= Time.deltaTime;
+            await UniTask.Yield();
+        }
+
+        if(_state == EUnitState.Idle)
+        {
+            _unitController.TargetFinder.GiveTagetSreachOder(EngageTarget);
+        }
+    }
+
+    private async UniTask AimTarget(CancellationToken ct, ITargetable target)
+    {
+        if (_weaponCooldown > 0)
+        {
+            await CoolDownWeapon(ct);
+        }
+
+        float aimTime = _unitController.Status.WeaponAimTime;
+
+        while (aimTime > 0)
+        {
+            if (ct.IsCancellationRequested)
+            {
+                return;
+            }
+
+            aimTime -= Time.deltaTime;
+            await UniTask.Yield();
+        }
+
+        EngageWeapon();
+    }
+
+    private void EngageWeapon()
+    {
+        ITargetable target = _unitController.TargetFinder.FindTarget();
+
+        if(target == null)
+        {
+            ChangeState(EUnitState.Idle);
+            return;
+        }
+
+        ChangeState(EUnitState.Engage);
+    }
+
+    private void FireWeapon()
+    {
+        _weaponCooldown = _unitController.Status.WeaponCoolDown;
+
+        ITargetable target = _unitController.TargetFinder.FindTarget();
+
+        if(target != null)
+        {
+            ChangeState(EUnitState.Aim);
+            CancelTask();
+            _cts = new CancellationTokenSource();
+
+            AimTarget(_cts.Token, target).Forget();
+            return;
+        }
+        
+        ChangeState(EUnitState.Idle);
+
+        CancelTask();
+        _cts = new CancellationTokenSource();
+
+        CoolDownWeapon(_cts.Token).Forget();
     }
 
     private void CarryOutOder()

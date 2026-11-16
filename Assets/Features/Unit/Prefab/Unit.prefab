@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 8464525824284770551}
   - component: {fileID: 4670785964344551259}
   - component: {fileID: 9177685394384040224}
+  - component: {fileID: 3078112197255469494}
   m_Layer: 6
   m_Name: Unit
   m_TagString: Unit
@@ -206,6 +207,7 @@ MonoBehaviour:
   _unitMovementController: {fileID: 6867744193411173796}
   _modifierHandler: {fileID: 8396585164198584801}
   _stateContoller: {fileID: 4670785964344551259}
+  _targetFinder: {fileID: 3078112197255469494}
   _selectionCircle: {fileID: 2681603290514756602}
 --- !u!114 &6867744193411173796
 MonoBehaviour:
@@ -329,3 +331,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3078112197255469494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265820906656408960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc655e2b3ad628341a122114dcb39348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CUnitTargetFinder
+  _unitController: {fileID: 3364450076485505681}

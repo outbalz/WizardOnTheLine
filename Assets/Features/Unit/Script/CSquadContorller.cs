@@ -19,7 +19,6 @@ public class CSquadContorller : MonoBehaviour
 {
     #region const
     private const float MAP_HIGHT_MAX = 0.6F;
-
     private const float MAP_HIGHT_MIN = -4.5F;
     #endregion
 

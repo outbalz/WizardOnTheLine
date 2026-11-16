@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 
 
-public class CUnitController : MonoBehaviour
+public class CUnitController : MonoBehaviour, ITargetable
 {
 	#region inspector
 	[SerializeField] private CUnitStatusHandler _unitStatusHandler;
 	[SerializeField] private CUnitMovementController _unitMovementController;
 	[SerializeField] private CModifierHandler _modifierHandler;
 	[SerializeField] private CUnitStateContoller _stateContoller;
+	[SerializeField] private CUnitTargetFinder _targetFinder;
 
 	[Space]
 	[Header("UnitSelection")]
@@ -24,6 +25,7 @@ public class CUnitController : MonoBehaviour
 	public CUnitStatusHandler Status => _unitStatusHandler;
 	public CUnitMovementController Movement => _unitMovementController;
 	public CModifierHandler Modifier => _modifierHandler;
+	public CUnitTargetFinder TargetFinder => _targetFinder;
     #endregion
 
     public void InitializeUnit(CSquadContorller squad, SOUnitData data)
@@ -77,6 +79,16 @@ public class CUnitController : MonoBehaviour
 			if(!TryGetComponent<CUnitStateContoller>(out _stateContoller))
 			{
 				Debug.LogWarning($"{this}/ _stateContoller is not assigned and not found on the GameObject {gameObject.name}.");
+				enabled = false;
+				return;
+			}
+		}
+
+		if(_targetFinder == null)
+		{
+			if(!TryGetComponent <CUnitTargetFinder>(out _targetFinder))
+			{
+				Debug.LogWarning($"{this}/ _targetFinder is not assigned and not found on the GameObject {gameObject.name}.");
 				enabled = false;
 				return;
 			}
