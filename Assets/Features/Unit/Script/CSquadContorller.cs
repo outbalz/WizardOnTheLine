@@ -36,6 +36,7 @@ public class CSquadContorller : MonoBehaviour
     public SOPlayerData PlayerData => _playerData;
     public float SquadRadiusX => _squadRadiusX;
     public List<CUnitController> SquadMembers => _squadMembers;
+    public event System.Action OnSquadDeath;
     #endregion
 
     private void Awake()
@@ -130,5 +131,14 @@ public class CSquadContorller : MonoBehaviour
         _markerController.SelectMarker(isSelected);
     }
 
+    public void KillSquad()
+    {
+        CSquadPool.Instance.ReturnToPool(this);
+
+        CGameManager.Instance.SquadListMap[_playerData].Remove(this);
+
+        OnSquadDeath?.Invoke();
+        OnSquadDeath = null;
+    }
 }
 

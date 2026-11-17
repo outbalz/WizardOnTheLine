@@ -14,9 +14,13 @@ public class CEnemyAIManager : MonoBehaviour
         FullOffence,
     }
 
+    #region const
+    private const float MAP_WITH_MIN = -10f;
+    private const float MAP_WITH_MAX = 50f;
+    #endregion
 
     #region inspector
-    [SerializeField] private SOPlayerData _aiPlayer;
+    //[SerializeField] private SOPlayerData _aiPlayer;
     [SerializeField] private List<SOSquadDataPreset> _squadPrest;
     [SerializeField] private CSquadSpawner _spawner;
     #endregion
@@ -80,14 +84,14 @@ public class CEnemyAIManager : MonoBehaviour
             enabled = false;
             return;
         }
-        
+        /*
         if(_aiPlayer == null)
         {
             Debug.LogWarning("_aiPlayer is not assigned.");
             enabled = false;
             return;
         }
-
+        */
         if (_spawner == null)
         {
             Debug.LogWarning("_spawner is not assigned.");
@@ -105,7 +109,7 @@ public class CEnemyAIManager : MonoBehaviour
 
             if(CGameManager.Instance.SpendEnemyCMP(_squadPrest[randomIndex].Cost))
             {
-                _spawner.SpawnSquad(_squadPrest[randomIndex], _aiPlayer);
+                _spawner.SpawnSquad(_squadPrest[randomIndex], CGameManager.Instance.EnemyPlayerData);
             }
 
             int nextSec = Random.Range(5, 15);
@@ -115,7 +119,9 @@ public class CEnemyAIManager : MonoBehaviour
     }
 
     private async UniTask TacticsCheck(CancellationToken ct)
-    {  
+    {
+        await UniTask.WaitForSeconds(20);
+
         while (!ct.IsCancellationRequested)
         {
             /*
@@ -126,6 +132,14 @@ public class CEnemyAIManager : MonoBehaviour
 
             EAITactic tactic = (EAITactic)Random.Range(0, System.Enum.GetValues(typeof(EAITactic)).Length);
 
+            IReadOnlyList<CSquadContorller> squads = CGameManager.Instance.SquadListMap[CGameManager.Instance.EnemyPlayerData];
+
+            float frontLinPos = MAP_WITH_MIN;
+            float fallbackPos = MAP_WITH_MAX;
+            SOderContext moveOder = new SOderContext();
+
+            int nextSec = Random.Range(20, 51);
+
             switch (tactic)
             {
                 case EAITactic.Idle:
@@ -133,19 +147,115 @@ public class CEnemyAIManager : MonoBehaviour
                     break;
                 case EAITactic.Defence:
                     Debug.Log("Enemy is taking Defecive postion.");
+
+                    frontLinPos = FindFrontLine();
+
+                    if(fallbackPos - 15f > frontLinPos)
+                    {
+                        fallbackPos = fallbackPos - 15f;
+                        frontLinPos = frontLinPos + 15f;
+                    }
+
+                    for (int i = 0; i < squads.Count; i++)
+                    {
+                        float defencsPos = Random.Range(frontLinPos, fallbackPos);
+
+                        moveOder.oderType = SOderContext.EOderType.Move;
+                        moveOder.targetPos = _spawner.transform.position;
+                        moveOder.targetPos.x = defencsPos;
+
+                        squads[i].GiveOder(moveOder);
+                    }
+
+
                     break;
                 case EAITactic.FoceRecon:
                     Debug.Log("Enemy is sending few unit forward");
+
+                    frontLinPos = FindFrontLine();
+
+                    int randomIndex = Random.Range(0, squads.Count);
+
+                    moveOder.oderType = SOderContext.EOderType.Move;
+                    moveOder.targetPos = _spawner.transform.position;
+                    moveOder.targetPos.x = frontLinPos;
+
+                    squads[randomIndex].GiveOder(moveOder);
+                    
+                    int randomIndex2 =  -1;
+
+                    if(squads.Count > 4)
+                    {
+                        randomIndex2 =  Random.Range(0, squads.Count);
+
+                        while(randomIndex == randomIndex2)
+                        {
+                            randomIndex2 =  Random.Range(0, squads.Count);
+                        }
+
+                        squads[randomIndex2].GiveOder(moveOder);
+                    }
+
+                    int reconTime = Random.Range(10, 20);
+
+                    await UniTask.WaitForSeconds(reconTime);
+
+                    moveOder.targetPos.x = fallbackPos;
+
+                    if (squads.Count > randomIndex)
+                    {
+                        squads[randomIndex].GiveOder(moveOder);
+                    }
+
+                    if(randomIndex2 != -1 && squads.Count > randomIndex2)
+                    {
+                        squads[randomIndex2].GiveOder(moveOder);
+                    }
+
                     break;
                 case EAITactic.FullOffence:
                     Debug.Log("Enemy is prepare for Full offence");
+
+                    frontLinPos = FindFrontLine();
+
+
+                    for (int i = 0; i < squads.Count; i++)
+                    {
+                        moveOder.oderType = SOderContext.EOderType.Move;
+                        moveOder.targetPos = _spawner.transform.position;
+                        moveOder.targetPos.x = frontLinPos;
+
+                        squads[i].GiveOder(moveOder);
+                    }
+
                     break;
                 default:
                     break;
             }
 
-            int nextSec = Random.Range(20, 50);
             await UniTask.WaitForSeconds(nextSec);
         }
+    }
+
+    private float FindFrontLine()
+    {
+        float frontLinePos = MAP_WITH_MIN;
+
+        IReadOnlyList<CSquadContorller> playerSquads = CGameManager.Instance.SquadListMap[CGameManager.Instance.PlayerData];
+
+        if (playerSquads == null || playerSquads.Count <= 0)
+        {
+            return frontLinePos;
+        }
+
+        for (int i = 0; i < playerSquads.Count; i++)
+        {
+            if (playerSquads[i].SquadMembers[0].transform.position.x > frontLinePos)
+            {
+                frontLinePos = playerSquads[i].SquadMembers[0].transform.position.x;
+            }
+        }
+
+        return frontLinePos;
     }
 }

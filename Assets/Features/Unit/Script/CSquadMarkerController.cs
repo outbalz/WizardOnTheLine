@@ -57,7 +57,7 @@ public class CSquadMarkerController : MonoBehaviour
 	{
 		if (_squad.SquadMembers.Count <= 0)
 		{
-			CSquadPool.Instance.ReturnToPool(_squad);
+			_squad.KillSquad();
 			enabled = false;
 			return;
 		}

@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CGameManager : CSingleton<CGameManager>
@@ -15,9 +16,16 @@ public class CGameManager : CSingleton<CGameManager>
 	#region private var
 	private float _playerCMP = 200f;
 	private float _enemyCMP = 200f;
+	private Dictionary<SOPlayerData, List<CSquadContorller>> _squadListMap = new Dictionary<SOPlayerData, List<CSquadContorller>>();
+	#endregion
+
+	#region property
+	public SOPlayerData PlayerData => _playerData;
+	public SOPlayerData EnemyPlayerData => _enemyPlayerData;
+	public Dictionary<SOPlayerData, List<CSquadContorller>> SquadListMap => _squadListMap;
     #endregion
 
-    private void Start()
+    protected override void Awake()
     {
         if(_CMPtext == null)
 		{
@@ -25,6 +33,18 @@ public class CGameManager : CSingleton<CGameManager>
 			enabled = false;
 			return;
 		}
+
+		if (_playerData == null || _enemyPlayerData == null)
+		{
+			Debug.LogWarning("playerData is null");
+			enabled = false;
+			return;
+		}
+
+		_squadListMap.Add(_playerData, new List<CSquadContorller>());
+		_squadListMap.Add(_enemyPlayerData, new List<CSquadContorller>());
+
+		base.Awake();
     }
 
     private void Update()

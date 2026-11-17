@@ -4,12 +4,22 @@ public class CSquadSpawner : MonoBehaviour
 {
     #region inspector
     [SerializeField] private SOPlayerData _playerData;
+    [SerializeField] private float _moveOderOffset;
     #endregion
 
 
     public void SpawnSquad(SOSquadDataPreset data, SOPlayerData playerData)
     {
-        CSquadFactory.Instance.Creat(transform, data, playerData);
+        CSquadContorller squad = CSquadFactory.Instance.Creat(transform, data, playerData);
+
+        SOderContext moveOderContext = new SOderContext();
+        moveOderContext.oderType = SOderContext.EOderType.Move;
+        moveOderContext.targetPos = transform.position;
+        moveOderContext.targetPos.x += _moveOderOffset;
+
+        squad.GiveOder(moveOderContext);
+
+        CGameManager.Instance.SquadListMap[playerData].Add(squad);
     }
 
     //for test====================
