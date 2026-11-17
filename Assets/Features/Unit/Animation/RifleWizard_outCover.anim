@@ -22,32 +22,32 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -1458355673418742383, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
-    - time: 0.020833334
+    - time: 0.010416667
       value: {fileID: -2925508423745225902, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
-    - time: 0.041666668
+    - time: 0.020833334
       value: {fileID: -547091146827654542, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
-    - time: 0.0625
+    - time: 0.03125
       value: {fileID: 6172677023576661124, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
-    - time: 0.083333336
+    - time: 0.041666668
       value: {fileID: -5646824882345637077, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
-    - time: 0.104166664
+    - time: 0.052083332
       value: {fileID: 543740318259051962, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
-    - time: 0.125
+    - time: 0.0625
       value: {fileID: -7322575110094488539, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
-    - time: 0.14583333
+    - time: 0.072916664
       value: {fileID: -7296483528603101667, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
-    - time: 0.16666667
+    - time: 0.083333336
       value: {fileID: -4050379527562877967, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
-    - time: 0.1875
+    - time: 0.09375
       value: {fileID: 4320293176814259607, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
-    - time: 0.20833333
+    - time: 0.104166664
       value: {fileID: 4170944641918078378, guid: 122ff298bac4aba409b3e10f12c2cbb1, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 48
+  m_SampleRate: 96
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -80,7 +80,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.22916666
+    m_StopTime: 0.11458333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -100,7 +100,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.20833333
+  - time: 0.104166664
     functionName: CarryOutOder
     data: 
     objectReferenceParameter: {fileID: 0}

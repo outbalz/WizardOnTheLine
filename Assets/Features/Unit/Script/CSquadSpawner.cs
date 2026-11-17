@@ -18,7 +18,7 @@ public class CSquadSpawner : MonoBehaviour
     #endregion
 
     [ContextMenu("SpawnSquad")]
-    private void SpawnTest()
+    public void SpawnTest()
     {
         SpawnSquad(_debugPrest, _playerData);
     }

@@ -248,7 +248,7 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
                 _selectedSquadHash.Add(minYSquad);
             }
 
-            Debug.Log($"Selected {_selectedSquad.Count} Squads.");
+            //Debug.Log($"Selected {_selectedSquad.Count} Squads.");
             return;
         }
 
@@ -298,7 +298,7 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
             }
         }
 
-        Debug.Log($"Selected {_selectedSquad.Count} Squads.");
+        //Debug.Log($"Selected {_selectedSquad.Count} Squads.");
         return;
     }
 

@@ -22,7 +22,7 @@ public class CUnitStateContoller : MonoBehaviour
 	#region private var
     private EUnitState _state = EUnitState.Idle;
     private SOderContext _currentOder;
-	private bool _isInCover = false;
+	//private bool _isInCover = false;
     //private bool _isWaitingAnimation = false;
     
     //private ITargetable _target = null;
@@ -45,7 +45,7 @@ public class CUnitStateContoller : MonoBehaviour
     private void OnEnable()
     {
         ExceptionCheck();
-        ChangeState(EUnitState.Idle);
+        //ChangeState(EUnitState.Idle);
     }
 
     private void ExceptionCheck()
@@ -88,11 +88,12 @@ public class CUnitStateContoller : MonoBehaviour
 
                 _currentOder = context;
 
-                if (!_isInCover)
-                {
-                    CarryOutOder();
-                }
                 ChangeState(EUnitState.Move);
+
+                //if (!_isInCover)
+                //{
+                    CarryOutOder();
+                //}
 
                 return true;
             case SOderContext.EOderType.AttackMove:
@@ -138,7 +139,7 @@ public class CUnitStateContoller : MonoBehaviour
         {
             case EUnitState.Idle:
                 _animator.SetBool(_isInCoverHash, true);
-                _isInCover = true;
+                //_isInCover = true;
 
                 FlipX(_unitController.Squad.PlayerData.IsFaceingLeft);
 
@@ -158,7 +159,7 @@ public class CUnitStateContoller : MonoBehaviour
             case EUnitState.Move:
                 _animator.SetBool(_isInCoverHash, false);
                 _animator.SetBool(_isMoveingHash, true);
-                _isInCover = false;
+                //_isInCover = false;
 
                 if (_currentOder.oderType != SOderContext.EOderType.AttackMove)
                 {

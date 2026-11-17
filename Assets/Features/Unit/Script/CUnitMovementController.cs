@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CUnitMovementController : MonoBehaviour
@@ -124,6 +125,12 @@ public class CUnitMovementController : MonoBehaviour
             }
 
             MoveTo(targtX);
+
+            if(ct.IsCancellationRequested)
+            {
+                return;
+            }
+
             await UniTask.Yield();
         }
 
