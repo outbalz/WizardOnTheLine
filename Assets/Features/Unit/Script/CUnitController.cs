@@ -17,6 +17,7 @@ public class CUnitController : MonoBehaviour, ITargetable
 
     #region private var
     private CSquadContorller _squad;
+	private Color32 _color;
 	#endregion
 
 	#region property
@@ -41,8 +42,10 @@ public class CUnitController : MonoBehaviour, ITargetable
 		ExceptionCheck();
 
 		gameObject.layer = squad.PlayerData.UnitLayer;
+		_color = squad.PlayerData.PlayerColor;
 		_unitStatusHandler.InitializeStat(data.StatusData);
 		_stateContoller.InitializeState();
+		SelectUint(false);
     }
 
 	private void ExceptionCheck()
@@ -99,16 +102,15 @@ public class CUnitController : MonoBehaviour, ITargetable
 
 	public void SelectUint(bool isSelected)
 	{
-		Color32 color = _selectionCircle.color;
 
 		if(isSelected)
 		{
-			color.a = 255;
-			_selectionCircle.color = color;
+			_selectionCircle.color = _color;
 		}
 
 		else
 		{
+			Color32 color = _color;
 			color.a = 50;
 			_selectionCircle.color = color;
 		}

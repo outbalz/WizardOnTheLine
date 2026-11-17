@@ -17,7 +17,7 @@ MonoBehaviour:
   _isFaceingLeft: 1
   _playerColor:
     serializedVersion: 2
-    rgba: 4284177243
+    rgba: 4278190335
   _unitLayer:
     serializedVersion: 2
     m_Bits: 128

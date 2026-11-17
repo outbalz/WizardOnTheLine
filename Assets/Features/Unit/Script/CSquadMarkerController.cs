@@ -42,6 +42,16 @@ public class CSquadMarkerController : MonoBehaviour
 		}
 	}
 
+    public void InitializeMarker()
+    {
+        ExceptionCheck();
+		AssignSquadLeader();
+
+        gameObject.layer = _squad.PlayerData.UnitLayer;
+        _color = _squad.PlayerData.PlayerColor;
+		SelectMarker(false);
+    }
+
     public void AssignSquadLeader()
 	{
 		if (_squad.SquadMembers.Count <= 0)
