@@ -319,7 +319,6 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
         Vector2 center = loweLeft + size / 2f;
         _selectBox.transform.position = center;
-
     }
 
 }
