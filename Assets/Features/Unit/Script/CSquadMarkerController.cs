@@ -44,6 +44,7 @@ public class CSquadMarkerController : MonoBehaviour
 
     public void InitializeMarker()
     {
+		enabled = true;
         ExceptionCheck();
 		AssignSquadLeader();
 
@@ -56,6 +57,7 @@ public class CSquadMarkerController : MonoBehaviour
 	{
 		if (_squad.SquadMembers.Count <= 0)
 		{
+			CSquadPool.Instance.ReturnToPool(_squad);
 			enabled = false;
 			return;
 		}

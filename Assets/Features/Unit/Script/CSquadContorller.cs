@@ -35,7 +35,7 @@ public class CSquadContorller : MonoBehaviour
     #region property
     public SOPlayerData PlayerData => _playerData;
     public float SquadRadiusX => _squadRadiusX;
-    public IReadOnlyList<CUnitController> SquadMembers => _squadMembers;
+    public List<CUnitController> SquadMembers => _squadMembers;
     #endregion
 
     private void Awake()

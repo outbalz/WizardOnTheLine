@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 4670785964344551259}
   - component: {fileID: 9177685394384040224}
   - component: {fileID: 3078112197255469494}
+  - component: {fileID: 6044316499413156852}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Unit
@@ -208,6 +209,7 @@ MonoBehaviour:
   _modifierHandler: {fileID: 8396585164198584801}
   _stateContoller: {fileID: 4670785964344551259}
   _targetFinder: {fileID: 3078112197255469494}
+  _hpHandler: {fileID: 6044316499413156852}
   _selectionCircle: {fileID: 2681603290514756602}
 --- !u!114 &6867744193411173796
 MonoBehaviour:
@@ -343,4 +345,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc655e2b3ad628341a122114dcb39348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CUnitTargetFinder
+  _unitController: {fileID: 3364450076485505681}
+--- !u!114 &6044316499413156852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265820906656408960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d284a4e2f09674d96254ae24758b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CUnitHPHandler
   _unitController: {fileID: 3364450076485505681}

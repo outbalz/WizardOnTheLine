@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class CUnitController : MonoBehaviour, ITargetable
+public class CUnitController : MonoBehaviour
 {
 	#region inspector
 	[SerializeField] private CUnitStatusHandler _unitStatusHandler;
@@ -9,6 +9,7 @@ public class CUnitController : MonoBehaviour, ITargetable
 	[SerializeField] private CModifierHandler _modifierHandler;
 	[SerializeField] private CUnitStateContoller _stateContoller;
 	[SerializeField] private CUnitTargetFinder _targetFinder;
+	[SerializeField] private CUnitHPHandler _hpHandler;
 
 	[Space]
 	[Header("UnitSelection")]
@@ -27,6 +28,7 @@ public class CUnitController : MonoBehaviour, ITargetable
 	public CUnitMovementController Movement => _unitMovementController;
 	public CModifierHandler Modifier => _modifierHandler;
 	public CUnitTargetFinder TargetFinder => _targetFinder;
+	public CUnitHPHandler HP => _hpHandler;
     #endregion
 
     public void InitializeUnit(CSquadContorller squad, SOUnitData data)
@@ -43,6 +45,7 @@ public class CUnitController : MonoBehaviour, ITargetable
 
 		gameObject.layer = squad.PlayerData.UnitLayer;
 		_color = squad.PlayerData.PlayerColor;
+		_hpHandler.InitializeHP();
 		_unitStatusHandler.InitializeStat(data.StatusData);
 		_stateContoller.InitializeState();
 		SelectUint(false);
@@ -114,5 +117,11 @@ public class CUnitController : MonoBehaviour, ITargetable
 			color.a = 50;
 			_selectionCircle.color = color;
 		}
+	}
+
+	public void KillUnit()
+	{
+		_squad.SquadMembers.Remove(this);
+		CUnitPool.Instance.ReturnToPool(this);
 	}
 }

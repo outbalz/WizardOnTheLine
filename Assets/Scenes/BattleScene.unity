@@ -883,12 +883,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1290,7 +1290,7 @@ Transform:
   m_GameObject: {fileID: 1218631402}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.12, y: 0, z: 0}
+  m_LocalPosition: {x: 47.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1308,8 +1308,9 @@ GameObject:
   - component: {fileID: 1340561908}
   - component: {fileID: 1340561907}
   - component: {fileID: 1340561906}
+  - component: {fileID: 1340561909}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RifleWizardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1379,9 +1380,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 622344773}
-        m_TargetAssemblyTypeName: CSquadSpawner, Assembly-CSharp
-        m_MethodName: SpawnTest
+      - m_Target: {fileID: 1340561909}
+        m_TargetAssemblyTypeName: CUnitSpawnButtonController, Assembly-CSharp
+        m_MethodName: OnButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1429,6 +1430,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340561904}
   m_CullTransparentMesh: 1
+--- !u!114 &1340561909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340561904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c560b293dab7cb34980d51bb231d4a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CUnitSpawnButtonController
+  _spawner: {fileID: 622344773}
+  _playerData: {fileID: 11400000, guid: d5f122946661f21479107ff8052b6c46, type: 2}
+  _preset: {fileID: 11400000, guid: 55f15897273b40445b54fb8eaf8dd5c6, type: 2}
 --- !u!1 &1476403837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,7 +1551,7 @@ MonoBehaviour:
   _CMPperSec: 5
   _playerData: {fileID: 11400000, guid: d5f122946661f21479107ff8052b6c46, type: 2}
   _enemyPlayerData: {fileID: 11400000, guid: ca10023107f63ee4fbdf800217fe398c, type: 2}
-  _CMPtext: {fileID: 0}
+  _CMPtext: {fileID: 1669581262}
 --- !u!1 &1669581260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,7 +1564,7 @@ GameObject:
   - component: {fileID: 1669581263}
   - component: {fileID: 1669581262}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CMPText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1833,7 +1849,7 @@ GameObject:
   - component: {fileID: 2045592710}
   - component: {fileID: 2045592709}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

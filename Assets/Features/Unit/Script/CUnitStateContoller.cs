@@ -337,6 +337,12 @@ public class CUnitStateContoller : MonoBehaviour
             }
         }
 
+        if (target is CUnitHPHandler targetHP)
+        {
+            float distance = Mathf.Abs(transform.position.x - targetHP.transform.position.x);
+            targetHP.TakeDamage(_unitController.Status.GetWeaponDamage(distance));
+        }
+
         ChangeState(EUnitState.Engage);
     }
 

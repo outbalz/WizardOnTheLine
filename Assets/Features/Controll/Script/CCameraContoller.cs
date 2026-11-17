@@ -14,7 +14,7 @@ public class CCameraContoller : MonoBehaviour
 
     #region private var
     private CInputVectorActionData _mousePositionAction;
-    private bool _isBinded = false;
+    //private bool _isBinded = false;
     #endregion
 
     private void Start()
@@ -28,8 +28,7 @@ public class CCameraContoller : MonoBehaviour
         {
             Debug.LogError("Camera is not assigned in the inspector and no main camera found.");
         }
-        /*
-        */
+
         if (CInputDispatcher.Instance.InputActionMap.TryGetValue(_mousePositionActionName, out CInputActionData mousePositionAction))
         {
             if (mousePositionAction is CInputVectorActionData vectorAction)
