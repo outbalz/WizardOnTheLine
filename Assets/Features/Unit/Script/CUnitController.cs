@@ -40,7 +40,9 @@ public class CUnitController : MonoBehaviour, ITargetable
 
 		ExceptionCheck();
 
+		gameObject.layer = squad.PlayerData.UnitLayer;
 		_unitStatusHandler.InitializeStat(data.StatusData);
+		_stateContoller.InitializeState();
     }
 
 	private void ExceptionCheck()

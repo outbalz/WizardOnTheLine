@@ -13,7 +13,7 @@ public class SOPlayerData : SOGameData
 	#region property
 	public bool IsFaceingLeft => _isFaceingLeft;
 	public Color32 PlayerColor => _playerColor;
-	public LayerMask UnitLayer => _unitLayer;
+	public int UnitLayer => Mathf.RoundToInt(Mathf.Log(_unitLayer.value,2));
 	public LayerMask TargetLayer => _targetLayer;
 	#endregion
 }

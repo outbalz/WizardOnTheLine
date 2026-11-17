@@ -45,7 +45,30 @@ public class CUnitStateContoller : MonoBehaviour
     private void OnEnable()
     {
         ExceptionCheck();
-        //ChangeState(EUnitState.Idle);
+    }
+
+    private void OnDisable()
+    {
+        CancelTask();
+    }
+
+    private void OnDestroy()
+    {
+        CancelTask();
+    }
+
+    public void InitializeState()
+    {
+        ExceptionCheck();
+        if (_state != EUnitState.Idle)
+        {
+            ChangeState(EUnitState.Idle);
+        }
+
+        else
+        {
+            OnStateEnter(EUnitState.Idle);
+        }
     }
 
     private void ExceptionCheck()
@@ -247,9 +270,32 @@ public class CUnitStateContoller : MonoBehaviour
 
     private async UniTask AimTarget(CancellationToken ct, ITargetable target)
     {
+        if (ct.IsCancellationRequested)
+        {
+            return;
+        }
+
+        if(target is MonoBehaviour mono)
+        {
+            if(mono.transform.position.x < transform.position.x)
+            {
+                FlipX(true);
+            }
+
+            else
+            {
+                FlipX(false);
+            }
+        }
+
         if (_weaponCooldown > 0)
         {
             await CoolDownWeapon(ct);
+        }
+
+        if (ct.IsCancellationRequested)
+        {
+            return;
         }
 
         float aimTime = _unitController.Status.WeaponAimTime;
@@ -276,6 +322,19 @@ public class CUnitStateContoller : MonoBehaviour
         {
             ChangeState(EUnitState.Idle);
             return;
+        }
+
+        if (target is MonoBehaviour mono)
+        {
+            if (mono.transform.position.x < transform.position.x)
+            {
+                FlipX(true);
+            }
+
+            else
+            {
+                FlipX(false);
+            }
         }
 
         ChangeState(EUnitState.Engage);

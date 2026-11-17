@@ -90,6 +90,8 @@ public class CSquadContorller : MonoBehaviour
             spawnPointY -= Random.Range(0.3f, 0.7f);
         }
 
+        _markerController.gameObject.layer = playerData.UnitLayer;
+
         ExceptionCheck();
     }
 

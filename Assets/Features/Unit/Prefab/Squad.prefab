@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 3309915881417440172}
   - component: {fileID: 4562893081271917400}
   - component: {fileID: 6701571761532917269}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SquadMarker
   m_TagString: SquadMarker
   m_Icon: {fileID: 0}
