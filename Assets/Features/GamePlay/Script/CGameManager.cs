@@ -45,4 +45,15 @@ public class CGameManager : CSingleton<CGameManager>
 		_playerCMP -= amount;
 		return true;
 	}
+
+	public bool SpendEnemyCMP(float amount)
+	{
+		if (_enemyCMP < amount)
+		{
+			return false;
+		}
+		
+		_enemyCMP -= amount;
+		return true;
+	}
 }
