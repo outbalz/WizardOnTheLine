@@ -13,23 +13,23 @@ public class CInputActionData
     
     public InputActionReference Reference => _reference;
     public string ActionName => _actionName;
-    public event Action<InputAction.CallbackContext> OnPerformedAction;
-    public event Action<InputAction.CallbackContext> OnStartedAction;
-    public event Action<InputAction.CallbackContext> OnCanceledAction;
+    public event Action OnPerformedAction;
+    public event Action OnStartedAction;
+    public event Action OnCanceledAction;
 
     public virtual void OnStarted(InputAction.CallbackContext context)
     {
-        OnStartedAction?.Invoke(context);
+        OnStartedAction?.Invoke();
     }
 
     public virtual void OnPerformed(InputAction.CallbackContext context)
     {
-        OnPerformedAction?.Invoke(context);
+        OnPerformedAction?.Invoke();
     }
 
     public virtual void OnCanceled(InputAction.CallbackContext context)
     {
-        OnCanceledAction?.Invoke(context);
+        OnCanceledAction?.Invoke();
     }
 }
 

@@ -140,6 +140,12 @@ public class CEnemyAIManager : MonoBehaviour
 
             int nextSec = Random.Range(10, 31);
 
+            if(squads.Count <= 0)
+            {
+                await UniTask.WaitForSeconds(nextSec);
+                continue;
+            }
+
             switch (tactic)
             {
                 case EAITactic.Idle:
@@ -180,9 +186,13 @@ public class CEnemyAIManager : MonoBehaviour
                     moveOder.targetPos = _spawner.transform.position;
                     moveOder.targetPos.x = frontLinPos;
 
-                    squads[randomIndex].GiveOder(moveOder);
+                    CSquadContorller reconSquad = squads[randomIndex];
+
+                    reconSquad.GiveOder(moveOder);
                     
                     int randomIndex2 =  -1;
+
+                    CSquadContorller reconSquad2 = null;
 
                     if(squads.Count > 4)
                     {
@@ -192,8 +202,10 @@ public class CEnemyAIManager : MonoBehaviour
                         {
                             randomIndex2 =  Random.Range(0, squads.Count);
                         }
+                        
+                        reconSquad2 = squads[randomIndex2];
 
-                        squads[randomIndex2].GiveOder(moveOder);
+                        reconSquad2.GiveOder(moveOder);
                     }
 
                     int reconTime = Random.Range(10, 20);
@@ -201,16 +213,23 @@ public class CEnemyAIManager : MonoBehaviour
                     await UniTask.WaitForSeconds(reconTime);
 
                     moveOder.oderType = SOderContext.EOderType.Move;
-                    moveOder.targetPos.x = fallbackPos;
 
-                    if (squads.Count > randomIndex)
+                    if (fallbackPos - 15f > frontLinPos)
                     {
-                        squads[randomIndex].GiveOder(moveOder);
+                        fallbackPos = fallbackPos - 15f;
+                        frontLinPos = frontLinPos + 15f;
                     }
 
-                    if(randomIndex2 != -1 && squads.Count > randomIndex2)
+                    moveOder.targetPos.x = Random.Range(frontLinPos, fallbackPos);
+
+                    if (CGameManager.Instance.SquadListMap[CGameManager.Instance.EnemyPlayerData].Contains(reconSquad))
                     {
-                        squads[randomIndex2].GiveOder(moveOder);
+                        reconSquad.GiveOder(moveOder);
+                    }
+
+                    if(reconSquad2 != null && CGameManager.Instance.SquadListMap[CGameManager.Instance.EnemyPlayerData].Contains(reconSquad2))
+                    {
+                        reconSquad2.GiveOder(moveOder);
                     }
 
                     break;

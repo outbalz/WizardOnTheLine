@@ -8,13 +8,15 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
     [SerializeField] private Camera _camera;
     [SerializeField] private SpriteRenderer _selectBox;
     [SerializeField] private LayerMask _selectableLayer;
-    [SerializeField] private string _mousePositionActionName = "MousePosition";
-    [SerializeField] private string _mouseClickActionName = "MouseClick";
-    [SerializeField] private string _unitTag = "Unit";
-    [SerializeField] private string _makerTag = "SquadMarker";
+    [SerializeField] private CMouseCommandController _mouseCommand;
     #endregion
 
     #region private var
+    private readonly string _mousePositionActionName = "MousePosition";
+    private readonly string _mouseClickActionName = "MouseClick";
+    private readonly string _unitTag = "Unit";
+    private readonly string _makerTag = "SquadMarker";
+
     private CInputVectorActionData _mousePositionAction;
     private CInputActionData _mouseClickAction;
     private Vector2 _mouseStartPosition;
@@ -49,6 +51,16 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
         if (_selectBox != null)
         {
             _selectBox.gameObject.SetActive(false);
+        }
+        
+        if(_mouseCommand == null)
+        {
+            if(!TryGetComponent<CMouseCommandController>(out _mouseCommand))
+            {
+                Debug.LogWarning($"{this}/ _mouseCommand is not assigned and not found on the GameObject {gameObject.name}");
+                enabled = false;
+                return;
+            }
         }
 
         if(CInputDispatcher.Instance.InputActionMap.TryGetValue(_mousePositionActionName, out CInputActionData mousePositionAction))
@@ -133,11 +145,16 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
         _isBinded = false;
     }
 
-    private void OnClickStarted(InputAction.CallbackContext context)
+    private void OnClickStarted()
     {
         if (_mousePositionAction == null)
         {
             Debug.LogError("Mouse position action is not assigned.");
+            return;
+        }
+
+        if(_mouseCommand.CommadState != CMouseCommandController.EMouseCommadState.Universal)
+        {
             return;
         }
 
@@ -154,8 +171,14 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
         _mouseStartPosition = worldPosition;
     }
 
-    private void OnClickCanceled(InputAction.CallbackContext context)
+    private void OnClickCanceled()
     {
+        if (_mouseCommand.CommadState != CMouseCommandController.EMouseCommadState.Universal)
+        {
+            _mouseCommand.SetCommanState(CMouseCommandController.EMouseCommadState.Universal);
+            return;
+        }
+
         float selectionSize = _selectBox.size.magnitude;
 
         _selectBox.gameObject.SetActive(false);
@@ -302,7 +325,7 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
         return;
     }
 
-    private void OnMousePosPerfomed(InputAction.CallbackContext context)
+    private void OnMousePosPerfomed()
     {
         Vector2 mousePosition = _mousePositionAction.Value;
         Vector3 worldPosition = _camera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, _camera.nearClipPlane));

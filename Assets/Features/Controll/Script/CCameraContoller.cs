@@ -7,13 +7,14 @@ public class CCameraContoller : MonoBehaviour
 	[SerializeField] private Camera _camera;
 	[SerializeField] private float _senstivity = 1.0f;
 	[SerializeField] private float _penArea = 1.0f;
-    [SerializeField] private string _mousePositionActionName = "MousePosition";
     [SerializeField] private float _minX;
     [SerializeField] private float _maxX;
     [SerializeField] private CBackgroundController _bgController;
     #endregion
 
     #region private var
+    private readonly string _mousePositionActionName = "MousePosition";
+
     private CInputVectorActionData _mousePositionAction;
     //private bool _isBinded = false;
     #endregion

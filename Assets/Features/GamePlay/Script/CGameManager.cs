@@ -16,6 +16,7 @@ public class CGameManager : CSingleton<CGameManager>
 	#region private var
 	private float _playerCMP = 200f;
 	private float _enemyCMP = 200f;
+	private float _numHolder = 0;
 	private Dictionary<SOPlayerData, List<CSquadContorller>> _squadListMap = new Dictionary<SOPlayerData, List<CSquadContorller>>();
 	#endregion
 
@@ -49,10 +50,16 @@ public class CGameManager : CSingleton<CGameManager>
 
     private void Update()
     {
-		_playerCMP += _CMPperSec * Time.deltaTime;
-		_enemyCMP += _CMPperSec * Time.deltaTime;
+		_numHolder += _CMPperSec * Time.deltaTime;
 
-		_CMPtext.SetText($"{_playerCMP:0}");
+		if (_numHolder >= 1)
+		{
+			_numHolder -= 1;
+			_playerCMP += 1;
+			_enemyCMP += 1;
+
+			UpdateText();
+		}
     }
 
 	public bool SpendPlayerCMP(float amount)
@@ -63,7 +70,9 @@ public class CGameManager : CSingleton<CGameManager>
 		}
 
 		_playerCMP -= amount;
-		return true;
+		UpdateText();
+
+        return true;
 	}
 
 	public bool SpendEnemyCMP(float amount)
@@ -76,4 +85,9 @@ public class CGameManager : CSingleton<CGameManager>
 		_enemyCMP -= amount;
 		return true;
 	}
+
+	private void UpdateText()
+	{
+        _CMPtext.SetText($"{_playerCMP:0}");
+    }
 }

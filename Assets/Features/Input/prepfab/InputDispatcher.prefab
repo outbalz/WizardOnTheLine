@@ -49,6 +49,9 @@ MonoBehaviour:
   - rid: 5559904060353020108
   - rid: 5559904060353020109
   - rid: 5559904060353020111
+  - rid: 6178808272421912668
+  - rid: 6178808272421912669
+  - rid: 6178808272421912670
   references:
     version: 2
     RefIds:
@@ -72,3 +75,18 @@ MonoBehaviour:
       data:
         _reference: {fileID: 8816471114339809100, guid: 200e6164e90dfc2499f3177eebf29beb, type: 3}
         _actionName: Scroll
+    - rid: 6178808272421912668
+      type: {class: CInputActionData, ns: , asm: Assembly-CSharp}
+      data:
+        _reference: {fileID: 6151909205221060581, guid: 200e6164e90dfc2499f3177eebf29beb, type: 3}
+        _actionName: A
+    - rid: 6178808272421912669
+      type: {class: CInputActionData, ns: , asm: Assembly-CSharp}
+      data:
+        _reference: {fileID: -7696942502231006639, guid: 200e6164e90dfc2499f3177eebf29beb, type: 3}
+        _actionName: S
+    - rid: 6178808272421912670
+      type: {class: CInputActionData, ns: , asm: Assembly-CSharp}
+      data:
+        _reference: {fileID: 975133744678966679, guid: 200e6164e90dfc2499f3177eebf29beb, type: 3}
+        _actionName: Q

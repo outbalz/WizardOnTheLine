@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class CMouseCommandController : MonoBehaviour
 {
-    public enum EMouseConnadState
+    public enum EMouseCommadState
     {
         Universal,
         Move,
@@ -15,17 +15,24 @@ public class CMouseCommandController : MonoBehaviour
 
     #region inspector
     [SerializeField] private Camera _camera;
-    [SerializeField] private string _mousePositionActionName = "MousePosition";
-    [SerializeField] private string _mouseClickActionName = "MouseClick";
-    [SerializeField] private string _mouseRightClickActionName = "MouseRigtCilck";
     #endregion
 
     #region private var
-    private EMouseConnadState _connadState = EMouseConnadState.Universal;
+    private readonly string _mousePositionActionName = "MousePosition";
+    private readonly string _mouseClickActionName = "MouseClick";
+    private readonly string _mouseRightClickActionName = "MouseRigtCilck";
+    private readonly string _AKeyActionName = "A";
+
+    private EMouseCommadState _commadState = EMouseCommadState.Universal;
     private CInputVectorActionData _mousePositionAction;
     private CInputActionData _mouseClickAction;
     private CInputActionData _mouseRightClickAction;
+    private CInputActionData _AKeyAction;
     private bool _isBinded = false;
+    #endregion
+
+    #region property
+    public EMouseCommadState CommadState => _commadState;
     #endregion
 
     private void Start()
@@ -78,6 +85,13 @@ public class CMouseCommandController : MonoBehaviour
             return;
         }
 
+        if (!(CInputDispatcher.Instance.InputActionMap.TryGetValue(_AKeyActionName, out _AKeyAction)))
+        {
+            Debug.LogError($"Mouse click action '{_AKeyAction}' not found in InputActionMap.");
+            enabled = false;
+            return;
+        }
+
         BindAction();
     }
 
@@ -110,6 +124,7 @@ public class CMouseCommandController : MonoBehaviour
 
         _mouseClickAction.OnPerformedAction += OnLeftClickCommand;
         _mouseRightClickAction.OnPerformedAction += OnRightClickCommand;
+        _AKeyAction.OnPerformedAction += OnAKeyPerfomed;
 
         _isBinded = true;
     }
@@ -128,39 +143,55 @@ public class CMouseCommandController : MonoBehaviour
 
         _mouseClickAction.OnPerformedAction -= OnLeftClickCommand;
         _mouseRightClickAction.OnPerformedAction -= OnRightClickCommand;
+        _AKeyAction.OnPerformedAction -= OnAKeyPerfomed;
+
+        _isBinded = false;
     }
 
-    private void ChangeCommandState(EMouseConnadState state)
+    private void ChangeCommandState(EMouseCommadState state)
     {
-        _connadState = state;
+        _commadState = state;
     }
 
-    private void OnLeftClickCommand(InputAction.CallbackContext context)
+    private void OnLeftClickCommand()
     {
-        switch (_connadState)
+        if(_commadState == EMouseCommadState.Universal)
         {
-            case EMouseConnadState.Universal:
-                return;
-            case EMouseConnadState.Move:
+            return;
+        }
+
+        Vector2 mousePosition = _mousePositionAction.Value;
+        Vector3 worldPosition = _camera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, _camera.nearClipPlane));
+        worldPosition.z = 0f;
+
+        SOderContext oder = new SOderContext();
+
+        switch (_commadState)
+        {
+            case EMouseCommadState.Move:
                 break;
-            case EMouseConnadState.AttackMove:
+            case EMouseCommadState.AttackMove:
+
+                oder.oderType = SOderContext.EOderType.AttackMove;
+                oder.targetPos = worldPosition;
+
+                GiveOderToSelectedSquad(oder);
+
                 break;
-            case EMouseConnadState.Skill:
+            case EMouseCommadState.Skill:
                 break;
             default:
                 break;
         }
     }
 
-    private void OnRightClickCommand(InputAction.CallbackContext context)
+    private void OnRightClickCommand()
     {
-        if (_connadState != EMouseConnadState.Universal)
+        if (_commadState != EMouseCommadState.Universal)
         {
-            ChangeCommandState(EMouseConnadState.Universal);
+            ChangeCommandState(EMouseCommadState.Universal);
             return;
         }
-
-        IReadOnlyList<CSquadContorller> selecedSquad = CUnitSelectionController.Instance.SelectedSquad;
 
         Vector2 mousePosition = _mousePositionAction.Value;
         Vector3 worldPosition = _camera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, _camera.nearClipPlane));
@@ -171,11 +202,28 @@ public class CMouseCommandController : MonoBehaviour
         oder.oderType = SOderContext.EOderType.Move;
         oder.targetPos = worldPosition;
 
+        GiveOderToSelectedSquad(oder);
+
+    }
+
+    private void GiveOderToSelectedSquad(SOderContext oder)
+    {
+        IReadOnlyList<CSquadContorller> selecedSquad = CUnitSelectionController.Instance.SelectedSquad;
+
         for (int i = 0; i < selecedSquad.Count; i++)
         {
             selecedSquad[i].GiveOder(oder);
         }
+    }
 
+    private void OnAKeyPerfomed()
+    {
+        _commadState = EMouseCommadState.AttackMove;
+    }
+
+    public void SetCommanState(EMouseCommadState state)
+    {
+        _commadState = state;
     }
 
 }
