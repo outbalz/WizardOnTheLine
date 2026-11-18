@@ -236,14 +236,11 @@ public class CEnemyAIManager : MonoBehaviour
                 case EAITactic.FullOffence:
                     Debug.Log("Enemy is prepare for Full offence");
 
-                    frontLinPos = FindFrontLine();
-
-
                     for (int i = 0; i < squads.Count; i++)
                     {
                         moveOder.oderType = SOderContext.EOderType.AttackMove;
                         moveOder.targetPos = _spawner.transform.position;
-                        moveOder.targetPos.x = frontLinPos;
+                        moveOder.targetPos.x = MAP_WITH_MAX;
 
                         squads[i].GiveOder(moveOder);
                     }

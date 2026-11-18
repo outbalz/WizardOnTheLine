@@ -263,7 +263,7 @@ public class CUnitStateContoller : MonoBehaviour
 
             else
             {
-                //CarryOutOder();
+                CarryOutOder();
             }
 
             return;
@@ -340,32 +340,25 @@ public class CUnitStateContoller : MonoBehaviour
 
         if (target == null)
         {
-            //_unitController.TargetFinder.GiveTagetSreachOder(EngageTarget);
-            return;
-        }
-
-        if(target is MonoBehaviour mono)
-        {
-            if(mono.transform.position.x < transform.position.x)
+            if (_currentOder.oderType != SOderContext.EOderType.Move && _currentOder.oderType != SOderContext.EOderType.AttackMove)
             {
-                FlipX(true);
+                ChangeState(EUnitState.Idle);
             }
 
             else
             {
-                FlipX(false);
+                ChangeState(EUnitState.Move);
             }
+
+            return;
         }
 
+        /*
         if (_weaponCooldown > 0)
         {
             await CoolDownWeapon(ct);
         }
-
-        if (ct.IsCancellationRequested)
-        {
-            return;
-        }
+        */
 
         float aimTime = _unitController.Status.WeaponAimTime;
 
@@ -374,6 +367,44 @@ public class CUnitStateContoller : MonoBehaviour
             if (ct.IsCancellationRequested)
             {
                 return;
+            }
+
+
+            target = _unitController.TargetFinder.FindTarget();
+
+            if (target == null)
+            {
+                if (_currentOder.oderType != SOderContext.EOderType.Move && _currentOder.oderType != SOderContext.EOderType.AttackMove)
+                {
+                    ChangeState(EUnitState.Idle);
+                }
+
+                else
+                {
+                    ChangeState(EUnitState.Move);
+                }
+
+                return;
+            }
+
+            if(target is MonoBehaviour mono)
+            {
+                if(mono.transform.position.x < transform.position.x)
+                {
+                    FlipX(true);
+                }
+
+                else
+                {
+                    FlipX(false);
+                }
+            }
+
+            if(_weaponCooldown > 0)
+            {
+                _weaponCooldown -= Time.deltaTime;
+                await UniTask.Yield();
+                continue;
             }
 
             aimTime -= Time.deltaTime;
@@ -389,7 +420,15 @@ public class CUnitStateContoller : MonoBehaviour
 
         if(target == null)
         {
-            ChangeState(EUnitState.Idle);
+            if (_currentOder.oderType != SOderContext.EOderType.Move && _currentOder.oderType != SOderContext.EOderType.AttackMove)
+            {
+                ChangeState(EUnitState.Idle);
+            }
+
+            else
+            {
+                ChangeState(EUnitState.Move);
+            }
             return;
         }
 
@@ -408,7 +447,6 @@ public class CUnitStateContoller : MonoBehaviour
             float distance = Mathf.Abs(transform.position.x - mono.transform.position.x);
             target.TakeDamage(_unitController.Status.GetWeaponDamage(distance));
         }
-
 
         ChangeState(EUnitState.Engage);
     }
@@ -429,7 +467,7 @@ public class CUnitStateContoller : MonoBehaviour
             return;
         }
 
-        if (_currentOder.oderType != SOderContext.EOderType.Move || _currentOder.oderType != SOderContext.EOderType.AttackMove)
+        if (_currentOder.oderType != SOderContext.EOderType.Move && _currentOder.oderType != SOderContext.EOderType.AttackMove)
         {
             ChangeState(EUnitState.Idle);
         }
