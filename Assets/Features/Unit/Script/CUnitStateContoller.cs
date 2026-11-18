@@ -197,6 +197,8 @@ public class CUnitStateContoller : MonoBehaviour
                     _unitController.TargetFinder.CancelSreach();
                 }
 
+                CarryOutOder();
+
                 break;
             case EUnitState.Aim:
                 _animator.SetBool(_hasTagetHash, true);
@@ -261,7 +263,7 @@ public class CUnitStateContoller : MonoBehaviour
 
             else
             {
-                CarryOutOder();
+                //CarryOutOder();
             }
 
             return;
@@ -276,7 +278,9 @@ public class CUnitStateContoller : MonoBehaviour
 
     private async UniTask TakeAStepColserToTarget(Transform targetTr, CancellationToken ct)
     {
-        while(Mathf.Abs(targetTr.position.x - transform.position.x) > _unitController.Status.WeaponRange - 1)
+        await UniTask.Yield();
+
+        while (Mathf.Abs(targetTr.position.x - transform.position.x) > _unitController.Status.WeaponRange - 1)
         {
             if (ct.IsCancellationRequested)
             {
@@ -306,6 +310,8 @@ public class CUnitStateContoller : MonoBehaviour
 
     private async UniTask CoolDownWeapon(CancellationToken ct)
     {
+        await UniTask.Yield();
+
         while (_weaponCooldown > 0)
         {
             if (ct.IsCancellationRequested)
@@ -325,6 +331,8 @@ public class CUnitStateContoller : MonoBehaviour
 
     private async UniTask AimTarget(CancellationToken ct, ITargetable target)
     {
+        await UniTask.Yield();
+
         if (ct.IsCancellationRequested)
         {
             return;
@@ -332,7 +340,7 @@ public class CUnitStateContoller : MonoBehaviour
 
         if (target == null)
         {
-            _unitController.TargetFinder.GiveTagetSreachOder(EngageTarget);
+            //_unitController.TargetFinder.GiveTagetSreachOder(EngageTarget);
             return;
         }
 

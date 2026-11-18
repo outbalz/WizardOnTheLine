@@ -106,6 +106,8 @@ public class CUnitTargetFinder : MonoBehaviour
 
     private async UniTask SreachTarget(CancellationToken ct, Action<ITargetable> targetHadleAction)
     {
+        await UniTask.Yield();
+
         while (!ct.IsCancellationRequested)
         {
             ITargetable target = FindTarget();

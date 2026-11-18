@@ -116,6 +116,8 @@ public class CUnitMovementController : MonoBehaviour
 
     private async UniTask MoveToAsync(float targtX, CancellationToken ct)
     {
+        await UniTask.Yield();
+
         float distance = targtX - transform.position.x;
         while (Mathf.Abs(distance) > 0.01f)
         {
