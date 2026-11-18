@@ -138,7 +138,7 @@ public class CEnemyAIManager : MonoBehaviour
             float fallbackPos = MAP_WITH_MAX;
             SOderContext moveOder = new SOderContext();
 
-            int nextSec = Random.Range(20, 51);
+            int nextSec = Random.Range(10, 31);
 
             switch (tactic)
             {
