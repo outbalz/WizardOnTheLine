@@ -10,6 +10,7 @@ public class CCameraContoller : MonoBehaviour
     [SerializeField] private string _mousePositionActionName = "MousePosition";
     [SerializeField] private float _minX;
     [SerializeField] private float _maxX;
+    [SerializeField] private CBackgroundController _bgController;
     #endregion
 
     #region private var
@@ -26,7 +27,7 @@ public class CCameraContoller : MonoBehaviour
 
         if (_camera == null)
         {
-            Debug.LogError("Camera is not assigned in the inspector and no main camera found.");
+            Debug.LogWarning("Camera is not assigned in the inspector and no main camera found.");
         }
 
         if (CInputDispatcher.Instance.InputActionMap.TryGetValue(_mousePositionActionName, out CInputActionData mousePositionAction))
@@ -38,7 +39,7 @@ public class CCameraContoller : MonoBehaviour
 
             else
             {
-                Debug.LogError($"Mouse position action '{_mousePositionActionName}' is not of type CInputVectorActionData.");
+                Debug.LogWarning($"Mouse position action '{_mousePositionActionName}' is not of type CInputVectorActionData.");
                 enabled = false;
                 return;
             }
@@ -46,9 +47,14 @@ public class CCameraContoller : MonoBehaviour
 
         else
         {
-            Debug.LogError($"Mouse position action '{_mousePositionActionName}' not found in InputActionMap.");
+            Debug.LogWarning($"Mouse position action '{_mousePositionActionName}' not found in InputActionMap.");
             enabled = false;
             return;
+        }
+
+        if(_bgController == null)
+        {
+            Debug.LogWarning("_bgController is not assigned.");
         }
 
         //BindAction();
@@ -129,8 +135,12 @@ public class CCameraContoller : MonoBehaviour
             pos.x -= _senstivity * Time.deltaTime;
         }
 
-        pos.x =Mathf.Clamp(pos.x, _minX, _maxX);
+        pos.x = Mathf.Clamp(pos.x, _minX, _maxX);
 
-        _camera.transform.position = pos;
+        if (pos != _camera.transform.position)
+        {
+            _bgController.OnCameraMove(pos.x - _camera.transform.position.x);
+            _camera.transform.position = pos;
+        }
     }
 }
