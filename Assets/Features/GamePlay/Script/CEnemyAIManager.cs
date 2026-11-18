@@ -176,7 +176,7 @@ public class CEnemyAIManager : MonoBehaviour
 
                     int randomIndex = Random.Range(0, squads.Count);
 
-                    moveOder.oderType = SOderContext.EOderType.Move;
+                    moveOder.oderType = SOderContext.EOderType.AttackMove;
                     moveOder.targetPos = _spawner.transform.position;
                     moveOder.targetPos.x = frontLinPos;
 
@@ -200,6 +200,7 @@ public class CEnemyAIManager : MonoBehaviour
 
                     await UniTask.WaitForSeconds(reconTime);
 
+                    moveOder.oderType = SOderContext.EOderType.Move;
                     moveOder.targetPos.x = fallbackPos;
 
                     if (squads.Count > randomIndex)
@@ -221,7 +222,7 @@ public class CEnemyAIManager : MonoBehaviour
 
                     for (int i = 0; i < squads.Count; i++)
                     {
-                        moveOder.oderType = SOderContext.EOderType.Move;
+                        moveOder.oderType = SOderContext.EOderType.AttackMove;
                         moveOder.targetPos = _spawner.transform.position;
                         moveOder.targetPos.x = frontLinPos;
 

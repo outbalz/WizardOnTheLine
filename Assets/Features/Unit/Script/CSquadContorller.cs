@@ -102,14 +102,13 @@ public class CSquadContorller : MonoBehaviour
         switch (context.oderType)
         {
             case SOderContext.EOderType.Move:
+            case SOderContext.EOderType.AttackMove:
                 for (int i = 0; i < _squadMembers.Count; i++)
                 {
                     _squadMembers[i].StateContoller.GiveOder(context);
                 }
 
                 return true;
-            case SOderContext.EOderType.AttackMove:
-                break;
             case SOderContext.EOderType.Stop:
                 break;
             case SOderContext.EOderType.Retreat:

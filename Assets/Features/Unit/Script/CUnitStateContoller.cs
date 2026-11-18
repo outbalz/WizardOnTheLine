@@ -120,6 +120,14 @@ public class CUnitStateContoller : MonoBehaviour
 
                 return true;
             case SOderContext.EOderType.AttackMove:
+
+                context.targetPos.x += Random.Range(-_unitController.Squad.SquadRadiusX, _unitController.Squad.SquadRadiusX);
+
+                _currentOder = context;
+
+                ChangeState(EUnitState.Move);
+                
+                CarryOutOder();
                 break;
             case SOderContext.EOderType.Stop:
                 break;
@@ -242,11 +250,58 @@ public class CUnitStateContoller : MonoBehaviour
             return;
         }
 
+        if(_currentOder.oderType == SOderContext.EOderType.AttackMove)
+        {
+            if (target is MonoBehaviour mono)
+            {
+                CancelTask();
+                _cts = new CancellationTokenSource();
+                TakeAStepColserToTarget(mono.transform, _cts.Token).Forget();
+            }
+
+            else
+            {
+                CarryOutOder();
+            }
+
+            return;
+        }
+
         //_target = target;
         ChangeState(EUnitState.Aim);
         CancelTask();
         _cts = new CancellationTokenSource();
         AimTarget(_cts.Token,target).Forget();
+    }
+
+    private async UniTask TakeAStepColserToTarget(Transform targetTr, CancellationToken ct)
+    {
+        while(Mathf.Abs(targetTr.position.x - transform.position.x) > _unitController.Status.WeaponRange - 1)
+        {
+            if (ct.IsCancellationRequested)
+            {
+                CarryOutOder();
+                return;
+            }
+
+            if(Mathf.Abs(targetTr.position.x - transform.position.x) > _unitController.Status.WeaponRange)
+            {
+                CarryOutOder();
+                return;
+            }
+
+            await UniTask.Yield();
+        }
+
+        _unitController.Movement.CancelMoveOder();
+
+        ChangeState(EUnitState.Aim);
+        
+        CancelTask();
+        _cts = new CancellationTokenSource();
+        ITargetable target = _unitController.TargetFinder.FindTarget();
+        AimTarget(_cts.Token,target).Forget();
+
     }
 
     private async UniTask CoolDownWeapon(CancellationToken ct)
@@ -272,6 +327,12 @@ public class CUnitStateContoller : MonoBehaviour
     {
         if (ct.IsCancellationRequested)
         {
+            return;
+        }
+
+        if (target == null)
+        {
+            _unitController.TargetFinder.GiveTagetSreachOder(EngageTarget);
             return;
         }
 
@@ -335,13 +396,11 @@ public class CUnitStateContoller : MonoBehaviour
             {
                 FlipX(false);
             }
+
+            float distance = Mathf.Abs(transform.position.x - mono.transform.position.x);
+            target.TakeDamage(_unitController.Status.GetWeaponDamage(distance));
         }
 
-        if (target is CUnitHPHandler targetHP)
-        {
-            float distance = Mathf.Abs(transform.position.x - targetHP.transform.position.x);
-            targetHP.TakeDamage(_unitController.Status.GetWeaponDamage(distance));
-        }
 
         ChangeState(EUnitState.Engage);
     }
@@ -362,7 +421,7 @@ public class CUnitStateContoller : MonoBehaviour
             return;
         }
 
-        if (_currentOder.oderType != SOderContext.EOderType.Move)
+        if (_currentOder.oderType != SOderContext.EOderType.Move || _currentOder.oderType != SOderContext.EOderType.AttackMove)
         {
             ChangeState(EUnitState.Idle);
         }
@@ -389,6 +448,9 @@ public class CUnitStateContoller : MonoBehaviour
                 _unitController.Movement.GiveMoveOder(_currentOder.targetPos.x);
                 break;
             case SOderContext.EOderType.AttackMove:
+                _unitController.Movement.GiveMoveOder(_currentOder.targetPos.x);
+
+                _unitController.TargetFinder.GiveTagetSreachOder(EngageTarget);
                 break;
             case SOderContext.EOderType.Stop:
                 break;

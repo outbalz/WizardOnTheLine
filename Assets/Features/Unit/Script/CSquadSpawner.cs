@@ -13,7 +13,7 @@ public class CSquadSpawner : MonoBehaviour
         CSquadContorller squad = CSquadFactory.Instance.Creat(transform, data, playerData);
 
         SOderContext moveOderContext = new SOderContext();
-        moveOderContext.oderType = SOderContext.EOderType.Move;
+        moveOderContext.oderType = SOderContext.EOderType.AttackMove;
         moveOderContext.targetPos = transform.position;
         moveOderContext.targetPos.x += _moveOderOffset;
 

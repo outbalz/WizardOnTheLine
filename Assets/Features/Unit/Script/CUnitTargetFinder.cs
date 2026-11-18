@@ -5,7 +5,7 @@ using UnityEngine;
 
 public interface ITargetable
 {
-
+    public void TakeDamage(float damage);
 }
 
 public class CUnitTargetFinder : MonoBehaviour
@@ -98,6 +98,8 @@ public class CUnitTargetFinder : MonoBehaviour
 
     public void GiveTagetSreachOder(Action<ITargetable> targetHadleAction)
     {
+        CancelSreach();
+
         _cts = new CancellationTokenSource();
         SreachTarget(_cts.Token, targetHadleAction).Forget();
     }
