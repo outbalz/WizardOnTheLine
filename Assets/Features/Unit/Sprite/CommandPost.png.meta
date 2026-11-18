@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0e3f484d6e6436b4d89c4a26964117a0
+guid: cda6df7d78e38d8449ef9806890577da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2068510756925785507
-    second: CommandPost_0
+      213: 5692100837873982411
+    second: CommandPost 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,419 +100,419 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CommandPost_0
+      name: CommandPost 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 1155
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a5c2a0f293d4bc10800000000000000
-      internalID: 2068510756925785507
+      spriteID: bcb9e23dd876efe40800000000000000
+      internalID: 5692100837873982411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_1
+      name: CommandPost 1_1
       rect:
         serializedVersion: 2
         x: 385
         y: 1155
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3845644b7446d4d48b228ca075e1070c
-      internalID: -1396954321
+      spriteID: 1a7d4bb1c52fcd74c822c240164c7838
+      internalID: -1546679140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_2
+      name: CommandPost 1_2
       rect:
         serializedVersion: 2
         x: 770
         y: 1155
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 263ea7b5fd1845e49ae0ee16213447d6
-      internalID: -58469574
+      spriteID: e7df343576f15264a9f27359c76e8e46
+      internalID: 1470339287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_3
+      name: CommandPost 1_3
       rect:
         serializedVersion: 2
         x: 1155
         y: 1155
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75d8bad09a7bdc944b8e2acf56a04b14
-      internalID: -664017549
+      spriteID: 6a76f81d2a0bc6f46bbe02a04e1695ea
+      internalID: 437772294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_4
+      name: CommandPost 1_4
       rect:
         serializedVersion: 2
         x: 1540
         y: 1155
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ce82eb9fb0fe8c4bbb656499a6c68c6
-      internalID: 167442855
+      spriteID: 867af4535c8732841b0167cd55fc1c69
+      internalID: 288703597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_5
+      name: CommandPost 1_5
       rect:
         serializedVersion: 2
         x: 0
         y: 770
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50fdd19dd473a9544847b1b6d75e5d52
-      internalID: 882896069
+      spriteID: fdd337f8da7c6584ab8644790896939e
+      internalID: -330815316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_6
+      name: CommandPost 1_6
       rect:
         serializedVersion: 2
         x: 385
         y: 770
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cb0bf12e9fc9864ca9598f1126f85b4
-      internalID: -111930540
+      spriteID: d7f8924992becd644b951a31cda1a0a2
+      internalID: -759736216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_7
+      name: CommandPost 1_7
       rect:
         serializedVersion: 2
         x: 770
         y: 770
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecaa9373ffb958449972a1baf8046575
-      internalID: 779541107
+      spriteID: cab0268232b4e1d4c993b86e8ca75947
+      internalID: 814130827
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_8
+      name: CommandPost 1_8
       rect:
         serializedVersion: 2
         x: 1155
         y: 770
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c83b9a81b2703a443bf7301600c523cb
-      internalID: 1754091416
+      spriteID: 790594fe9a65e534b86c2a9bc558add9
+      internalID: -740391935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_9
+      name: CommandPost 1_9
       rect:
         serializedVersion: 2
         x: 1540
         y: 770
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b87c48c14c9290444860d26eeef224d0
-      internalID: -638950367
+      spriteID: 3b2eb9fb505a23c4ea42a22386505a5f
+      internalID: -558642532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_10
+      name: CommandPost 1_10
       rect:
         serializedVersion: 2
         x: 0
         y: 385
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9b933dee8f8413449c0fffaa9b3471a
-      internalID: -1698868926
+      spriteID: 06544f9a04af1114cb7d86f2426530b4
+      internalID: -1784734776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_11
+      name: CommandPost 1_11
       rect:
         serializedVersion: 2
         x: 385
         y: 385
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5de0414cb6f07743b23e11da04fc7c0
-      internalID: -363547942
+      spriteID: f0cf037402d0b414c809fdd3eb6d0597
+      internalID: 157422257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_12
+      name: CommandPost 1_12
       rect:
         serializedVersion: 2
         x: 770
         y: 385
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23b72dab6ed60dd4ea0d45446f212e3f
-      internalID: 1893411676
+      spriteID: 7cdf1eeceb8414f49b06a1b871b9f659
+      internalID: 1357839343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_13
+      name: CommandPost 1_13
       rect:
         serializedVersion: 2
         x: 1155
         y: 385
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2adba72d5731274ba88375ba9a9e45a
-      internalID: 2137029582
+      spriteID: b95860003d7a4ce4cabee5baeb4f158c
+      internalID: 691210318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_14
+      name: CommandPost 1_14
       rect:
         serializedVersion: 2
         x: 1540
         y: 385
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51e0705e6a32dc945b5bcdd7e5aeeb2c
-      internalID: 1989249720
+      spriteID: 2f5edbee3d12d5948955c7a136f90ab4
+      internalID: 1603874522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_15
+      name: CommandPost 1_15
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37c5d0acbc0b7ba40b21a34442958690
-      internalID: -1802746232
+      spriteID: c1cb94c961d4c914c80125ea5e3309b8
+      internalID: -1468519869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_16
+      name: CommandPost 1_16
       rect:
         serializedVersion: 2
         x: 385
         y: 0
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 225aba600f17d9a45919d5b316c6f4ce
-      internalID: -302817910
+      spriteID: 601f250a1f5cd5a45be2ae8c935fc76e
+      internalID: -2014164489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_17
+      name: CommandPost 1_17
       rect:
         serializedVersion: 2
         x: 770
         y: 0
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6962dc7d61c1b54387d044b3c78dade
-      internalID: 1258711119
+      spriteID: 0bd499812acfbd8489f8dab59d27713e
+      internalID: -1458575917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CommandPost_18
+      name: CommandPost 1_18
       rect:
         serializedVersion: 2
         x: 1155
         y: 0
         width: 385
         height: 385
-      alignment: 9
-      pivot: {x: 0.25, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3be84e73bfb4994c82160025e3d8d63
-      internalID: -318512426
+      spriteID: 591550a23fa1ca84983baa63aeeefa95
+      internalID: 1858473277
       vertices: []
       indices: 
       edges: []
@@ -521,7 +521,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 11d66d12c8d4f004ca27b2ccca4d9b92
+    spriteID: 84a186645dba00e418934196cf8850a9
     internalID: 0
     vertices: []
     indices: 
@@ -531,27 +531,27 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":4.0},"gridSpriteSize":{"x":385.0,"y":385.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.25,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":4.0},"gridSpriteSize":{"x":385.0,"y":385.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      CommandPost_0: 2068510756925785507
-      CommandPost_1: -1396954321
-      CommandPost_10: -1698868926
-      CommandPost_11: -363547942
-      CommandPost_12: 1893411676
-      CommandPost_13: 2137029582
-      CommandPost_14: 1989249720
-      CommandPost_15: -1802746232
-      CommandPost_16: -302817910
-      CommandPost_17: 1258711119
-      CommandPost_18: -318512426
-      CommandPost_2: -58469574
-      CommandPost_3: -664017549
-      CommandPost_4: 167442855
-      CommandPost_5: 882896069
-      CommandPost_6: -111930540
-      CommandPost_7: 779541107
-      CommandPost_8: 1754091416
-      CommandPost_9: -638950367
+      CommandPost 1_0: 5692100837873982411
+      CommandPost 1_1: -1546679140
+      CommandPost 1_10: -1784734776
+      CommandPost 1_11: 157422257
+      CommandPost 1_12: 1357839343
+      CommandPost 1_13: 691210318
+      CommandPost 1_14: 1603874522
+      CommandPost 1_15: -1468519869
+      CommandPost 1_16: -2014164489
+      CommandPost 1_17: -1458575917
+      CommandPost 1_18: 1858473277
+      CommandPost 1_2: 1470339287
+      CommandPost 1_3: 437772294
+      CommandPost 1_4: 288703597
+      CommandPost 1_5: -330815316
+      CommandPost 1_6: -759736216
+      CommandPost 1_7: 814130827
+      CommandPost 1_8: -740391935
+      CommandPost 1_9: -558642532
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
