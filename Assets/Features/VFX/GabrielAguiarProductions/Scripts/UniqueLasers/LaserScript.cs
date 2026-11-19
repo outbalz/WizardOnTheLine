@@ -1,4 +1,6 @@
-﻿#pragma warning disable 0162 // unreachable code detected.
+﻿/*
+
+#pragma warning disable 0162 // unreachable code detected.
 
 using System.Collections;
 using System.Collections.Generic;
@@ -981,3 +983,4 @@ namespace GAP_LaserSystem{
 		}
 	}
 }
+*/
