@@ -38,8 +38,8 @@ public class CEtitySummonSkillEffect : CSkillEffect
 
     public override void CastSkill(CSkillCasterController caster, Vector2 targtPos)
     {
-		float ranX = caster.ModifierHandler.GetModifiedValue(_modifierName + "ranX", _randonRangeX);
-		float ranY = caster.ModifierHandler.GetModifiedValue(_modifierName + "ranY", _randonRangeX);
+		float ranX = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanX", _randonRangeX);
+		float ranY = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanY", _randonRangeX);
 
 		int amount = Mathf.RoundToInt(caster.ModifierHandler.GetModifiedValue(_modifierName + "Amount", _summonAmount));
 
