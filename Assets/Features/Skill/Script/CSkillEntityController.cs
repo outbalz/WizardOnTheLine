@@ -64,6 +64,6 @@ public class CSkillEntityController : MonoBehaviour
 		_caster = null;
 		_isInitialized = false;
 
-		_data.ReturnToPool(this);
+		CEntityPool.Instance.ReturnToPool(this, _data);
 	}
 }

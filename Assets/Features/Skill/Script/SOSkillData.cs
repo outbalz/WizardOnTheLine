@@ -49,7 +49,7 @@ public class CEtitySummonSkillEffect : CSkillEffect
 			ranPos.x += Random.Range(-ranX, ranX);
 			ranPos.y += Random.Range(-ranY, ranY);
 
-			CSkillEntityController entity = _entityData.GetFromPool();
+			CSkillEntityController entity = CEntityPool.Instance.GetFromPool(_entityData);
 			entity.transform.position = ranPos;
 			entity.Initialized(caster);
 			entity.gameObject.SetActive(true);

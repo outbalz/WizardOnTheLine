@@ -16,7 +16,7 @@ MonoBehaviour:
   _height: 1.5
   _width: 3
   _lifeTime: 2.5
-  _effectTime: 0.5
+  _effectTime: 0.1
   _isEffectContinuous: 0
   _effect:
     rid: 6178808293639585875

@@ -967,8 +967,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946b67f99c2b0c8458686c37d6934de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CEntityPool
-  _prefab:
-  - {fileID: 5388546764222081716, guid: 7c15ccf1d6c0b7043b57ce8ae196cb44, type: 3}
+  _so:
+  - {fileID: 11400000, guid: 9c95450994bafb846badd066a00b712f, type: 2}
   _prewarmCount: 0
   _poolRoot: {fileID: 0}
 --- !u!1 &619394800
@@ -7762,7 +7762,7 @@ MonoBehaviour:
   _CMPperSec: 5
   _playerData: {fileID: 11400000, guid: d5f122946661f21479107ff8052b6c46, type: 2}
   _enemyPlayerData: {fileID: 11400000, guid: ca10023107f63ee4fbdf800217fe398c, type: 2}
-  _difficultyMultiplyer: 0
+  _difficultyMultiplyer: 2
   _CMPtext: {fileID: 1669581262}
 --- !u!114 &1476403843
 MonoBehaviour:

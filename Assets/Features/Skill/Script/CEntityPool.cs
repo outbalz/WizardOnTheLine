@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
 
-public class CEntityPool : CMultiObjectPool<CEntityPool,CSkillEntityController>
+public class CEntityPool : CMultiObjectPool<CEntityPool, CSkillEntityController, SOEntityData>
 {
 }

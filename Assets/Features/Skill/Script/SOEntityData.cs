@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "EntityDataSO_", menuName = "Scriptable Objects/EntityDataSO")]
-public class SOEntityData : ScriptableObject
+public class SOEntityData : ScriptableObject, IPoolabeSO<CSkillEntityController>
 {
     #region inspector
     [SerializeField] private CSkillEntityController _prefab;
@@ -27,17 +27,9 @@ public class SOEntityData : ScriptableObject
     public float EffectTime => _effectTime;
     public bool IsEffectContinuous => _isEffectContinuous;
     public CEntityEffect Effect => _effect;
+    public CSkillEntityController Prefab => _prefab;
     #endregion
 
-    public CSkillEntityController GetFromPool()
-    {
-        return CEntityPool.Instance.GetFromPool(_prefab);
-    }
-
-    public void ReturnToPool(CSkillEntityController entity)
-    {
-        CEntityPool.Instance.ReturnToPool(entity, _prefab);
-    }
 }
 
 [System.Serializable]

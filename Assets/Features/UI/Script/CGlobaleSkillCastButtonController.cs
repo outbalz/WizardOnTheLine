@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class CGlobaleSkillCastButtonController : MonoBehaviour
-{
+{    
     [SerializeField] private CSkillCasterController _skillCaster;
     [SerializeField] private SOSkillData _skillData;
 

@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class CSkillCasterController : MonoBehaviour
 {
-	#region inspector
-	[SerializeField] private SOPlayerData _player;
+    #region const
+    private const float MAP_HIGHT_MAX = 0.6F;
+    private const float MAP_HIGHT_MIN = -4.5F;
+    #endregion
+
+    #region inspector
+    [SerializeField] private SOPlayerData _player;
 	[SerializeField] private CModifierHandler _modifierHandler;
 	[SerializeField] private List<SOSkillData> _skillDataList;
 	#endregion
@@ -48,6 +53,12 @@ public class CSkillCasterController : MonoBehaviour
 		if (_skillDatasMap[skillData] > 0)
 		{
 			Debug.Log("Skill is on CoolDown");
+			return false;
+		}
+
+		if(targetPos.y > MAP_HIGHT_MAX || targetPos.y < MAP_HIGHT_MIN)
+		{
+			Debug.Log("Skill Can't not casted outside of map range");
 			return false;
 		}
 

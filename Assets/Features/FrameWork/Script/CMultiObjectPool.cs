@@ -1,17 +1,22 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class CMultiObjectPool<TPool, TReuslt> : CSingleton<TPool> where TPool : MonoBehaviour where TReuslt : MonoBehaviour
+public interface IPoolabeSO<T> where T : MonoBehaviour
+{
+    public T Prefab { get;}
+}
+
+public class CMultiObjectPool<TPool, TReuslt, TSO> : CSingleton<TPool> where TPool : MonoBehaviour where TReuslt : MonoBehaviour where TSO : IPoolabeSO<TReuslt>
 {
     #region inspector
-    [SerializeField] protected TReuslt[] _prefab;
+    [SerializeField] protected TSO[] _so;
     [SerializeField] protected int _prewarmCount;
     [SerializeField] protected Transform _poolRoot;
     #endregion
 
     #region private var
-    protected readonly Dictionary<TReuslt, Queue<TReuslt>> _pool = new Dictionary<TReuslt, Queue<TReuslt>>();
-    protected readonly Dictionary<TReuslt, List<TReuslt>> _liveList = new Dictionary<TReuslt, List<TReuslt>>();
+    protected readonly Dictionary<TSO, Queue<TReuslt>> _pool = new Dictionary<TSO, Queue<TReuslt>>();
+    protected readonly Dictionary<TSO, List<TReuslt>> _liveList = new Dictionary<TSO, List<TReuslt>>();
     #endregion
 
     protected override void Awake()
@@ -19,11 +24,12 @@ public class CMultiObjectPool<TPool, TReuslt> : CSingleton<TPool> where TPool : 
         base.Awake();
 
         PrefabCheck();
+        Prewarm();
     }
 
     protected virtual void PrefabCheck()
     {
-        if (_prefab.Length == 0)
+        if (_so.Length == 0)
         {
             Debug.LogWarning("Object prefab is not assigned in the inspector.");
             enabled = false;
@@ -47,59 +53,59 @@ public class CMultiObjectPool<TPool, TReuslt> : CSingleton<TPool> where TPool : 
     {
         CreatePoolRoot();
 
-        for (int i = 0; i < _prefab.Length; i++)
+        for (int i = 0; i < _so.Length; i++)
         {
-            _pool.Add(_prefab[i], new Queue<TReuslt>());
-            _liveList.Add(_prefab[i], new List<TReuslt>());
+            _pool.Add(_so[i], new Queue<TReuslt>());
+            _liveList.Add(_so[i], new List<TReuslt>());
 
             for (int j = 0; j < _prewarmCount; j++)
             {
-                TReuslt obj = Instantiate(_prefab[i], _poolRoot);
+                TReuslt obj = Instantiate(_so[i].Prefab, _poolRoot);
                 obj.gameObject.SetActive(false);
-                _pool[_prefab[i]].Enqueue(obj);
+                _pool[_so[i]].Enqueue(obj);
             }
         }
     }
 
-    public TReuslt GetFromPool(TReuslt prefab)
+    public TReuslt GetFromPool(TSO so)
     {
         TReuslt obj;
 
-        if (_pool.Count > 0)
+        if (_pool[so].Count > 0)
         {
-            obj = _pool[prefab].Dequeue();
+            obj = _pool[so].Dequeue();
         }
 
         else
         {
-            obj = Instantiate(prefab);
+            obj = Instantiate(so.Prefab);
             obj.gameObject.SetActive(false);
         }
 
-        _liveList[prefab].Add(obj);
+        _liveList[so].Add(obj);
         //obj.gameObject.SetActive(true);
         return obj;
     }
 
-    public void ReturnToPool(TReuslt obj, TReuslt prefab)
+    public void ReturnToPool(TReuslt obj, TSO so)
     {
         if (obj == null)
         {
             return;
         }
 
-        if (_liveList[prefab].Contains(obj))
+        if (_liveList[so].Contains(obj))
         {
-            _liveList.Remove(obj);
+            _liveList[so].Remove(obj);
         }
 
         obj.transform.SetParent(_poolRoot);
         obj.gameObject.SetActive(false);
-        _pool[prefab].Enqueue(obj);
+        _pool[so].Enqueue(obj);
     }
 
-    public List<TReuslt> GetAliveList(TReuslt prefab)
+    public List<TReuslt> GetAliveList(TSO so)
     {
-        return _liveList[prefab];
+        return _liveList[so];
     }
 }

@@ -189,7 +189,7 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
                 break;
         }
 
-        OnClickEvent?.Invoke(_mousePositionAction.Value);
+        OnClickEvent?.Invoke(worldPosition);
     }
 
     private void OnRightClickCommand()
