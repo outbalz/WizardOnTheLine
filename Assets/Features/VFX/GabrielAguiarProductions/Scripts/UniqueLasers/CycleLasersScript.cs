@@ -1,4 +1,4 @@
-﻿
+﻿/*
 #pragma warning disable 0414 // private field assigned but not used.
 
 using System.Collections;
@@ -42,3 +42,4 @@ public class CycleLasersScript : MonoBehaviour {
 		StartCoroutine (CycleLasers());
 	}
 }
+*/
