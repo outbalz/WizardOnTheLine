@@ -1,9 +1,11 @@
 ﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
+using Unity.XR.OpenVR;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CMouseCommandController : MonoBehaviour
+public class CMouseCommandController : CSingleton<CMouseCommandController>
 {
     public enum EMouseCommadState
     {
@@ -33,6 +35,7 @@ public class CMouseCommandController : MonoBehaviour
 
     #region property
     public EMouseCommadState CommadState => _commadState;
+    public event Action<Vector2> OnClickEvent;
     #endregion
 
     private void Start()
@@ -105,9 +108,11 @@ public class CMouseCommandController : MonoBehaviour
         UnBindAction();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         UnBindAction();
+        OnClickEvent = null;
+        base.OnDestroy();
     }
 
     private void BindAction()
@@ -157,6 +162,7 @@ public class CMouseCommandController : MonoBehaviour
     {
         if(_commadState == EMouseCommadState.Universal)
         {
+            OnClickEvent = null;
             return;
         }
 
@@ -176,13 +182,14 @@ public class CMouseCommandController : MonoBehaviour
                 oder.targetPos = worldPosition;
 
                 GiveOderToSelectedSquad(oder);
-
                 break;
             case EMouseCommadState.Skill:
                 break;
             default:
                 break;
         }
+
+        OnClickEvent?.Invoke(_mousePositionAction.Value);
     }
 
     private void OnRightClickCommand()
@@ -225,5 +232,4 @@ public class CMouseCommandController : MonoBehaviour
     {
         _commadState = state;
     }
-
 }
