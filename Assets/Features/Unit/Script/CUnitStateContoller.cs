@@ -265,17 +265,9 @@ public class CUnitStateContoller : MonoBehaviour
 
         if(_currentOder.oderType == SOderContext.EOderType.AttackMove)
         {
-            if (target is MonoBehaviour mono)
-            {
-                CancelTask();
-                _cts = new CancellationTokenSource();
-                TakeAStepColserToTarget(mono.transform, _cts.Token).Forget();
-            }
-
-            else
-            {
-                CarryOutOder();
-            }
+            CancelTask();
+            _cts = new CancellationTokenSource();
+            TakeAStepColserToTarget(target.transform, _cts.Token).Forget();
 
             return;
         }
@@ -398,7 +390,7 @@ public class CUnitStateContoller : MonoBehaviour
                 return;
             }
 
-            Vector2 targetPos = target.GetPos();
+            Vector2 targetPos = target.transform.position;
 
             if(targetPos.x < transform.position.x)
             {
@@ -442,7 +434,7 @@ public class CUnitStateContoller : MonoBehaviour
             return;
         }
 
-        Vector2 targetPos = target.GetPos();
+        Vector2 targetPos = target.transform.position;
 
         if (targetPos.x < transform.position.x)
         {

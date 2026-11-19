@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SOSkillData
   _id: SkillDataSO_LightningMortar
   _name: SkillDataSO_LightningMortar
-  _cost: 50
+  _cost: 100
   _coolDown: -1
   _range: -1
   _effect:
@@ -26,7 +26,8 @@ MonoBehaviour:
       type: {class: CEtitySummonSkillEffect, ns: , asm: Assembly-CSharp}
       data:
         _entityData: {fileID: 11400000, guid: 9c95450994bafb846badd066a00b712f, type: 2}
-        _randonRangeX: 1
-        _randonRangeY: 0.5
-        _summonAmount: 1
+        _randonRangeX: 1.3
+        _randonRangeY: 1
+        _summonAmount: 3
+        _summonInterval: 1
         _modifierName: LightningMortar

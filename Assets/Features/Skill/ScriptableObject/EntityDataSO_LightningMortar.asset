@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SOEntityData
   _prefab: {fileID: 5388546764222081716, guid: 7c15ccf1d6c0b7043b57ce8ae196cb44, type: 3}
   _height: 1.5
-  _width: 3
+  _width: 2.5
   _lifeTime: 2.5
   _effectTime: 0.1
   _isEffectContinuous: 0
@@ -40,22 +40,22 @@ MonoBehaviour:
             inWeight: 0
             outWeight: 0.33333334
           - serializedVersion: 3
-            time: 0.3
+            time: 0.1
             value: 1
             inSlope: -0
-            outSlope: -0.29043117
+            outSlope: -0.06471575
             tangentMode: 5
             weightedMode: 0
             inWeight: 0.33333334
-            outWeight: 0.14804015
+            outWeight: 0.16351727
           - serializedVersion: 3
             time: 1
             value: 0.2
-            inSlope: -3.2052581
-            outSlope: -3.2052581
+            inSlope: -2.470586
+            outSlope: -2.470586
             tangentMode: 0
             weightedMode: 0
-            inWeight: 0.14361322
+            inWeight: 0.042831965
             outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2

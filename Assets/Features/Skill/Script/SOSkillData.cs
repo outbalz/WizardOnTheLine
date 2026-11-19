@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "SkillDataSO_", menuName = "Scriptable Objects/GameData/SkillDataSO_")]
 public class SOSkillData : SOGameData
@@ -33,11 +34,17 @@ public class CEtitySummonSkillEffect : CSkillEffect
 	[SerializeField] private float _randonRangeY;
 
 	[SerializeField] private int _summonAmount;
+	[SerializeField] private float _summonInterval;
 
 	[SerializeField] private string _modifierName;
 
-    public override void CastSkill(CSkillCasterController caster, Vector2 targtPos)
+    public override void CastSkill(CSkillCasterController caster, Vector2 targetPos)
     {
+		SummonEntity(caster, targetPos).Forget();
+    }
+
+	public async UniTask SummonEntity(CSkillCasterController caster, Vector2 targetPos)
+	{
 		float ranX = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanX", _randonRangeX);
 		float ranY = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanY", _randonRangeX);
 
@@ -45,7 +52,7 @@ public class CEtitySummonSkillEffect : CSkillEffect
 
 		for (int i = 0; i < amount; i++)
 		{
-			Vector2 ranPos = targtPos;
+			Vector2 ranPos = targetPos;
 			ranPos.x += Random.Range(-ranX, ranX);
 			ranPos.y += Random.Range(-ranY, ranY);
 
@@ -53,7 +60,8 @@ public class CEtitySummonSkillEffect : CSkillEffect
 			entity.transform.position = ranPos;
 			entity.Initialized(caster);
 			entity.gameObject.SetActive(true);
-		}
 
-    }
+			await UniTask.WaitForSeconds(_summonInterval);
+		}
+	}
 }
