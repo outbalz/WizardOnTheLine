@@ -43,17 +43,46 @@ public class SOEntityData : ScriptableObject
 [System.Serializable]
 public abstract class CEntityEffect
 {
-    public virtual void ApplyEffect(CSkillEntityController entity)
+    public abstract void ApplyEffect(CSkillEntityController entity);
+
+    public Collider2D[] GetEffectedCollider(CSkillEntityController entity)
     {
 
+        Vector2 pointA = new Vector2(entity.transform.position.x - (entity.Width * 0.5f), entity.transform.position.y - (entity.Height * 0.5f));
+        Vector2 pointB = new Vector2(entity.transform.position.x + (entity.Width * 0.5f), entity.transform.position.y + (entity.Height * 0.5f));
+
+
+        return Physics2D.OverlapAreaAll(pointA, pointB);
     }
 }
 
 [System.Serializable]
 public class CAreaDamageEntityEffect : CEntityEffect
 {
+    [SerializeField] private float _damage;
+
     public override void ApplyEffect(CSkillEntityController entity)
     {
+        Collider2D[] colliders = GetEffectedCollider(entity);
 
+        if (colliders.Length <= 0)
+        {
+            return;
+        }
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i] == null)
+            {
+                return;
+            }
+
+            ITargetable target = colliders[i].GetComponent<ITargetable>();
+
+            if (target != null)
+            {
+                target.TakeDamage(_damage);
+            }
+        }
     }
 }
