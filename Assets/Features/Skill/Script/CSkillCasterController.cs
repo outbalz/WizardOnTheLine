@@ -53,9 +53,11 @@ public class CSkillCasterController : MonoBehaviour
 
 		if (skillData.Range != -1)
 		{
-			float range = Mathf.Abs(transform.position.x - targetPos.x);
+			float range = _modifierHandler.GetModifiedValue(skillData.ID + "Range" ,skillData.Range);
 
-			if (range > skillData.Range)
+			float distance = Mathf.Abs(transform.position.x - targetPos.x);
+
+			if (distance > skillData.Range)
 			{
 				Debug.Log("target is out of range");
 				return false;
@@ -64,9 +66,11 @@ public class CSkillCasterController : MonoBehaviour
 
 		if (skillData.Cost > 0)
 		{
+			float cost = _modifierHandler.GetModifiedValue(skillData.ID + "Cost", skillData.Cost);
+
 			if (_player == CGameManager.Instance.PlayerData)
 			{
-				if (!CGameManager.Instance.SpendPlayerCMP(skillData.Cost))
+				if (!CGameManager.Instance.SpendPlayerCMP(cost))
 				{
 					Debug.Log("not enugh CMP");
 					return false;
@@ -75,7 +79,7 @@ public class CSkillCasterController : MonoBehaviour
 
 			else if(_player == CGameManager.Instance.EnemyPlayerData)
 			{
-				if (!CGameManager.Instance.SpendEnemyCMP(skillData.Cost))
+				if (!CGameManager.Instance.SpendEnemyCMP(cost))
 				{
 					Debug.Log("not enugh CMP");
 					return false;
@@ -84,7 +88,14 @@ public class CSkillCasterController : MonoBehaviour
 		}
 
 		skillData.Effect.CastSkill(this, targetPos);
-		CoolDownSkill(destroyCancellationToken, skillData).Forget();
+
+		if (skillData.CoolDown != -1)
+		{
+			float coolDown = _modifierHandler.GetModifiedValue(skillData.ID + "CoolDown", skillData.CoolDown);
+
+			_skillDatasMap[skillData] = coolDown;
+			CoolDownSkill(destroyCancellationToken, skillData).Forget();
+		}
 
 		return true;
 
