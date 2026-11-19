@@ -7610,6 +7610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CEnemyAIManager
   _squadPrest:
   - {fileID: 11400000, guid: 55f15897273b40445b54fb8eaf8dd5c6, type: 2}
+  - {fileID: 11400000, guid: 55f15897273b40445b54fb8eaf8dd5c6, type: 2}
+  - {fileID: 11400000, guid: 6c29cf250b5fa8941b226f75178bab43, type: 2}
   _spawner: {fileID: 1218631403}
 --- !u!1001 &1519809691
 PrefabInstance:
@@ -8130,7 +8132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -143922275557165909, guid: 8048e7dd5e883a74a9d4ee6bb6c1849c, type: 3}
+  m_Sprite: {fileID: -3693046295854999606, guid: df20479dd6f6e1745833ecfbb3b1fcfb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

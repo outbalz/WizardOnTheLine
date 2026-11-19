@@ -16,4 +16,5 @@ MonoBehaviour:
   _name: SquadDataPresetSO_singleUnitTest
   _unitData:
   - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}
+  _markerSprite: {fileID: 6227814674382697906, guid: 17be3ef22b4702d46bd64d3503f547b5, type: 3}
   _cost: 50

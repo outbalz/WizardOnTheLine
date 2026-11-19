@@ -21,4 +21,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}
   - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}
   - {fileID: 11400000, guid: bd3bbdf82a8f3cc46b3756fa5aa29317, type: 2}
+  _markerSprite: {fileID: 2030538723, guid: b73e12a94f10761438c1943837761af0, type: 3}
   _cost: 200

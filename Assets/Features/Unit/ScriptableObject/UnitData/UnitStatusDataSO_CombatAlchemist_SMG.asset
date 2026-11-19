@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: UnitStatusDataSO_CombatAlchemist_SMG
   _name: UnitStatusDataSO_CombatAlchemist_SMG
   _movementSpeed: 2.5
-  _weaponRange: 6
+  _weaponRange: 5.5
   _weaponDamage: 7
   _weaponAimTimeMin: 0.1
   _weaponAimTimeMax: 0.2
@@ -36,15 +36,15 @@ MonoBehaviour:
       time: 0.4
       value: 1
       inSlope: -0
-      outSlope: -1.4999999
+      outSlope: -0.1666667
       tangentMode: 69
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0.1
-      inSlope: -1.4999999
+      value: 0.9
+      inSlope: -0.1666667
       outSlope: -1
       tangentMode: 69
       weightedMode: 0
