@@ -47,7 +47,7 @@ public class CUnitController : MonoBehaviour
 		_color = squad.PlayerData.PlayerColor;
 		_hpHandler.InitializeHP();
 		_unitStatusHandler.InitializeStat(data.StatusData);
-		_stateContoller.InitializeState();
+		_stateContoller.InitializeState(data);
 		SelectUint(false);
     }
 

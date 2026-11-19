@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: UnitDataSO_RifleWizard
   m_EditorClassIdentifier: Assembly-CSharp::SOUnitData
   _statusData: {fileID: 11400000, guid: 171489a6563c93f49ae126674dc8fc99, type: 2}
-  _selectedCircle: {fileID: -5925420369026520006, guid: 55f5dc26c6f07ff438c611017692bdf8, type: 3}
-  _deselectedCircle: {fileID: -6037424452736478089, guid: 55f5dc26c6f07ff438c611017692bdf8, type: 3}
+  _animatorOverrideController: {fileID: 22100000, guid: ab0cfcaec37803047a13a7c50dc0719a, type: 2}
+  _markerSprite: {fileID: 0}

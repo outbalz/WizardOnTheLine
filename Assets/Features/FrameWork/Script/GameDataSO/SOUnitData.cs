@@ -5,16 +5,11 @@ public class SOUnitData : ScriptableObject
 {
 	#region inspector
 	[SerializeField] private SOUnitStatusData _statusData;
-
-	[Space]
-	[SerializeField] private Sprite _selectedCircle;
-	[SerializeField] private Sprite _deselectedCircle;
+	[SerializeField] private AnimatorOverrideController _animatorOverrideController;
 	#endregion
 
 	#region property
 	public SOUnitStatusData StatusData => _statusData;
-
-	public Sprite SelectedCircle => _selectedCircle;
-	public Sprite DeselectedCircle => _deselectedCircle;
+	public AnimatorOverrideController AnimatorOverrideController => _animatorOverrideController;
 	#endregion
 }

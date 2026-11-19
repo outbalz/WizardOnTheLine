@@ -57,9 +57,20 @@ public class CUnitStateContoller : MonoBehaviour
         CancelTask();
     }
 
-    public void InitializeState()
+    public void InitializeState(SOUnitData data)
     {
         ExceptionCheck();
+
+        if (data.AnimatorOverrideController != null)
+        {
+            _animator.runtimeAnimatorController = data.AnimatorOverrideController;
+        }
+
+        else
+        {
+
+        }
+
         if (_state != EUnitState.Idle)
         {
             ChangeState(EUnitState.Idle);

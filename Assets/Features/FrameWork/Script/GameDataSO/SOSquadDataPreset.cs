@@ -6,12 +6,14 @@ public class SOSquadDataPreset : SOGameData
 {
     #region inspector
     [SerializeField] private List<SOUnitData> _unitData;
+    [SerializeField] private Sprite _markerSprite;
     [SerializeField] private float _cost;
     #endregion
 
     #region property
     public int SquadSize => _unitData.Count;
     public IReadOnlyList<SOUnitData> UnitDatas => _unitData;
+    public Sprite MarkerSprite => _markerSprite;
     public float Cost => _cost;
     #endregion
 }

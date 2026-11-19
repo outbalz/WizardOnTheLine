@@ -91,7 +91,7 @@ public class CSquadContorller : MonoBehaviour
             spawnPointY -= Random.Range(0.3f, 0.7f);
         }
 
-        _markerController.InitializeMarker();
+        _markerController.InitializeMarker(squadDataPreset);
 
         ExceptionCheck();
     }

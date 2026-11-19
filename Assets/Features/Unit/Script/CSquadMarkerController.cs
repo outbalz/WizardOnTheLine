@@ -42,13 +42,14 @@ public class CSquadMarkerController : MonoBehaviour
 		}
 	}
 
-    public void InitializeMarker()
+    public void InitializeMarker(SOSquadDataPreset preset)
     {
 		enabled = true;
         ExceptionCheck();
 		AssignSquadLeader();
 
         gameObject.layer = _squad.PlayerData.UnitLayer;
+		_renderer.sprite = preset.MarkerSprite;
         _color = _squad.PlayerData.PlayerColor;
 		SelectMarker(false);
     }
