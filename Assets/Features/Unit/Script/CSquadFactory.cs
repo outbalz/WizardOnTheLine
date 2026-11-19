@@ -8,6 +8,7 @@ public class CSquadFactory : CObjectPoolFactory<CSquadFactory, CSquadPool, CSqua
         CSquadContorller squad = Creat();
         squad.transform.position = tr.position;
         squad.InitializeSquad(data, playerData);
+        squad.gameObject.SetActive(true);
 
         return squad;
     }
@@ -17,6 +18,7 @@ public class CSquadFactory : CObjectPoolFactory<CSquadFactory, CSquadPool, CSqua
         CSquadContorller squad = Creat();
         squad.transform.position = pos;
         squad.InitializeSquad(data, playerData);
+        squad.gameObject.SetActive(true);
 
         return squad;
     }

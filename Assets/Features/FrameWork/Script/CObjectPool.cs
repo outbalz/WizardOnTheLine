@@ -72,7 +72,7 @@ public class CObjectPool<TPool, TReuslt> : CSingleton<TPool> where TPool : MonoB
         }
 
         _liveList.Add(obj);
-        obj.gameObject.SetActive(true);
+        //obj.gameObject.SetActive(true);
         return obj;
     }
 

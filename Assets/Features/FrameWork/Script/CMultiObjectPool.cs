@@ -76,7 +76,7 @@ public class CMultiObjectPool<TPool, TReuslt> : CSingleton<TPool> where TPool : 
         }
 
         _liveList[prefab].Add(obj);
-        obj.gameObject.SetActive(true);
+        //obj.gameObject.SetActive(true);
         return obj;
     }
 

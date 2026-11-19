@@ -7,6 +7,7 @@ public class CUnitFactory : CObjectPoolFactory<CUnitFactory, CUnitPool, CUnitCon
         CUnitController unit = Creat(squad.transform);
         unit.transform.position = squad.transform.position;
         unit.InitializeUnit(squad, data);
+        unit.gameObject.SetActive(true);
 
         return unit;
     }
