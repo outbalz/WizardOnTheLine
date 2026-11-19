@@ -240,7 +240,7 @@ public class CEnemyAIManager : MonoBehaviour
                     {
                         moveOder.oderType = SOderContext.EOderType.AttackMove;
                         moveOder.targetPos = _spawner.transform.position;
-                        moveOder.targetPos.x = MAP_WITH_MAX;
+                        moveOder.targetPos.x = MAP_WITH_MIN;
 
                         squads[i].GiveOder(moveOder);
                     }
