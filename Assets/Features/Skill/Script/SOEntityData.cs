@@ -60,6 +60,7 @@ public abstract class CEntityEffect
 public class CAreaDamageEntityEffect : CEntityEffect
 {
     [SerializeField] private float _damage;
+    [SerializeField] private AnimationCurve _damageFallOff;
 
     public override void ApplyEffect(CSkillEntityController entity)
     {
@@ -70,6 +71,10 @@ public class CAreaDamageEntityEffect : CEntityEffect
             return;
         }
 
+        Vector3 pointA = new Vector3(entity.transform.position.x - (entity.Width * 0.5f), entity.transform.position.y - (entity.Height * 0.5f), entity.transform.position.z);
+        float maxDistance = (entity.transform.position - pointA).magnitude;
+
+
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i] == null)
@@ -77,11 +82,22 @@ public class CAreaDamageEntityEffect : CEntityEffect
                 return;
             }
 
+            float damage = _damage;
+
+            if (_damageFallOff != null)
+            {
+                float distanceFormCanter = (colliders[i].transform.position - entity.transform.position).magnitude;
+
+                float t = distanceFormCanter / maxDistance;
+
+                damage = _damage * _damageFallOff.Evaluate(t);
+            }
+
             ITargetable target = colliders[i].GetComponent<ITargetable>();
 
             if (target != null)
             {
-                target.TakeDamage(_damage);
+                target.TakeDamage(damage);
             }
         }
     }

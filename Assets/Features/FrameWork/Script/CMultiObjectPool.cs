@@ -73,6 +73,7 @@ public class CMultiObjectPool<TPool, TReuslt> : CSingleton<TPool> where TPool : 
         else
         {
             obj = Instantiate(prefab);
+            obj.gameObject.SetActive(false);
         }
 
         _liveList[prefab].Add(obj);

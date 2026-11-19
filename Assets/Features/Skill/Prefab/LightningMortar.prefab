@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2965130535225553053}
+  - component: {fileID: 5388546764222081716}
   m_Layer: 0
   m_Name: LightningMortar
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   - {fileID: 3278932589588957726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5388546764222081716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38076889355722755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622eb161f0291094aa81912e88f18ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CSkillEntityController
+  _data: {fileID: 11400000, guid: 9c95450994bafb846badd066a00b712f, type: 2}
 --- !u!1 &437098698490151555
 GameObject:
   m_ObjectHideFlags: 0

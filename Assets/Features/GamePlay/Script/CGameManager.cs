@@ -9,6 +9,9 @@ public class CGameManager : CSingleton<CGameManager>
 	[SerializeField] private SOPlayerData _playerData;
 	[SerializeField] private SOPlayerData _enemyPlayerData;
 
+	[Space]
+	[SerializeField] private float _difficultyMultiplyer;
+
 	[Header("UI")]
 	[SerializeField] private TMP_Text _CMPtext;
 	#endregion
@@ -24,6 +27,7 @@ public class CGameManager : CSingleton<CGameManager>
 	public SOPlayerData PlayerData => _playerData;
 	public SOPlayerData EnemyPlayerData => _enemyPlayerData;
 	public Dictionary<SOPlayerData, List<CSquadContorller>> SquadListMap => _squadListMap;
+	public float PlayerCMP => _playerCMP;
     #endregion
 
     protected override void Awake()
@@ -51,12 +55,14 @@ public class CGameManager : CSingleton<CGameManager>
     private void Update()
     {
 		_numHolder += _CMPperSec * Time.deltaTime;
+		_enemyCMP += _CMPperSec * _difficultyMultiplyer * Time.deltaTime;
 
 		if (_numHolder >= 1)
 		{
-			_numHolder -= 1;
-			_playerCMP += 1;
-			_enemyCMP += 1;
+			float num = Mathf.Floor(_numHolder);
+
+			_numHolder -= num;
+			_playerCMP += num;
 
 			UpdateText();
 		}

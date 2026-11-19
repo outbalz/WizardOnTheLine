@@ -726,6 +726,7 @@ GameObject:
   - component: {fileID: 568967209}
   - component: {fileID: 568967208}
   - component: {fileID: 568967207}
+  - component: {fileID: 568967211}
   m_Layer: 0
   m_Name: PoolFactory
   m_TagString: Untagged
@@ -805,6 +806,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CUnitPool
   _prefab: {fileID: 3364450076485505681, guid: 6de045e28704451498c5dfeea1b685c6, type: 3}
   _prewarmCount: 20
+  _poolRoot: {fileID: 0}
+--- !u!114 &568967211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568967205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946b67f99c2b0c8458686c37d6934de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CEntityPool
+  _prefab:
+  - {fileID: 5388546764222081716, guid: 7c15ccf1d6c0b7043b57ce8ae196cb44, type: 3}
+  _prewarmCount: 0
   _poolRoot: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
@@ -13677,6 +13694,10 @@ PrefabInstance:
     - target: {fileID: 38076889355722755, guid: 7c15ccf1d6c0b7043b57ce8ae196cb44, type: 3}
       propertyPath: m_Name
       value: LightningMortar
+      objectReference: {fileID: 0}
+    - target: {fileID: 38076889355722755, guid: 7c15ccf1d6c0b7043b57ce8ae196cb44, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2965130535225553053, guid: 7c15ccf1d6c0b7043b57ce8ae196cb44, type: 3}
       propertyPath: m_LocalPosition.x
