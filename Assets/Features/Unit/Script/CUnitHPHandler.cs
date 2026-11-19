@@ -56,4 +56,9 @@ public class CUnitHPHandler : MonoBehaviour, ITargetable
             _unitController.KillUnit();
         }
     }
+
+    public Vector2 GetPos()
+    {
+        return transform.position;
+    }
 }

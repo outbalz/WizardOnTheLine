@@ -6,4 +6,9 @@ public class CTargetDummy : MonoBehaviour, ITargetable
     {
         Debug.Log(damage);
     }
+
+    public Vector2 GetPos()
+    {
+        return transform.position;
+    }
 }

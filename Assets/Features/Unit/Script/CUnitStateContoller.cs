@@ -398,17 +398,16 @@ public class CUnitStateContoller : MonoBehaviour
                 return;
             }
 
-            if(target is MonoBehaviour mono)
-            {
-                if(mono.transform.position.x < transform.position.x)
-                {
-                    FlipX(true);
-                }
+            Vector2 targetPos = target.GetPos();
 
-                else
-                {
-                    FlipX(false);
-                }
+            if(targetPos.x < transform.position.x)
+            {
+                FlipX(true);
+            }
+
+            else
+            {
+                FlipX(false);
             }
 
             if(_weaponCooldown > 0)
@@ -443,21 +442,21 @@ public class CUnitStateContoller : MonoBehaviour
             return;
         }
 
-        if (target is MonoBehaviour mono)
+        Vector2 targetPos = target.GetPos();
+
+        if (targetPos.x < transform.position.x)
         {
-            if (mono.transform.position.x < transform.position.x)
-            {
-                FlipX(true);
-            }
-
-            else
-            {
-                FlipX(false);
-            }
-
-            float distance = Mathf.Abs(transform.position.x - mono.transform.position.x);
-            target.TakeDamage(_unitController.Status.GetWeaponDamage(distance));
+            FlipX(true);
         }
+
+        else
+        {
+            FlipX(false);
+        }
+
+        float distance = Mathf.Abs(transform.position.x - targetPos.x);
+        target.TakeDamage(_unitController.Status.GetWeaponDamage(distance));
+        
 
         ChangeState(EUnitState.Engage);
     }

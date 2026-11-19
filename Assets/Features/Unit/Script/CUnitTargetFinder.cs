@@ -6,6 +6,7 @@ using UnityEngine;
 public interface ITargetable
 {
     public void TakeDamage(float damage);
+    public Vector2 GetPos();
 }
 
 public class CUnitTargetFinder : MonoBehaviour
