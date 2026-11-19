@@ -24,3 +24,36 @@ public abstract class CSkillEffect
 	public abstract void CastSkill(CSkillCasterController caster, Vector2 targtPos);
 }
 
+[System.Serializable]
+public class CEtitySummonSkillEffect : CSkillEffect
+{
+	[SerializeField] private SOEntityData _entityData;
+
+	[SerializeField] private float _randonRangeX;
+	[SerializeField] private float _randonRangeY;
+
+	[SerializeField] private int _summonAmount;
+
+	[SerializeField] private string _modifierName;
+
+    public override void CastSkill(CSkillCasterController caster, Vector2 targtPos)
+    {
+		float ranX = caster.ModifierHandler.GetModifiedValue(_modifierName + "ranX", _randonRangeX);
+		float ranY = caster.ModifierHandler.GetModifiedValue(_modifierName + "ranY", _randonRangeX);
+
+		int amount = Mathf.RoundToInt(caster.ModifierHandler.GetModifiedValue(_modifierName + "Amount", _summonAmount));
+
+		for (int i = 0; i < amount; i++)
+		{
+			Vector2 ranPos = targtPos;
+			ranPos.x += Random.Range(-ranX, ranX);
+			ranPos.y += Random.Range(-ranY, ranY);
+
+			CSkillEntityController entity = _entityData.GetFromPool();
+			entity.transform.position = ranPos;
+			entity.Initialized(caster);
+			entity.gameObject.SetActive(true);
+		}
+
+    }
+}
