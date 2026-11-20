@@ -1,6 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Threading;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class CUnitStateContoller : MonoBehaviour
