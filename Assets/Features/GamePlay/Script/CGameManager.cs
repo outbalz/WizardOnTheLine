@@ -53,6 +53,8 @@ public class CGameManager : CSingleton<CGameManager>
 		_squadListMap.Add(_playerData, new List<CSquadContorller>());
 		_squadListMap.Add(_enemyPlayerData, new List<CSquadContorller>());
 
+		Cursor.lockState = CursorLockMode.Confined;
+
 		base.Awake();
     }
 
@@ -106,6 +108,8 @@ public class CGameManager : CSingleton<CGameManager>
 		Time.timeScale = 0;
 		_enemyAIManager.enabled = false;
 		_NoPostCam.gameObject.SetActive(false);
+
+		Cursor.lockState = CursorLockMode.None;
 
 		if (isVictory)
 		{

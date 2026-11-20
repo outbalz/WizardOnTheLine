@@ -4,7 +4,8 @@ using UnityEngine.UI;
 public class CSquadMarkerController : MonoBehaviour
 {
 	#region inspector
-	[SerializeField] private SpriteRenderer _renderer;
+	//[SerializeField] private SpriteRenderer _renderer;
+	[SerializeField] private Image _image;
 	[SerializeField] private Color32 _color;
 	[SerializeField] private CSquadContorller _squad;
 	[SerializeField] private float _offsetY;
@@ -26,6 +27,7 @@ public class CSquadMarkerController : MonoBehaviour
 
     private void ExceptionCheck()
 	{
+		/*
 		if(_renderer == null)
 		{
 			if(!TryGetComponent<SpriteRenderer>(out _renderer))
@@ -34,6 +36,13 @@ public class CSquadMarkerController : MonoBehaviour
                 enabled = false;
                 return;
             }
+		}
+		*/
+		if (_image == null)
+		{
+			Debug.LogWarning($"{this}/ _image is not assigned.");
+			enabled = false;
+			return;
 		}
 
 		if(_squad == null)
@@ -57,7 +66,8 @@ public class CSquadMarkerController : MonoBehaviour
 		AssignSquadLeader();
 
         gameObject.layer = _squad.PlayerData.UnitLayer;
-		_renderer.sprite = preset.MarkerSprite;
+		//_renderer.sprite = preset.MarkerSprite;
+		_image.sprite = preset.MarkerSprite;
         _color = _squad.PlayerData.PlayerColor;
 
 		_hpSlider.fillRect.GetComponent<Image>().color = _color;
@@ -99,13 +109,15 @@ public class CSquadMarkerController : MonoBehaviour
 
 		if (isSelected)
 		{
-			_renderer.color = color;
+			//_renderer.color = color;
+			_image.color = color;
 		}
 
 		else
 		{
 			color.a = 150;
-			_renderer.color = color;
+			//_renderer.color = color;
+			_image.color = color;
 		}
 	}
 

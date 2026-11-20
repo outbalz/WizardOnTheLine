@@ -46,7 +46,7 @@ public class CEtitySummonSkillEffect : CSkillEffect
 	public async UniTask SummonEntity(CSkillCasterController caster, Vector2 targetPos)
 	{
 		float ranX = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanX", _randonRangeX);
-		float ranY = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanY", _randonRangeX);
+		float ranY = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanY", _randonRangeY);
 
 		int amount = Mathf.RoundToInt(caster.ModifierHandler.GetModifiedValue(_modifierName + "Amount", _summonAmount));
 
