@@ -65,11 +65,13 @@ Material:
     - _Cull: 2
     - _Darken: 0
     - _DstBlend: 0
+    - _DstBlendAlpha: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SoftParticles: 1
     - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
     - _Surface: 0
     - _VertexAmount: 0.2
     - _VertexScale: 8

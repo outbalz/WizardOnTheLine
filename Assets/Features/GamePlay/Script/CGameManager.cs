@@ -53,7 +53,7 @@ public class CGameManager : CSingleton<CGameManager>
 		_squadListMap.Add(_playerData, new List<CSquadContorller>());
 		_squadListMap.Add(_enemyPlayerData, new List<CSquadContorller>());
 
-		Cursor.lockState = CursorLockMode.Confined;
+		//Cursor.lockState = CursorLockMode.Confined;
 
 		base.Awake();
     }
