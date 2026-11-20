@@ -51,8 +51,11 @@ public class CUnitHPHandler : MonoBehaviour, ITargetable
         _hp -= damage;
         //Debug.Log($"{_hp} - {damage}");
 
+        _unitController.Squad.SquadHpUpdate();
+
         if (_hp <= 0)
         {
+            _hp = 0;
             _unitController.KillUnit();
         }
     }

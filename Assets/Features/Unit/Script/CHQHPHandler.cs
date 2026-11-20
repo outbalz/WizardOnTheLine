@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CHQHPHandler : MonoBehaviour, ITargetable
@@ -6,6 +7,8 @@ public class CHQHPHandler : MonoBehaviour, ITargetable
 	#region inspector
 	[SerializeField] private float _maxHP;
     [SerializeField] private Slider _hpSlider;
+
+    [SerializeField] private UnityEvent _destroyEvent;
 	#endregion
 
 	#region private var
@@ -27,7 +30,8 @@ public class CHQHPHandler : MonoBehaviour, ITargetable
         if (_hp <= 0)
         {
             _hp = 0;
-            //TODO game over
+            
+            _destroyEvent.Invoke();
         }
 
         _hpSlider.SetValueWithoutNotify(_hp);

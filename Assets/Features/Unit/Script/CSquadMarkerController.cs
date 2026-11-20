@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class CSquadMarkerController : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class CSquadMarkerController : MonoBehaviour
 	[SerializeField] private Color32 _color;
 	[SerializeField] private CSquadContorller _squad;
 	[SerializeField] private float _offsetY;
+	[SerializeField] private Slider _hpSlider;
 	#endregion
 
 	#region private var
@@ -40,6 +42,12 @@ public class CSquadMarkerController : MonoBehaviour
 			enabled = false;
 			return;
 		}
+
+		if( _hpSlider == null)
+		{
+			Debug.LogWarning($"{this}/ _hpSlider is not assigned.");
+			return;
+		}
 	}
 
     public void InitializeMarker(SOSquadDataPreset preset)
@@ -51,6 +59,8 @@ public class CSquadMarkerController : MonoBehaviour
         gameObject.layer = _squad.PlayerData.UnitLayer;
 		_renderer.sprite = preset.MarkerSprite;
         _color = _squad.PlayerData.PlayerColor;
+
+		_hpSlider.fillRect.GetComponent<Image>().color = _color;
 		SelectMarker(false);
     }
 
@@ -97,5 +107,15 @@ public class CSquadMarkerController : MonoBehaviour
 			color.a = 150;
 			_renderer.color = color;
 		}
+	}
+
+	public void UpdateHPSlider(float hp)
+	{
+		_hpSlider.SetValueWithoutNotify(hp);
+	}
+
+	public void SetMaxHP( float maxHp)
+	{
+		_hpSlider.maxValue = maxHp;
 	}
 }

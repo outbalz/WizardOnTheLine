@@ -94,6 +94,8 @@ public class CSquadContorller : MonoBehaviour
         _markerController.InitializeMarker(squadDataPreset);
 
         ExceptionCheck();
+        SetSquadMaxHP();
+        SquadHpUpdate();
     }
 
     public bool GiveOder(SOderContext context)
@@ -138,6 +140,30 @@ public class CSquadContorller : MonoBehaviour
 
         OnSquadDeath?.Invoke();
         OnSquadDeath = null;
+    }
+
+    private void SetSquadMaxHP()
+    {
+        float maxHP = 0;
+
+        for (int i = 0; i < _squadMembers.Count; i++)
+        {
+            maxHP += _squadMembers[i].Status.MaxHP;
+        }
+
+        _markerController.SetMaxHP(maxHP);
+    }
+
+    public void SquadHpUpdate()
+    {
+        float hp = 0;
+
+        for (int i = 0; i < _squadMembers.Count; i++)
+        {
+            hp += _squadMembers[i].HP.HP;
+        }
+
+        _markerController.UpdateHPSlider(hp);
     }
 }
 

@@ -8,12 +8,16 @@ public class CGameManager : CSingleton<CGameManager>
 	[SerializeField] private float _CMPperSec;
 	[SerializeField] private SOPlayerData _playerData;
 	[SerializeField] private SOPlayerData _enemyPlayerData;
+	[SerializeField] private CEnemyAIManager _enemyAIManager;
 
 	[Space]
 	[SerializeField] private float _difficultyMultiplyer;
 
 	[Header("UI")]
 	[SerializeField] private TMP_Text _CMPtext;
+	[SerializeField] private GameObject _victoryPanel;
+	[SerializeField] private GameObject _defeatedPanel;
+	[SerializeField] private Camera _NoPostCam;
 	#endregion
 
 	#region private var
@@ -96,4 +100,21 @@ public class CGameManager : CSingleton<CGameManager>
 	{
         _CMPtext.SetText($"{_playerCMP:0}");
     }
+
+	public void GameOver(bool isVictory)
+	{
+		Time.timeScale = 0;
+		_enemyAIManager.enabled = false;
+		_NoPostCam.gameObject.SetActive(false);
+
+		if (isVictory)
+		{
+			_victoryPanel.SetActive(true);
+		}
+
+		else
+		{
+            _defeatedPanel.SetActive(true);
+        }
+	}
 }
