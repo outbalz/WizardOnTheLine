@@ -111,6 +111,8 @@ public class CSquadSkillCastEffect : CSkillEffect
 {
 	[SerializeField] private SOSkillData _skillData;
 	[SerializeField] private int _castAmount;
+	[SerializeField] private float _sreachRange;
+    [SerializeField] private string _modifierName;
 
     public override void CastSkill(CSkillCasterController caster, Vector2 targtPos)
     {
@@ -119,6 +121,32 @@ public class CSquadSkillCastEffect : CSkillEffect
 			return;
 		}
 
-		//DOSomthing
+		int[] ranIndex = new int[squadSkillCaster.UnitSkillCaster.Count];
+
+		for (int i = 0; i < ranIndex.Length; i++)
+		{
+			ranIndex[i] = i;
+		}
+
+		for (int i = ranIndex.Length -1; i >= 0; i--)
+		{
+			int temp = ranIndex[i];
+			ranIndex[i] = Random.Range(0, temp);
+			ranIndex[ranIndex[i]] = temp;
+		}
+
+		int castAmount = Mathf.RoundToInt(squadSkillCaster.ModifierHandler.GetModifiedValue(_modifierName, _castAmount));
+
+		if (castAmount > ranIndex.Length)
+		{
+			castAmount = ranIndex.Length;
+		}
+
+		Collider2D[] targets = Physics2D.OverlapAreaAll()
+
+		for (int i = 0; i < castAmount; i++)
+		{
+			squadSkillCaster.UnitSkillCaster[i].CastSkill(_skillData);
+		}
     }
 }

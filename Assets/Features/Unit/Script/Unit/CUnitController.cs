@@ -135,6 +135,13 @@ public class CUnitController : MonoBehaviour
 	public void KillUnit()
 	{
 		_squad.SquadMembers.Remove(this);
+		_skillCaster.ClearSkill();
+
+		if(_squad.SquadMembers.Count > 0)
+		{
+			_squad.SkillCaster.SetUnitSkillCasters();
+		}
+
 		CUnitPool.Instance.ReturnToPool(this);
 	}
 }

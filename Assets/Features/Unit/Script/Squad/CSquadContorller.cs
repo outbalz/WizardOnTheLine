@@ -103,11 +103,14 @@ public class CSquadContorller : MonoBehaviour
             spawnPointY -= Random.Range(0.3f, 0.7f);
         }
 
+        ExceptionCheck();
+
         _markerController.InitializeMarker(squadDataPreset);
 
-        ExceptionCheck();
         SetSquadMaxHP();
         SquadHpUpdate();
+
+        _skillCasterController.InitializeSquadSkill(squadDataPreset);
     }
 
     public bool GiveOder(SOderContext context)
