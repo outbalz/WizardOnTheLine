@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9a6f0cc141145438c58c36571ea4c3, type: 3}
+  m_Name: SkillDataSO_FireBallSquad
+  m_EditorClassIdentifier: Assembly-CSharp::SOSkillData
+  _id: SkillDataSO_FireBallSquad
+  _name: SkillDataSO_FireBallSquad
+  _cost: 0
+  _coolDown: 40
+  _range: 7
+  _effect:
+    rid: 5559904230910984291
+  references:
+    version: 2
+    RefIds:
+    - rid: 5559904230910984291
+      type: {class: CSquadSkillCastEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _skillData: {fileID: 11400000, guid: cc39745348be8fe4abb5e5db6ebb4135, type: 2}
+        _castAmount: 1
+        _sreachRange: 1
+        _modifierName: SquadFireBallAmount

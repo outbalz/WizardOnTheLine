@@ -285,6 +285,7 @@ MonoBehaviour:
   _markerController: {fileID: 4562893081271917400}
   _squadRadiusX: 0.1
   _skillCasterController: {fileID: 4840410861320625928}
+  _squadModifierHandler: {fileID: 1161093224126705254}
 --- !u!114 &4840410861320625928
 MonoBehaviour:
   m_ObjectHideFlags: 0

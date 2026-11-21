@@ -1,6 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class CSkillCasterController : MonoBehaviour
@@ -9,11 +10,12 @@ public class CSkillCasterController : MonoBehaviour
     #region inspector
     [SerializeField] private SOPlayerData _player;
 	[SerializeField] private CModifierHandler _modifierHandler;
-	[SerializeField] private List<SOSkillData> _skillDataList;
+	[SerializeField] protected List<SOSkillData> _skillDataList;
 	#endregion
 
 	#region private var
 	private Dictionary<SOSkillData, float> _skillDatasMap = new Dictionary<SOSkillData, float>();
+	protected Dictionary<SOSkillData, CancellationTokenSource> _skillCTSMap = new Dictionary<SOSkillData, CancellationTokenSource>();
 	#endregion
 
 	#region property
@@ -28,6 +30,7 @@ public class CSkillCasterController : MonoBehaviour
 			if (!_skillDatasMap.ContainsKey(_skillDataList[i]))
 			{
 				_skillDatasMap.Add(_skillDataList[i],0);
+				_skillCTSMap.Add(_skillDataList[i], new CancellationTokenSource());
 			}
 		}
     }
@@ -103,18 +106,31 @@ public class CSkillCasterController : MonoBehaviour
 			float coolDown = _modifierHandler.GetModifiedValue(skillData.ID + "CoolDown", skillData.CoolDown);
 
 			_skillDatasMap[skillData] = coolDown;
-			CoolDownSkill(destroyCancellationToken, skillData).Forget();
+
+			Cancel(skillData);
+			_skillCTSMap[skillData] = new CancellationTokenSource();
+			CoolDownSkill(_skillCTSMap[skillData].Token, skillData).Forget();
 		}
 
 		return true;
 
 	}
 
-	private async UniTask CoolDownSkill(CancellationToken ct, SOSkillData skillData)
+	protected async UniTask CoolDownSkill(CancellationToken ct, SOSkillData skillData)
 	{
+		if (ct.IsCancellationRequested)
+		{
+			return;
+		}
+
 		while (_skillDatasMap[skillData] > 0)
 		{
 			if (ct.IsCancellationRequested)
+			{
+				return;
+			}
+
+			if (gameObject == null)
 			{
 				return;
 			}
@@ -126,6 +142,11 @@ public class CSkillCasterController : MonoBehaviour
 
 			_skillDatasMap[skillData] -= Time.deltaTime;
 			await UniTask.Yield();
+
+			if (ct.IsCancellationRequested)
+			{
+				return;
+			}
 		}
 	}
 
@@ -133,6 +154,7 @@ public class CSkillCasterController : MonoBehaviour
 	{
 		_skillDataList.Add(skillData);
 		_skillDatasMap.Add(skillData, 0);
+		_skillCTSMap.Add(skillData, new CancellationTokenSource());
 	}
 
 	public void SetPlayer(SOPlayerData playerData)
@@ -142,15 +164,40 @@ public class CSkillCasterController : MonoBehaviour
 	
 	public void ClearSkill()
 	{
-		_skillDataList.Clear();
+        for (int i = 0; i < _skillDataList.Count; i++)
+        {
+            Cancel(_skillDataList[i]);
+        }
+
+        _skillDataList.Clear();
 		_skillDatasMap.Clear();
+		_skillCTSMap.Clear();
 	}
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
-		for (int i = 0; i < _skillDataList.Count; i++)
-		{
-			_skillDatasMap[_skillDataList[i]] = 0;
-		}
+		ClearSkill();
     }
+
+    private void OnDestroy()
+    {
+        ClearSkill();
+    }
+
+	public void Cancel(SOSkillData key)
+	{
+		if (!_skillCTSMap.ContainsKey(key))
+		{
+			return;
+		}
+
+		if (_skillCTSMap[key] == null)
+		{
+			return;
+		}
+
+		_skillCTSMap[key].Cancel();
+		_skillCTSMap[key].Dispose();
+		_skillCTSMap[key] = null;
+	}
 }

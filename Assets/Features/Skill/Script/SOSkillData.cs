@@ -89,6 +89,7 @@ public class CProjectileSummonSkillEffect : CSkillEffect
         float ranX = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanX", _randonRangeX);
         float ranY = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanY", _randonRangeY);
 
+
         int amount = Mathf.RoundToInt(caster.ModifierHandler.GetModifiedValue(_modifierName + "Amount", _summonAmount));
 
         for (int i = 0; i < amount; i++)
@@ -96,8 +97,10 @@ public class CProjectileSummonSkillEffect : CSkillEffect
             Vector2 ranPos = targetPos;
             ranPos.x += Random.Range(-ranX, ranX);
             ranPos.y += Random.Range(-ranY, ranY);
+			Debug.Log(ranPos);
 
             CProjectileController projectile = CProjectilePool.Instance.GetFromPool(_projectileData);
+			projectile.transform.position = caster.transform.position;
             projectile.Initialized(caster.transform.position, ranPos);
             projectile.gameObject.SetActive(true);
 
@@ -142,11 +145,38 @@ public class CSquadSkillCastEffect : CSkillEffect
 			castAmount = ranIndex.Length;
 		}
 
-		Collider2D[] targets = Physics2D.OverlapAreaAll()
+		Vector2 pointA = new Vector2(targtPos.x - _sreachRange, CUtil.MAP_HIGHT_MAX);
+		Vector2 pointB = new Vector2(targtPos.x + _sreachRange, CUtil.MAP_HIGHT_MIN);
+
+		Collider2D[] targets = Physics2D.OverlapAreaAll(pointA, pointB, squadSkillCaster.Squad.PlayerData.TargetLayer);
+
+		if (targets.Length <= 0)
+		{
+			return;
+		}
 
 		for (int i = 0; i < castAmount; i++)
 		{
-			squadSkillCaster.UnitSkillCaster[i].CastSkill(_skillData);
+			float closistDitance = float.MaxValue;
+			Vector2 closistPos = targtPos;
+
+			for (int j = 0; j < targets.Length; j++)
+			{
+				float distance = (targets[j].transform.position - squadSkillCaster.UnitSkillCaster[i].transform.position).sqrMagnitude;
+
+				if (distance < closistDitance)
+				{
+					closistDitance = distance;
+					closistPos = targets[j].transform.position;
+				}
+			}
+
+			if(closistPos.y > CUtil.MAP_HIGHT_MAX)
+			{
+				closistPos.y = CUtil.MAP_HIGHT_MAX -1;
+			}
+
+			squadSkillCaster.UnitSkillCaster[ranIndex[i]].CastSkill(_skillData, closistPos);
 		}
     }
 }

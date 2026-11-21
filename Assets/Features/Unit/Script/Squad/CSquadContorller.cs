@@ -22,6 +22,7 @@ public class CSquadContorller : MonoBehaviour
     [SerializeField] private CSquadMarkerController _markerController;
     [SerializeField] private float _squadRadiusX;
     [SerializeField] private CSquadSkillCasterController _skillCasterController;
+    [SerializeField] private CModifierHandler _squadModifierHandler;
 	#endregion
 
 	#region private var
@@ -34,6 +35,7 @@ public class CSquadContorller : MonoBehaviour
     public float SquadRadiusX => _squadRadiusX;
     public List<CUnitController> SquadMembers => _squadMembers;
     public CSquadSkillCasterController SkillCaster => _skillCasterController;
+    public CModifierHandler SquadModifierHandler => _squadModifierHandler;
     public event System.Action OnSquadDeath;
     #endregion
 
@@ -59,6 +61,16 @@ public class CSquadContorller : MonoBehaviour
             if(!TryGetComponent<CSquadSkillCasterController>(out _skillCasterController))
             {
                 Debug.LogWarning($"{this}/ _skillCasterController is not assigned and not found on the GameObject {gameObject.name}.");
+                enabled = false;
+                return;
+            }
+        }
+
+        if( _squadModifierHandler == null )
+        {
+            if(!TryGetComponent<CModifierHandler>(out _squadModifierHandler))
+            {
+                Debug.LogWarning($"{this}/ _squadModifierHandler is not assigned and not found on the GameObject {gameObject.name}.");
                 enabled = false;
                 return;
             }

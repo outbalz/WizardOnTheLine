@@ -12,6 +12,8 @@ public class CUnitController : MonoBehaviour
 	[SerializeField] private CUnitHPHandler _hpHandler;
 	[SerializeField] private CSkillCasterController _skillCaster;
 
+	[SerializeField] private Collider2D _collider;
+
 	[Space]
 	[Header("UnitSelection")]
 	[SerializeField] private SpriteRenderer _selectionCircle;
@@ -52,6 +54,8 @@ public class CUnitController : MonoBehaviour
 		_stateContoller.InitializeState(data);
 		_skillCaster.SetPlayer(Squad.PlayerData);
 		SelectUint(false);
+
+		_collider.enabled = true;
     }
 
 	private void ExceptionCheck()
@@ -114,6 +118,16 @@ public class CUnitController : MonoBehaviour
 				return;
 			}
 		}
+
+		if(_collider == null)
+		{
+			if(!TryGetComponent <Collider2D>(out _collider))
+			{
+				Debug.LogWarning($"{this}/ _collider is not assigned and not found on the GameObject {gameObject.name}.");
+				enabled = false;
+				return;
+			}
+		}
 	}
 
 	public void SelectUint(bool isSelected)
@@ -134,8 +148,9 @@ public class CUnitController : MonoBehaviour
 
 	public void KillUnit()
 	{
+		_collider.enabled = false;
 		_squad.SquadMembers.Remove(this);
-		_skillCaster.ClearSkill();
+		//_skillCaster.ClearSkill();
 
 		if(_squad.SquadMembers.Count > 0)
 		{
