@@ -54,3 +54,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _maxHp: 50
+  _projectile: {fileID: 0}

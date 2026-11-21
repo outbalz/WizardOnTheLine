@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899d83be782cbd748a2f370b5942a94d, type: 3}
+  m_Name: UnitDataSO_CombaAlchemist_ManaThrower
+  m_EditorClassIdentifier: Assembly-CSharp::SOUnitData
+  _id: UnitDataSO_CombaAlchemist_ManaThrower
+  _name: UnitDataSO_CombaAlchemist_ManaThrower
+  _statusData: {fileID: 11400000, guid: 0a976adb0fc6e5a4088e2d4a4cde2a36, type: 2}
+  _animatorOverrideController: {fileID: 22100000, guid: 55ca1733b1e51b540ba2b288dbfcad03, type: 2}

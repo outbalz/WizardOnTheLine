@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff5bb5dcd04cf74eb9357f03e0cb8f9, type: 3}
+  m_Name: ProjectileDataSO_fireBall
+  m_EditorClassIdentifier: Assembly-CSharp::SOProjectileData
+  _id: ProjectileDataSO_fireBall
+  _name: ProjectileDataSO_fireBall
+  _prefab: {fileID: 2577526979399820566, guid: a2828fea595400245a8dac429ad0706b, type: 3}
+  _positionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _heightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 5.355
+      outSlope: 5.355
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.045351475
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -5.249996
+      outSlope: -5.249996
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.045351505
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _heightMax: 3
+  _travelTime: 2
+  _isFaceingTarget: 0
+  _effect:
+    rid: 6178808320384565331
+  references:
+    version: 2
+    RefIds:
+    - rid: 6178808320384565331
+      type: {class: CProjectileSummonEntityEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _entityData: {fileID: 11400000, guid: 95e1ba1dcd3c6c740989156877a7cac2, type: 2}

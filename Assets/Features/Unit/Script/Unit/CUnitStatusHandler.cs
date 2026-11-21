@@ -18,6 +18,8 @@ public class CUnitStatusHandler : MonoBehaviour
     public float WeaponAimTime => GetWeaponAimTime();
 
     public float MaxHP => GetStatusValue(_unitStatusDataSO.MaxHp, "MaxHP");
+
+    public SOProjectileData Projectile => _unitStatusDataSO.Projectile;
     #endregion
 
     private void Awake()

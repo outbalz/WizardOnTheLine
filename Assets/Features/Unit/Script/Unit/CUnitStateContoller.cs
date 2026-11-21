@@ -16,6 +16,7 @@ public class CUnitStateContoller : MonoBehaviour
 	[SerializeField] private CUnitController _unitController;
 	[SerializeField] private SpriteRenderer _spriteRenderer;
 	[SerializeField] private Animator _animator;
+    [SerializeField] private Vector2 _projectileOffset;
 	#endregion
 
 	#region private var
@@ -434,21 +435,33 @@ public class CUnitStateContoller : MonoBehaviour
         }
 
         Vector2 targetPos = target.transform.position;
+        Vector2 originPos = transform.position;
 
         if (targetPos.x < transform.position.x)
         {
             FlipX(true);
+            originPos.x -= _projectileOffset.x;
+            originPos.y += _projectileOffset.y;
         }
 
         else
         {
             FlipX(false);
+            originPos.x += _projectileOffset.x;
+            originPos.y += _projectileOffset.y;
         }
 
         float distance = Mathf.Abs(transform.position.x - targetPos.x);
         target.TakeDamage(_unitController.Status.GetWeaponDamage(distance));
-        
 
+        if(_unitController.Status.Projectile != null)
+        {
+            CProjectileController projectile = CProjectilePool.Instance.GetFromPool(_unitController.Status.Projectile);
+            projectile.transform.position = transform.position;
+            projectile.Initialized(originPos, targetPos);
+            projectile.gameObject.SetActive(true);
+        }
+        
         ChangeState(EUnitState.Engage);
     }
 

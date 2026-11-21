@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2855c06dfa4314e469462e6b147efae2, type: 3}
+  m_Name: EntityDataSO_FireExplosion
+  m_EditorClassIdentifier: Assembly-CSharp::SOEntityData
+  _id: EntityDataSO_FireExplosion
+  _name: EntityDataSO_FireExplosion
+  _prefab: {fileID: 7132406412223698572, guid: 6bb854d0c18671a408fab8c9b6a14c2e, type: 3}
+  _height: 0.5
+  _width: 1
+  _lifeTime: 5
+  _effectTime: 0.2
+  _isEffectContinuous: 0
+  _effect:
+    rid: 6178808320384565328
+  references:
+    version: 2
+    RefIds:
+    - rid: 6178808320384565328
+      type: {class: CAreaDamageEntityEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _damage: 50
+        _damageFallOff:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: -0.9
+            outSlope: -2.0932322
+            tangentMode: 1
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.051232185
+          - serializedVersion: 3
+            time: 1
+            value: 0.1
+            inSlope: -0.027755495
+            outSlope: -0.027755495
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.15581757
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4

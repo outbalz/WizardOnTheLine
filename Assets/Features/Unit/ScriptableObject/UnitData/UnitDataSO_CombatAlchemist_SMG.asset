@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899d83be782cbd748a2f370b5942a94d, type: 3}
   m_Name: UnitDataSO_CombatAlchemist_SMG
   m_EditorClassIdentifier: Assembly-CSharp::SOUnitData
+  _id: UnitDataSO_CombatAlchemist_SMG
+  _name: UnitDataSO_CombatAlchemist_SMG
   _statusData: {fileID: 11400000, guid: 16d4596afda4ae14193d803d62971eba, type: 2}
   _animatorOverrideController: {fileID: 22100000, guid: 5164424fc0360f843a9dfe761de53b14, type: 2}
-  _markerSprite: {fileID: 0}

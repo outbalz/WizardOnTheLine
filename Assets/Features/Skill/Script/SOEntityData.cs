@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "EntityDataSO_", menuName = "Scriptable Objects/EntityDataSO")]
-public class SOEntityData : ScriptableObject, IPoolabeSO<CSkillEntityController>
+[CreateAssetMenu(fileName = "EntityDataSO_", menuName = "Scriptable Objects/GameData/EntityDataSO")]
+public class SOEntityData : SOGameData, IPoolabeSO<CSkillEntityController>
 {
     #region inspector
     [SerializeField] private CSkillEntityController _prefab;

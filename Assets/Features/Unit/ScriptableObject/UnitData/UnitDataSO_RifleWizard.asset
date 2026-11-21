@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899d83be782cbd748a2f370b5942a94d, type: 3}
   m_Name: UnitDataSO_RifleWizard
   m_EditorClassIdentifier: Assembly-CSharp::SOUnitData
+  _id: UnitDataSO_RifleWizard
+  _name: UnitDataSO_RifleWizard
   _statusData: {fileID: 11400000, guid: 171489a6563c93f49ae126674dc8fc99, type: 2}
   _animatorOverrideController: {fileID: 22100000, guid: ab0cfcaec37803047a13a7c50dc0719a, type: 2}
-  _markerSprite: {fileID: 0}

@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "ProjectileDataSO_", menuName = "Scriptable Objects/ProjectileDataSO")]
-public class SOProjectileData : ScriptableObject, IPoolabeSO<CProjectileController>
+[CreateAssetMenu(fileName = "ProjectileDataSO_", menuName = "Scriptable Objects/GameData/ProjectileDataSO")]
+public class SOProjectileData : SOGameData, IPoolabeSO<CProjectileController>
 {
     #region inspector
     [SerializeField] private CProjectileController _prefab;
@@ -108,3 +109,16 @@ public class CProjectileAreaDamageEffect : CProjectileAreaEffect
     }
 }
 
+[System.Serializable]
+public class CProjectileSummonEntityEffect : CProjectileEffect
+{
+    [SerializeField] private SOEntityData _entityData;
+
+    public override void ApplyEffect(Vector2 targetPos)
+    {
+        CSkillEntityController entity = CEntityPool.Instance.GetFromPool(_entityData);
+        entity.transform.position = targetPos;
+        entity.Initialized(null);
+        entity.gameObject.SetActive(true);
+    }
+}

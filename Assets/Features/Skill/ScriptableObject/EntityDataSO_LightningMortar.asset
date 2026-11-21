@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2855c06dfa4314e469462e6b147efae2, type: 3}
   m_Name: EntityDataSO_LightningMortar
   m_EditorClassIdentifier: Assembly-CSharp::SOEntityData
+  _id: EntityDataSO_LightningMortar
+  _name: EntityDataSO_LightningMortar
   _prefab: {fileID: 5388546764222081716, guid: 7c15ccf1d6c0b7043b57ce8ae196cb44, type: 3}
   _height: 1.5
   _width: 2.5

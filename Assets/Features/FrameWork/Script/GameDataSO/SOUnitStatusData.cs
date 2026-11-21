@@ -17,6 +17,9 @@ public class SOUnitStatusData : SOGameData
 
     [Header("HP")]
     [SerializeField, Min(1f)] private float _maxHp;
+
+    [Header("Projectile")]
+    [SerializeField] private SOProjectileData _projectile;
     #endregion
 
     #region property
@@ -27,6 +30,7 @@ public class SOUnitStatusData : SOGameData
     public float WeaponAimTimeMax => _weaponAimTimeMax;
     public float WeaponCoolDown => _weaponCoolDown;
     public float MaxHp => _maxHp;
+    public SOProjectileData Projectile => _projectile;
     #endregion
 
     public float GetWeaponDamageByDistance(float distance)

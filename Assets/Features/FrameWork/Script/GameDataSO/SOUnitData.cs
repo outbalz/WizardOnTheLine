@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "UnitDataSO_", menuName = "Scriptable Objects/GameData/UnitDataSO")]
-public class SOUnitData : ScriptableObject
+public class SOUnitData : SOGameData
 {
 	#region inspector
 	[SerializeField] private SOUnitStatusData _statusData;

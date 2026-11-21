@@ -312,6 +312,7 @@ MonoBehaviour:
   _unitController: {fileID: 3364450076485505681}
   _spriteRenderer: {fileID: 5735655865652129864}
   _animator: {fileID: 9177685394384040224}
+  _projectileOffset: {x: 0.7, y: 0.1}
 --- !u!95 &9177685394384040224
 Animator:
   serializedVersion: 7
