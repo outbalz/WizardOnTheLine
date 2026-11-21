@@ -14,10 +14,6 @@ public class CEnemyAIManager : MonoBehaviour
         FullOffence,
     }
 
-    #region const
-    private const float MAP_WITH_MIN = -10f;
-    private const float MAP_WITH_MAX = 50f;
-    #endregion
 
     #region inspector
     //[SerializeField] private SOPlayerData _aiPlayer;
@@ -134,8 +130,8 @@ public class CEnemyAIManager : MonoBehaviour
 
             IReadOnlyList<CSquadContorller> squads = CGameManager.Instance.SquadListMap[CGameManager.Instance.EnemyPlayerData];
 
-            float frontLinPos = MAP_WITH_MIN;
-            float fallbackPos = MAP_WITH_MAX;
+            float frontLinPos = CUtil.MAP_WITH_MIN;
+            float fallbackPos = CUtil.MAP_WITH_MAX;
             SOderContext moveOder = new SOderContext();
 
             int nextSec = Random.Range(5, 16);
@@ -240,7 +236,7 @@ public class CEnemyAIManager : MonoBehaviour
                     {
                         moveOder.oderType = SOderContext.EOderType.AttackMove;
                         moveOder.targetPos = _spawner.transform.position;
-                        moveOder.targetPos.x = MAP_WITH_MIN;
+                        moveOder.targetPos.x = CUtil.MAP_WITH_MIN;
 
                         squads[i].GiveOder(moveOder);
                     }
@@ -258,7 +254,7 @@ public class CEnemyAIManager : MonoBehaviour
 
     private float FindFrontLine()
     {
-        float frontLinePos = MAP_WITH_MIN;
+        float frontLinePos = CUtil.MAP_WITH_MIN;
 
         IReadOnlyList<CSquadContorller> playerSquads = CGameManager.Instance.SquadListMap[CGameManager.Instance.PlayerData];
 

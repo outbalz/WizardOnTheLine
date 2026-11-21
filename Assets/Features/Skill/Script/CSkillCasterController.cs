@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class CSkillCasterController : MonoBehaviour
 {
-    #region const
-    private const float MAP_HIGHT_MAX = 0.6F;
-    private const float MAP_HIGHT_MIN = -4.5F;
-    #endregion
 
     #region inspector
     [SerializeField] private SOPlayerData _player;
@@ -56,12 +52,13 @@ public class CSkillCasterController : MonoBehaviour
 			return false;
 		}
 
-		if(targetPos.y > MAP_HIGHT_MAX || targetPos.y < MAP_HIGHT_MIN)
+		if(targetPos.y > CUtil.MAP_HIGHT_MAX || targetPos.y < CUtil.MAP_HIGHT_MIN)
 		{
 			Debug.Log("Skill Can't not casted outside of map range");
 			return false;
 		}
 
+		/*
 		if (skillData.Range != -1)
 		{
 			float range = _modifierHandler.GetModifiedValue(skillData.ID + "Range" ,skillData.Range);
@@ -74,6 +71,7 @@ public class CSkillCasterController : MonoBehaviour
 				return false;
 			}
 		}
+		*/
 
 		if (skillData.Cost > 0)
 		{
@@ -140,6 +138,12 @@ public class CSkillCasterController : MonoBehaviour
 	public void SetPlayer(SOPlayerData playerData)
 	{
 		_player = playerData;
+	}
+	
+	public void ClearSkill()
+	{
+		_skillDataList.Clear();
+		_skillDatasMap.Clear();
 	}
 
     private void OnDisable()

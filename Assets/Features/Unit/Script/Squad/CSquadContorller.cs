@@ -17,10 +17,6 @@ public struct SOderContext
 }
 public class CSquadContorller : MonoBehaviour
 {
-    #region const
-    private const float MAP_HIGHT_MAX = 0.6F;
-    private const float MAP_HIGHT_MIN = -4.5F;
-    #endregion
 
     #region inspector
     [SerializeField] private CSquadMarkerController _markerController;
@@ -87,7 +83,7 @@ public class CSquadContorller : MonoBehaviour
 
         _squadMembers.Clear();
 
-        float spawnPointY = MAP_HIGHT_MAX - Random.Range(0f, 1.8f);
+        float spawnPointY = CUtil.MAP_HIGHT_MAX - Random.Range(0f, 1.8f);
 
         for (int i = 0; i < squadDataPreset.SquadSize; i++)
         {

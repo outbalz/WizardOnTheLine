@@ -11,11 +11,6 @@ public interface ITargetable
 
 public class CUnitTargetFinder : MonoBehaviour
 {
-    #region const
-    private const float MAP_HIGHT_MAX = 0.6F;
-    private const float MAP_HIGHT_MIN = -4.5F;
-    #endregion
-
     #region inspector
     [SerializeField] private CUnitController _unitController;
     #endregion
@@ -63,8 +58,8 @@ public class CUnitTargetFinder : MonoBehaviour
 
     public ITargetable FindTarget()
     {
-        Vector3 pointA = new Vector3(transform.position.x - WeaponRange, MAP_HIGHT_MIN, transform.position.z);
-        Vector3 pointB = new Vector3(transform.position.x + WeaponRange, MAP_HIGHT_MAX, transform.position.z);
+        Vector3 pointA = new Vector3(transform.position.x - WeaponRange, CUtil.MAP_HIGHT_MIN, transform.position.z);
+        Vector3 pointB = new Vector3(transform.position.x + WeaponRange, CUtil.MAP_HIGHT_MAX, transform.position.z);
 
         Collider2D[] colliders = Physics2D.OverlapAreaAll(pointA, pointB, _unitController.Squad.PlayerData.TargetLayer);
 
