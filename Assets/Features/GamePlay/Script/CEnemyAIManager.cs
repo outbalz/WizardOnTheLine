@@ -130,7 +130,7 @@ public class CEnemyAIManager : MonoBehaviour
             EAITactic tactic = (EAITactic)values.GetValue(randomIndex);
             */
 
-            EAITactic tactic = (EAITactic)Random.Range(0, System.Enum.GetValues(typeof(EAITactic)).Length);
+            EAITactic tactic = (EAITactic)Random.Range(1, System.Enum.GetValues(typeof(EAITactic)).Length);
 
             IReadOnlyList<CSquadContorller> squads = CGameManager.Instance.SquadListMap[CGameManager.Instance.EnemyPlayerData];
 
@@ -138,7 +138,7 @@ public class CEnemyAIManager : MonoBehaviour
             float fallbackPos = MAP_WITH_MAX;
             SOderContext moveOder = new SOderContext();
 
-            int nextSec = Random.Range(10, 31);
+            int nextSec = Random.Range(5, 16);
 
             if(squads.Count <= 0)
             {
@@ -244,6 +244,8 @@ public class CEnemyAIManager : MonoBehaviour
 
                         squads[i].GiveOder(moveOder);
                     }
+
+                    nextSec = Random.Range(15, 41);
 
                     break;
                 default:
