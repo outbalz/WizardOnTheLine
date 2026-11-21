@@ -55,6 +55,7 @@ public class CUnitController : MonoBehaviour
 		_skillCaster.SetPlayer(Squad.PlayerData);
 		SelectUint(false);
 
+		//Physics2D.SyncTransforms();
 		_collider.enabled = true;
     }
 

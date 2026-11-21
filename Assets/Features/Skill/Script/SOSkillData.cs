@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SkillDataSO_", menuName = "Scriptable Objects/GameData/SkillDataSO_")]
@@ -97,7 +98,7 @@ public class CProjectileSummonSkillEffect : CSkillEffect
             Vector2 ranPos = targetPos;
             ranPos.x += Random.Range(-ranX, ranX);
             ranPos.y += Random.Range(-ranY, ranY);
-			Debug.Log(ranPos);
+			//Debug.Log(ranPos);
 
             CProjectileController projectile = CProjectilePool.Instance.GetFromPool(_projectileData);
 			projectile.transform.position = caster.transform.position;
@@ -162,6 +163,11 @@ public class CSquadSkillCastEffect : CSkillEffect
 
 			for (int j = 0; j < targets.Length; j++)
 			{
+				if (Mathf.Abs(targets[j].transform.position.x - targtPos.x) > _sreachRange)
+				{
+					continue;
+				}
+
 				float distance = (targets[j].transform.position - squadSkillCaster.UnitSkillCaster[i].transform.position).sqrMagnitude;
 
 				if (distance < closistDitance)

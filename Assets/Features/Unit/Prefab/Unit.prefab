@@ -213,6 +213,7 @@ MonoBehaviour:
   _targetFinder: {fileID: 3078112197255469494}
   _hpHandler: {fileID: 6044316499413156852}
   _skillCaster: {fileID: 5105666368243540976}
+  _collider: {fileID: 8464525824284770551}
   _selectionCircle: {fileID: 2681603290514756602}
 --- !u!114 &6867744193411173796
 MonoBehaviour:
@@ -260,7 +261,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5265820906656408960}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

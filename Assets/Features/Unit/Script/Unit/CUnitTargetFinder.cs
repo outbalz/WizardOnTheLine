@@ -68,12 +68,20 @@ public class CUnitTargetFinder : MonoBehaviour
             return null;
         }
 
-        float distance = float.MaxValue;
+        float closestDistance = float.MaxValue;
         ITargetable closestTarget = null;
 
         for (int i = 0; colliders.Length > i; i++)
         {
-            if ((colliders[i].transform.position - transform.position).sqrMagnitude >= distance)
+
+            if (Mathf.Abs(colliders[i].transform.position.x - transform.position.x) > WeaponRange)
+            {
+                continue;
+            }
+
+            float distance = (colliders[i].transform.position - transform.position).sqrMagnitude;
+
+            if (distance>= closestDistance)
             {
                 continue;
             }
@@ -84,8 +92,8 @@ public class CUnitTargetFinder : MonoBehaviour
             {
                 continue;
             }
-            
-            distance = (colliders[i].transform.position - transform.position).sqrMagnitude;
+
+            closestDistance = distance;
             closestTarget = target;
         }
 
@@ -102,7 +110,7 @@ public class CUnitTargetFinder : MonoBehaviour
 
     private async UniTask SreachTarget(CancellationToken ct, Action<ITargetable> targetHadleAction)
     {
-        await UniTask.Yield();
+        await UniTask.Yield(PlayerLoopTiming.FixedUpdate);
 
         while (!ct.IsCancellationRequested)
         {
@@ -114,7 +122,7 @@ public class CUnitTargetFinder : MonoBehaviour
                 return;
             }
 
-            await UniTask.Yield();
+            await UniTask.Yield(PlayerLoopTiming.FixedUpdate);
         }
     }
 

@@ -55,7 +55,7 @@ public class CSquadSkillCasterController : CSkillCasterController
     }
     private void FindTarget(SOSkillData skillData)
     {
-        Vector2 targetPos = Vector2.zero;
+        Vector2 targetPos = Vector2.positiveInfinity;
 
         if(_squadContorller.SquadMembers.Count <= 0)
         {
@@ -75,20 +75,32 @@ public class CSquadSkillCasterController : CSkillCasterController
 
              for (int i = 0; i < targets.Length; i++)
              {
-                 float distance = Mathf.Abs(targets[i].transform.position.x - squadPos.x);
-                 if (distance < closistDistance)
-                 {
-                     closistDistance = distance;
-                     targetPos = targets[i].transform.position;
-                 }
+                float distance = Mathf.Abs(targets[i].transform.position.x - squadPos.x);
+                 
+                if(distance > skillData.Range)
+                {
+                    //Debug.Log("??");
+                    continue;
+                }
 
-                 if(targetPos.y > CUtil.MAP_HIGHT_MAX)
-                 {
-                     targetPos.y = CUtil.MAP_HIGHT_MAX -1;
-                 }
+                if (distance < closistDistance)
+                {
+                    closistDistance = distance;
+                    targetPos = targets[i].transform.position;
+                }
+
+                if(targetPos.y > CUtil.MAP_HIGHT_MAX)
+                {
+                    targetPos.y = CUtil.MAP_HIGHT_MAX -1;
+                }
 
              }
-
+             /*
+             Debug.DrawLine(squadPos, targetPos, Color.yellow, 5f);
+             Debug.Log($"[FindTarget] frame={Time.frameCount} skill={skillData.name} " +
+                      $"origin={squadPos:F2} aim={targetPos:F2} " +
+                      $"dx={Mathf.Abs(targetPos.x - squadPos.x):F2} range={skillData.Range}");
+             */
              CastSkill(skillData, targetPos);
              return;
          }
@@ -120,7 +132,7 @@ public class CSquadSkillCasterController : CSkillCasterController
     }
     */
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         for (int i = 0; i < _skillDataList.Count; i++)
         {

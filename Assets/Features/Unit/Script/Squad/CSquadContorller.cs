@@ -118,6 +118,7 @@ public class CSquadContorller : MonoBehaviour
         SetSquadMaxHP();
         SquadHpUpdate();
 
+        _skillCasterController.enabled = true;
         _skillCasterController.InitializeSquadSkill(squadDataPreset);
     }
 
@@ -157,6 +158,7 @@ public class CSquadContorller : MonoBehaviour
 
     public void KillSquad()
     {
+        _skillCasterController.enabled = false;
         CSquadPool.Instance.ReturnToPool(this);
 
         CGameManager.Instance.SquadListMap[_playerData].Remove(this);
