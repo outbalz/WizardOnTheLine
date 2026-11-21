@@ -25,6 +25,7 @@ public class CSquadContorller : MonoBehaviour
     #region inspector
     [SerializeField] private CSquadMarkerController _markerController;
     [SerializeField] private float _squadRadiusX;
+    [SerializeField] private CSquadSkillCasterController _skillCasterController;
 	#endregion
 
 	#region private var
@@ -36,6 +37,7 @@ public class CSquadContorller : MonoBehaviour
     public SOPlayerData PlayerData => _playerData;
     public float SquadRadiusX => _squadRadiusX;
     public List<CUnitController> SquadMembers => _squadMembers;
+    public CSquadSkillCasterController SkillCaster => _skillCasterController;
     public event System.Action OnSquadDeath;
     #endregion
 
@@ -51,6 +53,16 @@ public class CSquadContorller : MonoBehaviour
             if(!TryGetComponent<CSquadMarkerController>(out _markerController))
             {
                 Debug.LogWarning($"{this}/ _markerController is not assigned and not found on the GameObject {gameObject.name}.");
+                enabled = false;
+                return;
+            }
+        }
+
+        if( _skillCasterController == null )
+        {
+            if(!TryGetComponent<CSquadSkillCasterController>(out _skillCasterController))
+            {
+                Debug.LogWarning($"{this}/ _skillCasterController is not assigned and not found on the GameObject {gameObject.name}.");
                 enabled = false;
                 return;
             }

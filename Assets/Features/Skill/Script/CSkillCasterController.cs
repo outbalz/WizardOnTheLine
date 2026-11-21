@@ -137,6 +137,11 @@ public class CSkillCasterController : MonoBehaviour
 		_skillDatasMap.Add(skillData, 0);
 	}
 
+	public void SetPlayer(SOPlayerData playerData)
+	{
+		_player = playerData;
+	}
+
     private void OnDisable()
     {
 		for (int i = 0; i < _skillDataList.Count; i++)

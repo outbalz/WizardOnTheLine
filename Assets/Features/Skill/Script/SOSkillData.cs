@@ -65,3 +65,60 @@ public class CEtitySummonSkillEffect : CSkillEffect
 		}
 	}
 }
+
+[System.Serializable]
+public class CProjectileSummonSkillEffect : CSkillEffect
+{
+	[SerializeField] private SOProjectileData _projectileData;
+
+    [SerializeField] private float _randonRangeX;
+    [SerializeField] private float _randonRangeY;
+
+    [SerializeField] private int _summonAmount;
+    [SerializeField] private float _summonInterval;
+
+    [SerializeField] private string _modifierName;
+
+    public override void CastSkill(CSkillCasterController caster, Vector2 targetPos)
+    {
+        SummonProjectile(caster, targetPos).Forget();
+    }
+
+    public async UniTask SummonProjectile(CSkillCasterController caster, Vector2 targetPos)
+    {
+        float ranX = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanX", _randonRangeX);
+        float ranY = caster.ModifierHandler.GetModifiedValue(_modifierName + "RanY", _randonRangeY);
+
+        int amount = Mathf.RoundToInt(caster.ModifierHandler.GetModifiedValue(_modifierName + "Amount", _summonAmount));
+
+        for (int i = 0; i < amount; i++)
+        {
+            Vector2 ranPos = targetPos;
+            ranPos.x += Random.Range(-ranX, ranX);
+            ranPos.y += Random.Range(-ranY, ranY);
+
+            CProjectileController projectile = CProjectilePool.Instance.GetFromPool(_projectileData);
+            projectile.Initialized(caster.transform.position, ranPos);
+            projectile.gameObject.SetActive(true);
+
+            await UniTask.WaitForSeconds(_summonInterval);
+        }
+    }
+}
+
+[System.Serializable]
+public class CSquadSkillCastEffect : CSkillEffect
+{
+	[SerializeField] private SOSkillData _skillData;
+	[SerializeField] private int _castAmount;
+
+    public override void CastSkill(CSkillCasterController caster, Vector2 targtPos)
+    {
+		if(caster is not CSquadSkillCasterController squadSkillCaster)
+		{
+			return;
+		}
+
+		//DOSomthing
+    }
+}

@@ -17,9 +17,9 @@ MonoBehaviour:
   _movementSpeed: 2.5
   _weaponRange: 10
   _weaponDamage: 10
-  _weaponAimTimeMin: 1
-  _weaponAimTimeMax: 1.8
-  _weaponCoolDown: 2
+  _weaponAimTimeMin: 0.5
+  _weaponAimTimeMax: 1
+  _weaponCoolDown: 2.5
   _weaponDamageFalloff:
     serializedVersion: 2
     m_Curve:
@@ -54,3 +54,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _maxHp: 50
+  _projectile: {fileID: 0}

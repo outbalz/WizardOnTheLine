@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 9177685394384040224}
   - component: {fileID: 3078112197255469494}
   - component: {fileID: 6044316499413156852}
+  - component: {fileID: 5105666368243540976}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Unit
@@ -211,6 +212,7 @@ MonoBehaviour:
   _stateContoller: {fileID: 4670785964344551259}
   _targetFinder: {fileID: 3078112197255469494}
   _hpHandler: {fileID: 6044316499413156852}
+  _skillCaster: {fileID: 5105666368243540976}
   _selectionCircle: {fileID: 2681603290514756602}
 --- !u!114 &6867744193411173796
 MonoBehaviour:
@@ -361,6 +363,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CUnitHPHandler
   _unitController: {fileID: 3364450076485505681}
+--- !u!114 &5105666368243540976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265820906656408960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1f21bfabe058f4694905ca15189bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CSkillCasterController
+  _player: {fileID: 0}
+  _modifierHandler: {fileID: 8396585164198584801}
+  _skillDataList: []
 --- !u!1 &7526013707454699099
 GameObject:
   m_ObjectHideFlags: 0

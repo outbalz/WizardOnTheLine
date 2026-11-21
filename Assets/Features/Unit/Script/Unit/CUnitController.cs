@@ -10,6 +10,7 @@ public class CUnitController : MonoBehaviour
 	[SerializeField] private CUnitStateContoller _stateContoller;
 	[SerializeField] private CUnitTargetFinder _targetFinder;
 	[SerializeField] private CUnitHPHandler _hpHandler;
+	[SerializeField] private CSkillCasterController _skillCaster;
 
 	[Space]
 	[Header("UnitSelection")]
@@ -29,6 +30,7 @@ public class CUnitController : MonoBehaviour
 	public CModifierHandler Modifier => _modifierHandler;
 	public CUnitTargetFinder TargetFinder => _targetFinder;
 	public CUnitHPHandler HP => _hpHandler;
+	public CSkillCasterController SkillCaster => _skillCaster;
     #endregion
 
     public void InitializeUnit(CSquadContorller squad, SOUnitData data)
@@ -48,6 +50,7 @@ public class CUnitController : MonoBehaviour
 		_hpHandler.InitializeHP();
 		_unitStatusHandler.InitializeStat(data.StatusData);
 		_stateContoller.InitializeState(data);
+		_skillCaster.SetPlayer(Squad.PlayerData);
 		SelectUint(false);
     }
 
@@ -97,6 +100,16 @@ public class CUnitController : MonoBehaviour
 			if(!TryGetComponent <CUnitTargetFinder>(out _targetFinder))
 			{
 				Debug.LogWarning($"{this}/ _targetFinder is not assigned and not found on the GameObject {gameObject.name}.");
+				enabled = false;
+				return;
+			}
+		}
+
+		if(_skillCaster == null)
+		{
+			if(!TryGetComponent <CSkillCasterController>(out _skillCaster))
+			{
+				Debug.LogWarning($"{this}/ _skillCaster is not assigned and not found on the GameObject {gameObject.name}.");
 				enabled = false;
 				return;
 			}

@@ -10,7 +10,7 @@ public class CSquadSpawner : MonoBehaviour
 
     public void SpawnSquad(SOSquadDataPreset data, SOPlayerData playerData)
     {
-        CSquadContorller squad = CSquadFactory.Instance.Creat(transform, data, playerData);
+        CSquadContorller squad = CSquadFactory.Instance.Creat(transform.position, data, playerData);
 
         SOderContext moveOderContext = new SOderContext();
         moveOderContext.oderType = SOderContext.EOderType.AttackMove;

@@ -245,6 +245,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4292605325530001162}
   - component: {fileID: 4582756215149049931}
+  - component: {fileID: 4840410861320625928}
+  - component: {fileID: 1161093224126705254}
   m_Layer: 0
   m_Name: Squad
   m_TagString: Untagged
@@ -282,6 +284,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CSquadContorller
   _markerController: {fileID: 4562893081271917400}
   _squadRadiusX: 0.1
+  _skillCasterController: {fileID: 4840410861320625928}
+--- !u!114 &4840410861320625928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3458398316879598850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c3def9f97cadb48966e1d397ab8bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CSquadSkillCasterController
+  _player: {fileID: 0}
+  _modifierHandler: {fileID: 1161093224126705254}
+  _skillDataList: []
+  _squadContorller: {fileID: 4582756215149049931}
+--- !u!114 &1161093224126705254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3458398316879598850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fe2274e59493e4d94edb2af1b75c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CModifierHandler
 --- !u!1 &3847869620354803338
 GameObject:
   m_ObjectHideFlags: 0
