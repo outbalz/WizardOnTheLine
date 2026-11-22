@@ -77,9 +77,9 @@ public class CSquadContorller : MonoBehaviour
         }
     }
 
-    public void InitializeSquad(SOSquadDataPreset squadDataPreset, SOPlayerData playerData)
+    public void InitializeSquad(ISquadReferance squadData, SOPlayerData playerData)
     {
-        if (squadDataPreset == null)
+        if (squadData == null)
         {
             Debug.LogWarning("squadDataPreset is null.");
             return;
@@ -97,14 +97,21 @@ public class CSquadContorller : MonoBehaviour
 
         float spawnPointY = CUtil.MAP_HIGHT_MAX - Random.Range(0f, 1.8f);
 
-        for (int i = 0; i < squadDataPreset.SquadSize; i++)
+        for (int i = 0; i < squadData.SquadSize; i++)
         {
-            CUnitController unit = CUnitFactory.Instance.Creat(this, squadDataPreset.UnitDatas[i]);
 
-            float spawnPointX = unit.transform.position.x;
+            float spawnPointX = transform.position.x;
             spawnPointX += Random.Range(-_squadRadiusX, _squadRadiusX);
 
-            unit.transform.position = new Vector3(spawnPointX, spawnPointY, unit.transform.position.z);
+            CUnitController unit = CUnitFactory.Instance.Creat(this, squadData.UnitDatas[i], new Vector3(spawnPointX, spawnPointY, transform.position.z));
+
+            if (squadData.UnitModifier != null && squadData.UnitModifier.Count > 0)
+            {
+                for (int j = 0; j < squadData.UnitModifier.Count; j++)
+                {
+                    unit.Modifier.ApplyModifierWithCheck(squadData.UnitModifier[j]);
+                }
+            }
 
             _squadMembers.Add(unit);
 
@@ -113,13 +120,21 @@ public class CSquadContorller : MonoBehaviour
 
         ExceptionCheck();
 
-        _markerController.InitializeMarker(squadDataPreset);
+        _markerController.InitializeMarker(squadData);
 
         SetSquadMaxHP();
         SquadHpUpdate();
 
+        if(squadData.SquadModifier != null && squadData.SquadModifier.Count > 0)
+        {
+            for (int i = 0; i < squadData.SquadModifier.Count; i++)
+            {
+                _squadModifierHandler.ApplyModifierWithCheck(squadData.SquadModifier[i]);
+            }
+        }
+
         _skillCasterController.enabled = true;
-        _skillCasterController.InitializeSquadSkill(squadDataPreset);
+        _skillCasterController.InitializeSquadSkill(squadData);
     }
 
     public bool GiveOder(SOderContext context)

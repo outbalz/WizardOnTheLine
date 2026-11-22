@@ -128,12 +128,12 @@ public class CCameraContoller : MonoBehaviour
 
         if(mousePos.x >= Screen.width - _penArea)
         {
-            pos.x += _senstivity * Time.deltaTime;
+            pos.x += _senstivity * Time.unscaledDeltaTime;
         }
 
         else if (mousePos.x <= _penArea)
         {
-            pos.x -= _senstivity * Time.deltaTime;
+            pos.x -= _senstivity * Time.unscaledDeltaTime;
         }
 
         pos.x = Mathf.Clamp(pos.x, _minX, _maxX);

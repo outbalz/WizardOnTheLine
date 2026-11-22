@@ -151,12 +151,14 @@ public class CUnitController : MonoBehaviour
 	{
 		_collider.enabled = false;
 		_squad.SquadMembers.Remove(this);
-		//_skillCaster.ClearSkill();
 
 		if(_squad.SquadMembers.Count > 0)
 		{
 			_squad.SkillCaster.SetUnitSkillCasters();
 		}
+
+		_skillCaster.ClearSkill();
+		_modifierHandler.ClearModifier();
 
 		CUnitPool.Instance.ReturnToPool(this);
 	}

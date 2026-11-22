@@ -59,7 +59,7 @@ public class CSquadMarkerController : MonoBehaviour
 		}
 	}
 
-    public void InitializeMarker(SOSquadDataPreset preset)
+    public void InitializeMarker(ISquadReferance referance)
     {
 		enabled = true;
         ExceptionCheck();
@@ -67,7 +67,7 @@ public class CSquadMarkerController : MonoBehaviour
 
         gameObject.layer = _squad.PlayerData.UnitLayer;
 		//_renderer.sprite = preset.MarkerSprite;
-		_image.sprite = preset.MarkerSprite;
+		_image.sprite = referance.MarkerSprite;
         _color = _squad.PlayerData.PlayerColor;
 
 		_hpSlider.fillRect.GetComponent<Image>().color = _color;

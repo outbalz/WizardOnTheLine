@@ -1,8 +1,20 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+public interface ISquadReferance
+{
+    public int SquadSize { get; }
+    public IReadOnlyList<SOUnitData> UnitDatas { get; }
+    public IReadOnlyList<SOSkillData> SquadSkill { get; }
+    public IReadOnlyList<SOSkillData> UnitSkill { get; }
+    public IReadOnlyList<CModifier> SquadModifier { get; }
+    public IReadOnlyList<CModifier> UnitModifier { get; }
+    public Sprite MarkerSprite { get; }
+    public float Cost { get; }
+}
+
 [CreateAssetMenu(fileName = "SquadDataPresetSO_", menuName = "Scriptable Objects/GameData/SquadDataPreseSO")]
-public class SOSquadDataPreset : SOGameData
+public class SOSquadDataPreset : SOGameData, ISquadReferance
 {
     #region inspector
     [SerializeField] private List<SOUnitData> _unitData;
@@ -17,6 +29,8 @@ public class SOSquadDataPreset : SOGameData
     public IReadOnlyList<SOUnitData> UnitDatas => _unitData;
     public IReadOnlyList<SOSkillData> SquadSkill => _squadSkill;
     public IReadOnlyList<SOSkillData> UnitSkill => _unitSkill;
+    public IReadOnlyList<CModifier> SquadModifier => null;
+    public IReadOnlyList<CModifier> UnitModifier => null;
     public Sprite MarkerSprite => _markerSprite;
     public float Cost => _cost;
     #endregion

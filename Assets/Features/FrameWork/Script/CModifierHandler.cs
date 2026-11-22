@@ -137,4 +137,20 @@ public class CModifierHandler : MonoBehaviour
             ApplyModifier(modifier);
         }
     }
+
+	public void ClearModifier()
+	{
+		_modifierMap.Clear();
+		_aditiveModifierMap.Clear();
+	}
+
+    private void OnDisable()
+    {
+		ClearModifier();
+    }
+
+    private void OnDestroy()
+    {
+        ClearModifier();
+    }
 }

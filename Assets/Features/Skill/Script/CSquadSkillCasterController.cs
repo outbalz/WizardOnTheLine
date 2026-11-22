@@ -29,26 +29,26 @@ public class CSquadSkillCasterController : CSkillCasterController
         }
     }
 
-    public void InitializeSquadSkill(SOSquadDataPreset dataPreset)
+    public void InitializeSquadSkill(ISquadReferance data)
     {
         ClearSkill();
         SetUnitSkillCasters();
 
-        if(dataPreset.SquadSkill.Count == 0 && dataPreset.UnitSkill.Count == 0)
+        if(data.SquadSkill.Count == 0 && data.UnitSkill.Count == 0)
         {
             return;
         }
 
-        for (int i = 0; i < dataPreset.SquadSkill.Count; i++)
+        for (int i = 0; i < data.SquadSkill.Count; i++)
         {
-            AddSkill(dataPreset.SquadSkill[i]);
+            AddSkill(data.SquadSkill[i]);
         }
 
         for (int i = 0; i < _unitSkillCaster.Count; i++)
         {
-            for (int j = 0; j < dataPreset.UnitSkill.Count; j++)
+            for (int j = 0; j < data.UnitSkill.Count; j++)
             {
-                _unitSkillCaster[i].AddSkill(dataPreset.UnitSkill[j]);
+                _unitSkillCaster[i].AddSkill(data.UnitSkill[j]);
             }
         }
 
