@@ -8,7 +8,7 @@ public class CSquadSpawner : MonoBehaviour
     #endregion
 
 
-    public void SpawnSquad(SOSquadDataPreset data, SOPlayerData playerData)
+    public void SpawnSquad(ISquadReferance data, SOPlayerData playerData)
     {
         CSquadContorller squad = CSquadFactory.Instance.Creat(transform.position, data, playerData);
 

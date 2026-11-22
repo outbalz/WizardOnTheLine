@@ -19,7 +19,7 @@ public class CBackgroundController : MonoBehaviour
 {
 
     #region inspector
-    [SerializeField] private Transform _cameraTr;
+    [SerializeField] private Camera _cam;
 
     [SerializeField] private List<CBackgroundLayer> _backgroundLayers = new List<CBackgroundLayer>();
 
@@ -28,31 +28,18 @@ public class CBackgroundController : MonoBehaviour
     #endregion
 
     #region private var
-    private Camera _cam;
     #endregion
-
-    private void Reset()
-    {
-        if (_cameraTr == null && Camera.main != null)
-        {
-            _cameraTr = Camera.main.transform;
-        }
-    }
 
 
     private void Awake()
     {
-        if (_cameraTr == null && Camera.main != null)
-        {
-            _cameraTr = Camera.main.transform;
-        }
 
         if (_cam == null && Camera.main != null)
         {
             _cam = Camera.main;
         }
          
-        if(_cam == null ||  _cameraTr == null)
+        if(_cam == null)
         {
             Debug.LogWarning("carmera is not assigned in the inspector and no main camera found.");
             enabled = false;
@@ -148,8 +135,7 @@ public class CBackgroundController : MonoBehaviour
         return leftMost;
     }
 
-
-    private void UpdateLoop()
+    private void UpdateLoop(float moveAmount)
     {
         float camLeftX = GetCamLeftEdgeX();
         float camRightX = GetCamRightEdgeX();
@@ -159,8 +145,13 @@ public class CBackgroundController : MonoBehaviour
 
         for (int i = 0; i < _backgroundLayers.Count; i++)
         {
-            float rightMosEdgeX = GetRightMostEdgeX(_backgroundLayers[i]);
-            float leftMostEdgeX = GetLeftMostEdgeX(_backgroundLayers[i]);
+
+            float relativeMoveAount = moveAmount * (_backgroundLayers[i].SpeedMutiplier -1);
+
+            if (Mathf.Abs(moveAmount) < 0.00001f)
+            {
+                continue;
+            }
 
             for (int j = 0; j < _backgroundLayers[i].Segments.Count; j++)
             {
@@ -169,8 +160,9 @@ public class CBackgroundController : MonoBehaviour
                 float segRightEdgeX = seg.position.x + _backgroundLayers[i].HalfWitdth;
                 float segLeftEdgeX = seg.position.x - _backgroundLayers[i].HalfWitdth;
 
-                if (segRightEdgeX < LeftLimit)
+                if (relativeMoveAount < 0 && segRightEdgeX < LeftLimit)
                 {
+                    float rightMosEdgeX = GetRightMostEdgeX(_backgroundLayers[i]);
                     Vector3 p = seg.position;
 
                     p.x = rightMosEdgeX + _backgroundLayers[i].HalfWitdth - _overlap;
@@ -181,8 +173,9 @@ public class CBackgroundController : MonoBehaviour
                     //leftMostEdgeX = GetLeftMostEdgeX(_backgroundLayers[i]);
                 }
 
-                if (segLeftEdgeX > RightLimit)
+                if (relativeMoveAount > 0 && segLeftEdgeX > RightLimit)
                 {
+                    float leftMostEdgeX = GetLeftMostEdgeX(_backgroundLayers[i]);
                     Vector3 p = seg.position;
 
                     p.x = leftMostEdgeX - _backgroundLayers[i].HalfWitdth + _overlap;
@@ -198,7 +191,6 @@ public class CBackgroundController : MonoBehaviour
 
     public void OnCameraMove(float amount)
     {
-        float dx = amount;
 
         for (int i = 0; i < _backgroundLayers.Count; i++)
         {
@@ -207,12 +199,12 @@ public class CBackgroundController : MonoBehaviour
             {
                 Vector3 p = _backgroundLayers[i].Segments[j].position;
 
-                p.x += dx * _backgroundLayers[i].SpeedMutiplier;
+                p.x += amount * _backgroundLayers[i].SpeedMutiplier;
 
                 _backgroundLayers[i].Segments[j].position = p;
             }
         }
 
-        UpdateLoop();
+        UpdateLoop(amount);
     }
 }

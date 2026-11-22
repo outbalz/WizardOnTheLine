@@ -140,8 +140,9 @@ public class CCameraContoller : MonoBehaviour
 
         if (pos != _camera.transform.position)
         {
-            _bgController.OnCameraMove(pos.x - _camera.transform.position.x);
+            float dx = pos.x - _camera.transform.position.x;
             _camera.transform.position = pos;
+            _bgController.OnCameraMove(dx);
         }
     }
 }

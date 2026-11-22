@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3de041500fbe134fafa02999c7c1e16, type: 3}
   m_Name: UpgradeDataSO_CombatAlchemist_ManaThrower1
   m_EditorClassIdentifier: Assembly-CSharp::SOUpgradeData
-  _id: id
-  _name: name
-  _upgradeTag: 
-  _preset: {fileID: 0}
+  _id: UpgradeDataSO_CombatAlchemist_ManaThrower1
+  _name: UpgradeDataSO_CombatAlchemist_ManaThrower1
+  _upgradeTag: ManaThrower
+  _preset: {fileID: 11400000, guid: 6c29cf250b5fa8941b226f75178bab43, type: 2}
   _squadSkillData: []
   _unitSkillData: []
-  _upgradeMakerSprite: {fileID: 0}
-  _costChange: 0
-  _potraitSprite: {fileID: 0}
+  _upgradeMakerSprite: {fileID: 677103591, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
+  _replacement:
+  - IndexNum: 3
+    RepalceUnitData: {fileID: 11400000, guid: 287352f0ba0bc0e41a067da1516f303a, type: 2}
+  _costChange: 30
+  _potraitSprite: {fileID: 21300000, guid: 41faab29b0f60b640bdba65cb63446d9, type: 3}

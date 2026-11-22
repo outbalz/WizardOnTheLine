@@ -9,14 +9,13 @@ public class CGameManager : CSingleton<CGameManager>
 	[SerializeField] private SOPlayerData _playerData;
 	[SerializeField] private SOPlayerData _enemyPlayerData;
 	[SerializeField] private CEnemyAIManager _enemyAIManager;
+	[SerializeField] private CSquadSpawner _spawner;
 
 	[Space]
 	[SerializeField] private float _difficultyMultiplyer;
 
-	[Header("UI")]
-	[SerializeField] private TMP_Text _CMPtext;
-	[SerializeField] private GameObject _victoryPanel;
-	[SerializeField] private GameObject _defeatedPanel;
+	[Space]
+	[SerializeField] private CBattleUIManager _battleUIManager;
 	[SerializeField] private Camera _NoPostCam;
 	#endregion
 
@@ -32,16 +31,11 @@ public class CGameManager : CSingleton<CGameManager>
 	public SOPlayerData EnemyPlayerData => _enemyPlayerData;
 	public Dictionary<SOPlayerData, List<CSquadContorller>> SquadListMap => _squadListMap;
 	public float PlayerCMP => _playerCMP;
+	public CSquadSpawner Spawner => _spawner;
     #endregion
 
     protected override void Awake()
     {
-        if(_CMPtext == null)
-		{
-			Debug.LogWarning("_CMPtext is not assigned in the inspector.");
-			enabled = false;
-			return;
-		}
 
 		if (_playerData == null || _enemyPlayerData == null)
 		{
@@ -71,7 +65,7 @@ public class CGameManager : CSingleton<CGameManager>
 			_numHolder -= num;
 			_playerCMP += num;
 
-			UpdateText();
+			_battleUIManager.UpdateText(_playerCMP);
 		}
     }
 
@@ -83,7 +77,7 @@ public class CGameManager : CSingleton<CGameManager>
 		}
 
 		_playerCMP -= amount;
-		UpdateText();
+        _battleUIManager.UpdateText(_playerCMP);
 
         return true;
 	}
@@ -99,10 +93,6 @@ public class CGameManager : CSingleton<CGameManager>
 		return true;
 	}
 
-	private void UpdateText()
-	{
-        _CMPtext.SetText($"{_playerCMP:0}");
-    }
 
 	public void GameOver(bool isVictory)
 	{
@@ -110,16 +100,6 @@ public class CGameManager : CSingleton<CGameManager>
 		_enemyAIManager.enabled = false;
 		_NoPostCam.gameObject.SetActive(false);
 
-		Cursor.lockState = CursorLockMode.None;
-
-		if (isVictory)
-		{
-			_victoryPanel.SetActive(true);
-		}
-
-		else
-		{
-            _defeatedPanel.SetActive(true);
-        }
+		_battleUIManager.GameOver(isVictory);
 	}
 }

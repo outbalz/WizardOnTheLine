@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 8090609670529395952}
   - component: {fileID: 5696336952228880090}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CostText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,6 +643,10 @@ MonoBehaviour:
   _spawner: {fileID: 0}
   _playerData: {fileID: 11400000, guid: d5f122946661f21479107ff8052b6c46, type: 2}
   _preset: {fileID: 11400000, guid: 55f15897273b40445b54fb8eaf8dd5c6, type: 2}
+  _index: 0
+  _dropdown: {fileID: 4161928368103647476}
+  _potrait: {fileID: 2306234920644335945}
+  _costText: {fileID: 5696336952228880090}
 --- !u!1 &6014788713732870447
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +734,7 @@ GameObject:
   - component: {fileID: 7024808450993938265}
   - component: {fileID: 2306234920644335945}
   m_Layer: 5
-  m_Name: Image
+  m_Name: PotraitImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

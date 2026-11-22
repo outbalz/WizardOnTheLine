@@ -13,7 +13,7 @@ public class CSquadFactory : CObjectPoolFactory<CSquadFactory, CSquadPool, CSqua
         return squad;
     }
 
-    public CSquadContorller Creat(Vector3 pos, SOSquadDataPreset data, SOPlayerData playerData)
+    public CSquadContorller Creat(Vector3 pos, ISquadReferance data, SOPlayerData playerData)
     {
         CSquadContorller squad = Creat();
         squad.transform.position = pos;
