@@ -115,7 +115,11 @@ public class CSquadMarkerController : MonoBehaviour
 
 		else
 		{
-			color.a = 150;
+			if (_squad.PlayerData == CGameManager.Instance.PlayerData)
+			{
+				color.a = 50;
+			}
+
 			//_renderer.color = color;
 			_image.color = color;
 		}

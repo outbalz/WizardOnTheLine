@@ -190,6 +190,7 @@ public class CSquadSkillCastEffect : CSkillEffect
 			}
 
 			squadSkillCaster.UnitSkillCaster[ranIndex[i]].CastSkill(_skillData, closistPos);
+
 		}
     }
 }
