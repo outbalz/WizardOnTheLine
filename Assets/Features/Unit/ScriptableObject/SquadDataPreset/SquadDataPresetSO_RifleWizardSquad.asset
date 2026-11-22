@@ -27,3 +27,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc39745348be8fe4abb5e5db6ebb4135, type: 2}
   _markerSprite: {fileID: -38586969, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
   _cost: 200
+  _potraitSprite: {fileID: 21300000, guid: 0051ab7705a4f374b8959ace1dcf29e0, type: 3}

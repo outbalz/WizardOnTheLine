@@ -22,6 +22,8 @@ public class SOSquadDataPreset : SOGameData, ISquadReferance
     [SerializeField] private List<SOSkillData> _unitSkill;
     [SerializeField] private Sprite _markerSprite;
     [SerializeField] private float _cost;
+
+    [SerializeField] private Sprite _potraitSprite;
     #endregion
 
     #region property
@@ -33,5 +35,7 @@ public class SOSquadDataPreset : SOGameData, ISquadReferance
     public IReadOnlyList<CModifier> UnitModifier => null;
     public Sprite MarkerSprite => _markerSprite;
     public float Cost => _cost;
+
+    public Sprite PotraitSprite => _potraitSprite;
     #endregion
 }

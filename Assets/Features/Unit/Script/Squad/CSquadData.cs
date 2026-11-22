@@ -13,6 +13,8 @@ public class CSquadData : ISquadReferance
     [SerializeField] private List<SOSkillData> _squadSkillData;
     [SerializeField] private List<SOSkillData> _unitSkillData;
     [SerializeField] private float _cost;
+
+    [SerializeField] private Sprite _potraitSprite;
     #endregion
 
     #region property
@@ -26,6 +28,8 @@ public class CSquadData : ISquadReferance
     public IReadOnlyList<SOSkillData> SquadSkill => _squadSkillData;
     public IReadOnlyList<SOSkillData> UnitSkill => _unitSkillData;
     public float Cost => _cost;
+
+    public Sprite PotraitSprite => _potraitSprite;
     #endregion
 
     public CSquadData(string tag, SOSquadDataPreset preset)
@@ -94,6 +98,11 @@ public class CSquadData : ISquadReferance
         }
 
         _cost += upgrade.CostChange;
+
+        if(upgrade.PotraitSprite != null)
+        {
+            _potraitSprite = upgrade.PotraitSprite;
+        }
 
         return true;
     }

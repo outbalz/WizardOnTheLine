@@ -104,10 +104,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 25
         width: 130
-        height: 240
-      alignment: 9
+        height: 215
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -126,10 +126,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 130
-        y: 0
+        y: 25
         width: 130
-        height: 240
-      alignment: 9
+        height: 215
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -148,10 +148,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 260
-        y: 0
+        y: 25
         width: 130
-        height: 240
-      alignment: 9
+        height: 215
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -170,10 +170,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 390
-        y: 0
+        y: 25
         width: 130
-        height: 240
-      alignment: 9
+        height: 215
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -192,10 +192,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 520
-        y: 0
+        y: 25
         width: 130
-        height: 240
-      alignment: 9
+        height: 215
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -214,10 +214,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 650
-        y: 0
+        y: 25
         width: 130
-        height: 240
-      alignment: 9
+        height: 215
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -236,10 +236,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 780
-        y: 0
+        y: 25
         width: 130
-        height: 240
-      alignment: 9
+        height: 215
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -258,10 +258,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 910
-        y: 0
+        y: 25
         width: 130
-        height: 240
-      alignment: 9
+        height: 215
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -280,10 +280,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1040
-        y: 0
+        y: 25
         width: 130
-        height: 240
-      alignment: 9
+        height: 215
+      alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -311,7 +311,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":130.0,"y":240.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":130.0,"y":215.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       squadIcon 1_0: 4345123836142220414
       squadIcon 1_1: -2068534106

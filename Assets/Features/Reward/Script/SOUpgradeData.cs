@@ -14,6 +14,8 @@ public class SOUpgradeData : SOGameData
     [SerializeField] private Sprite _upgradeMakerSprite;
     [SerializeField] private List<SMemberReplacement> _replacement;
     [SerializeField] private float _costChange = 0;
+
+    [SerializeField] private Sprite _potraitSprite;
     #endregion
 
     #region property
@@ -26,9 +28,12 @@ public class SOUpgradeData : SOGameData
     public Sprite UpgradeMakerSprite => _upgradeMakerSprite;
     public IReadOnlyList<SMemberReplacement> Replacement => _replacement;
     public float CostChange => _costChange;
+
+    public Sprite PotraitSprite => _potraitSprite;
     #endregion
 }
 
+[System.Serializable]
 public struct SMemberReplacement
 {
     public int IndexNum;
