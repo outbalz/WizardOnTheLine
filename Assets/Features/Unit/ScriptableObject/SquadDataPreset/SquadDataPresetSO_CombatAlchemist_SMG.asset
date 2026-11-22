@@ -19,5 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2d608ba4f599d140a0948f71b490a44, type: 2}
   - {fileID: 11400000, guid: 287352f0ba0bc0e41a067da1516f303a, type: 2}
   - {fileID: 11400000, guid: b2d608ba4f599d140a0948f71b490a44, type: 2}
-  _markerSprite: {fileID: -2818913466763352935, guid: b73e12a94f10761438c1943837761af0, type: 3}
+  _squadSkill: []
+  _unitSkill: []
+  _markerSprite: {fileID: 677103591, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
   _cost: 120

@@ -283,6 +283,12 @@ public class CUnitStateContoller : MonoBehaviour
     {
         await UniTask.Yield();
 
+        if (ct.IsCancellationRequested)
+        {
+            CarryOutOder();
+            return;
+        }
+
         while (Mathf.Abs(targetTr.position.x - transform.position.x) > _unitController.Status.WeaponRange - 1)
         {
             if (ct.IsCancellationRequested)

@@ -57,7 +57,7 @@ public class CSkillCasterController : MonoBehaviour
 
 		if(targetPos.y > CUtil.MAP_HIGHT_MAX || targetPos.y < CUtil.MAP_HIGHT_MIN)
 		{
-			Debug.Log("Skill Can't not casted outside of map range");
+			Debug.Log($" {targetPos} Skill Can't not casted outside of map range");
 			return false;
 		}
 

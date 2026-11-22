@@ -56,6 +56,7 @@ public class CSquadSkillCasterController : CSkillCasterController
     private void FindTarget(SOSkillData skillData)
     {
         Vector2 targetPos = Vector2.positiveInfinity;
+        bool hasTarget = false;
 
         if(_squadContorller.SquadMembers.Count <= 0)
         {
@@ -64,29 +65,30 @@ public class CSquadSkillCasterController : CSkillCasterController
 
         Vector2 squadPos = _squadContorller.SquadMembers[0].transform.position;
 
-         Vector2 pointA = new Vector2 (squadPos.x - skillData.Range, CUtil.MAP_HIGHT_MAX);
-         Vector2 pointB = new Vector2 (squadPos.x + skillData.Range, CUtil.MAP_HIGHT_MIN);
+        Vector2 pointA = new Vector2 (squadPos.x - skillData.Range, CUtil.MAP_HIGHT_MAX);
+        Vector2 pointB = new Vector2 (squadPos.x + skillData.Range, CUtil.MAP_HIGHT_MIN);
 
-         Collider2D[] targets = Physics2D.OverlapAreaAll(pointA, pointB, _squadContorller.PlayerData.TargetLayer);
+        Collider2D[] targets = Physics2D.OverlapAreaAll(pointA, pointB, _squadContorller.PlayerData.TargetLayer);
 
-         if (targets.Length > 0)
-         {
-             float closistDistance = float.MaxValue;
+        if (targets.Length > 0)
+        {
+            float closistDistance = float.MaxValue;
 
-             for (int i = 0; i < targets.Length; i++)
-             {
+            for (int i = 0; i < targets.Length; i++)
+            {
                 float distance = Mathf.Abs(targets[i].transform.position.x - squadPos.x);
-                 
+                
                 if(distance > skillData.Range)
                 {
-                    //Debug.Log("??");
-                    continue;
+                     //Debug.Log("??");
+                     continue;
                 }
 
                 if (distance < closistDistance)
                 {
-                    closistDistance = distance;
-                    targetPos = targets[i].transform.position;
+                     closistDistance = distance;
+                     targetPos = targets[i].transform.position;
+                     hasTarget = true;
                 }
 
                 if(targetPos.y > CUtil.MAP_HIGHT_MAX)
@@ -94,16 +96,21 @@ public class CSquadSkillCasterController : CSkillCasterController
                     targetPos.y = CUtil.MAP_HIGHT_MAX -1;
                 }
 
-             }
-             /*
-             Debug.DrawLine(squadPos, targetPos, Color.yellow, 5f);
-             Debug.Log($"[FindTarget] frame={Time.frameCount} skill={skillData.name} " +
-                      $"origin={squadPos:F2} aim={targetPos:F2} " +
-                      $"dx={Mathf.Abs(targetPos.x - squadPos.x):F2} range={skillData.Range}");
-             */
-             CastSkill(skillData, targetPos);
-             return;
-         }
+            }
+            /*
+            Debug.DrawLine(squadPos, targetPos, Color.yellow, 5f);
+            Debug.Log($"[FindTarget] frame={Time.frameCount} skill={skillData.name} " +
+                     $"origin={squadPos:F2} aim={targetPos:F2} " +
+                     $"dx={Mathf.Abs(targetPos.x - squadPos.x):F2} range={skillData.Range}");
+            */
+            
+            if (hasTarget)
+            {
+                CastSkill(skillData, targetPos);
+                return;
+            }
+        }
+            
     }
     
     /*

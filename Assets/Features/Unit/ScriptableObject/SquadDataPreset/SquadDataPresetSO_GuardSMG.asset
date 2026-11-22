@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07cd509833d7744d891933098a8a6f5, type: 3}
+  m_Name: SquadDataPresetSO_GuardSMG
+  m_EditorClassIdentifier: Assembly-CSharp::SOSquadDataPreset
+  _id: SquadDataPresetSO_GuardSMG
+  _name: SquadDataPresetSO_GuardSMG
+  _unitData:
+  - {fileID: 11400000, guid: e8c127bf529da254fbe814093ea577d4, type: 2}
+  - {fileID: 11400000, guid: e8c127bf529da254fbe814093ea577d4, type: 2}
+  - {fileID: 11400000, guid: e8c127bf529da254fbe814093ea577d4, type: 2}
+  - {fileID: 11400000, guid: e8c127bf529da254fbe814093ea577d4, type: 2}
+  - {fileID: 11400000, guid: e8c127bf529da254fbe814093ea577d4, type: 2}
+  _squadSkill: []
+  _unitSkill: []
+  _markerSprite: {fileID: -1778852917, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
+  _cost: 180

@@ -74,8 +74,8 @@ MonoBehaviour:
     - rid: 6178808320384565332
       type: {class: CProjectileAreaDamageEffect, ns: , asm: Assembly-CSharp}
       data:
-        _width: 0.2
-        _height: 0.3
+        _width: 0.5
+        _height: 0.5
         _damage: 10
         _damageFallOff:
           serializedVersion: 2

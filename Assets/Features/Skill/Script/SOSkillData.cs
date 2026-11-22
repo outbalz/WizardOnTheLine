@@ -132,11 +132,13 @@ public class CSquadSkillCastEffect : CSkillEffect
 			ranIndex[i] = i;
 		}
 
-		for (int i = ranIndex.Length -1; i >= 0; i--)
+		for (int i = ranIndex.Length -1; i > 0; i--)
 		{
-			int temp = ranIndex[i];
-			ranIndex[i] = Random.Range(0, temp);
-			ranIndex[ranIndex[i]] = temp;
+			int ran = Random.Range(0, i +1);
+			int temp =  ranIndex[i];
+			ranIndex[i] = ranIndex[ran];
+			ranIndex[ran] = temp;
+
 		}
 
 		int castAmount = Mathf.RoundToInt(squadSkillCaster.ModifierHandler.GetModifiedValue(_modifierName, _castAmount));
@@ -163,6 +165,11 @@ public class CSquadSkillCastEffect : CSkillEffect
 
 			for (int j = 0; j < targets.Length; j++)
 			{
+				if (targets[j].CompareTag("SquadMarker"))
+				{
+					continue;
+				}
+
 				if (Mathf.Abs(targets[j].transform.position.x - targtPos.x) > _sreachRange)
 				{
 					continue;
