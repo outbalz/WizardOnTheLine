@@ -101,7 +101,7 @@ public class CProjectileAreaDamageEffect : CProjectileAreaEffect
 
                 float t = distanceFormCanter / maxDistance;
 
-                damage = _damage * _damageFallOff.Evaluate(t);
+                damage = _damage * _damageFallOff.Evaluate(Mathf.Clamp01(t));
             }
 
             ITargetable target = colliders[i].GetComponent<ITargetable>();

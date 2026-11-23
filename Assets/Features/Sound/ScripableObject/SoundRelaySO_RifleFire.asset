@@ -18,8 +18,8 @@ MonoBehaviour:
   - Clip: {fileID: 8300000, guid: 708d65bd50a2634488277ba85e866364, type: 3}
     Delay: 0
     Volume: 0.2
-    PitchMin: 0.8
-    PitchMax: 1.2
+    PitchMin: 0.4
+    PitchMax: 0.6
   - Clip: {fileID: 8300000, guid: e32f268366de12942a4a86dd1f6648aa, type: 3}
     Delay: 0.5
     Volume: 0.05

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899d83be782cbd748a2f370b5942a94d, type: 3}
+  m_Name: UnitDataSO_RifleWizard_ATRifle
+  m_EditorClassIdentifier: Assembly-CSharp::SOUnitData
+  _id: UnitDataSO_RifleWizard_ATRifle
+  _name: UnitDataSO_RifleWizard_ATRifle
+  _statusData: {fileID: 11400000, guid: 7d518a075468110468e2f6540bb9f2d3, type: 2}
+  _animatorOverrideController: {fileID: 22100000, guid: ab0cfcaec37803047a13a7c50dc0719a, type: 2}
