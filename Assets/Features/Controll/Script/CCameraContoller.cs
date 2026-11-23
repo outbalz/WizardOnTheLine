@@ -1,12 +1,13 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Threading;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CCameraContoller : CSingleton<CCameraContoller>
 {
 	#region inspector
-	[SerializeField] private Camera _camera;
+	[SerializeField] private CinemachineCamera _camera;
 	[SerializeField] private float _senstivity = 1.0f;
 	[SerializeField] private float _penArea = 1.0f;
     [SerializeField] private float _minX;
@@ -25,12 +26,7 @@ public class CCameraContoller : CSingleton<CCameraContoller>
     {
         if (_camera == null)
         {
-            _camera = Camera.main;
-        }
-
-        if (_camera == null)
-        {
-            Debug.LogWarning("Camera is not assigned in the inspector and no main camera found.");
+            Debug.LogWarning("Camera is not assigned in the inspector.");
         }
 
         if (CInputDispatcher.Instance.InputActionMap.TryGetValue(_mousePositionActionName, out CInputActionData mousePositionAction))
@@ -148,8 +144,9 @@ public class CCameraContoller : CSingleton<CCameraContoller>
         }
     }
 
-    public static void ShakeCamera(float strength, float duration)
+    public static void ShakeCamera(CinemachineImpulseSource impulseSource, float force)
     {
+        impulseSource.GenerateImpulseWithForce(force);
     }
 
 }

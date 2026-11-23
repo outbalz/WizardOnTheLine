@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Cinemachine;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "EntityDataSO_", menuName = "Scriptable Objects/GameData/EntityDataSO")]
 public class SOEntityData : SOGameData, IPoolabeSO<CSkillEntityController>
@@ -55,8 +56,6 @@ public class CAreaDamageEntityEffect : CEntityEffect
 {
     [SerializeField] private float _damage;
     [SerializeField] private AnimationCurve _damageFallOff;
-    [SerializeField] private float _cameraShakeStrengh;
-    [SerializeField] private float _cameraShakeDuration;
 
     public override void ApplyEffect(CSkillEntityController entity)
     {
@@ -65,11 +64,6 @@ public class CAreaDamageEntityEffect : CEntityEffect
         if (colliders.Length <= 0)
         {
             return;
-        }
-
-        if (_cameraShakeDuration > 0)
-        {
-            CCameraContoller.ShakeCamera(_cameraShakeStrengh, _cameraShakeDuration);
         }
 
         Vector3 pointA = new Vector3(entity.transform.position.x - (entity.Width * 0.5f), entity.transform.position.y - (entity.Height * 0.5f), entity.transform.position.z);
@@ -91,7 +85,7 @@ public class CAreaDamageEntityEffect : CEntityEffect
 
                 float t = distanceFormCanter / maxDistance;
 
-                damage = _damage * _damageFallOff.Evaluate(t);
+                damage = _damage * _damageFallOff.Evaluate(Mathf.Clamp01(t));
             }
 
             ITargetable target = colliders[i].GetComponent<ITargetable>();

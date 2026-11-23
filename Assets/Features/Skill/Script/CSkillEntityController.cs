@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using Unity.Cinemachine;
+using UnityEngine;
 
 public class CSkillEntityController : MonoBehaviour
 {
 	#region inspector
-	[SerializeField] SOEntityData _data;
+	[SerializeField] private SOEntityData _data;
+	[SerializeField] private float _cameraShakeStrengh;
+    [SerializeField] private CinemachineImpulseSource _impulseSource;
 	#endregion
 
 	#region private var
@@ -58,7 +61,11 @@ public class CSkillEntityController : MonoBehaviour
 		else if (!_isEffectApplyed && _timer >= EffectTime)
 		{
 			Effect.ApplyEffect(this);
-			_isEffectApplyed = true;
+            if (_impulseSource != null)
+            {
+                CCameraContoller.ShakeCamera(_impulseSource, _cameraShakeStrengh);
+            }
+            _isEffectApplyed = true;
 		}
 
 		_timer += Time.deltaTime;
