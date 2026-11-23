@@ -551,10 +551,6 @@ MonoBehaviour:
     m_Options:
     - m_Text: 
       m_Image: {fileID: -2068534106, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
-    - m_Text: 
-      m_Image: {fileID: 1679917289, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
-    - m_Text: 
-      m_Image: {fileID: 1872895338, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8987,6 +8983,81 @@ MonoBehaviour:
   m_Spacing: {x: 20, y: 20}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1 &1288526530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1288526531}
+  - component: {fileID: 1288526533}
+  - component: {fileID: 1288526532}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1288526531
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288526530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2042896822}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -57.7}
+  m_SizeDelta: {x: 65, y: 107.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1288526532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288526530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 4345123836142220414, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1288526533
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288526530}
+  m_CullTransparentMesh: 1
 --- !u!1 &1431990908
 GameObject:
   m_ObjectHideFlags: 0
@@ -9445,7 +9516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375d804f630e7524cb1b7d57a966613d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CGameManager
-  _CMPperSec: 10
+  _CMPperSec: 20
   _playerData: {fileID: 11400000, guid: d5f122946661f21479107ff8052b6c46, type: 2}
   _enemyPlayerData: {fileID: 11400000, guid: ca10023107f63ee4fbdf800217fe398c, type: 2}
   _enemyAIManager: {fileID: 1476403843}
@@ -10898,6 +10969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1881812832}
   - component: {fileID: 1881812831}
+  - component: {fileID: 1881812833}
   m_Layer: 0
   m_Name: GameManagerDonDestroyOnLoad
   m_TagString: Untagged
@@ -10934,9 +11006,22 @@ Transform:
   m_LocalPosition: {x: 22.36781, y: -1.26391, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2049929373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881812833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881812830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ee39184966f6645bd52b843511f363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CSoundManager
 --- !u!1001 &1908895671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11441,6 +11526,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 722723563}
+  - {fileID: 1288526531}
   - {fileID: 189434218}
   m_Father: {fileID: 1931932761}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11573,6 +11659,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045592707}
   m_CullTransparentMesh: 1
+--- !u!1 &2049929372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2049929373}
+  - component: {fileID: 2049929374}
+  m_Layer: 0
+  m_Name: AudioPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2049929373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049929372}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1881812832}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2049929374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049929372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae64d72989acab4f92ce74ea122ace5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CAudioSourcePool
+  _prefab: {fileID: 1162182595837372779, guid: e17b890d0d90d7641bf03d872c1542ab, type: 3}
+  _prewarmCount: 20
+  _poolRoot: {fileID: 2049929373}
 --- !u!1 &2077022103
 GameObject:
   m_ObjectHideFlags: 0

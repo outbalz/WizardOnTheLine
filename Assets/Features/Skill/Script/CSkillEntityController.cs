@@ -30,6 +30,11 @@ public class CSkillEntityController : MonoBehaviour
 		_isEffectApplyed = false;
 
 		_isInitialized = true;
+
+		if(_data.Sound != null)
+		{
+			CSoundManager.PlaySoundRelay(_data.Sound, transform.position);
+		}
     }
 
     private void Update()

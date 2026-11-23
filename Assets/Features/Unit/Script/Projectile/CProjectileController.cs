@@ -27,6 +27,11 @@ public class CProjectileController : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
+
+		if (_data.LaunchSound != null)
+		{
+			CSoundManager.PlaySoundRelay(_data.LaunchSound, originPos);
+		}
     }
 
     private void Update()
@@ -39,6 +44,12 @@ public class CProjectileController : MonoBehaviour
 		if (_timer >= _data.TravelTime)
 		{
 			_data.Effect.ApplyEffect(_targetPos);
+
+			if (_data.ImpactSound != null)
+			{
+				CSoundManager.PlaySoundRelay(_data.ImpactSound, _targetPos);
+			}
+
 			KillProjectile();
 			return;
 		}

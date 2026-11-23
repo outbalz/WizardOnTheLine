@@ -16,7 +16,7 @@ public class CUnitStatusHandler : MonoBehaviour
     public float WeaponRange => GetStatusValue(_unitStatusDataSO.WeaponRange, "WeaponRange");
     public float WeaponCoolDown => GetStatusValue(_unitStatusDataSO.WeaponCoolDown, "WeaponCoolDown");
     public float WeaponAimTime => GetWeaponAimTime();
-
+    public SOSoundRelay WeaponSound => _unitStatusDataSO.WeaponSound;
     public float MaxHP => GetStatusValue(_unitStatusDataSO.MaxHp, "MaxHP");
 
     public SOProjectileData Projectile => _unitStatusDataSO.Projectile;

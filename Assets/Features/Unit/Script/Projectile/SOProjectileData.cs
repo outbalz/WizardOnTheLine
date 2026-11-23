@@ -11,6 +11,9 @@ public class SOProjectileData : SOGameData, IPoolabeSO<CProjectileController>
     [SerializeField] private float _heightMax;
     [SerializeField] private float _travelTime;
     [SerializeField] private bool _isFaceingTarget;
+    [SerializeField] private SOSoundRelay _launchSound;
+    [SerializeField] private SOSoundRelay _impactSound;
+
     [SerializeReference, SubclassSelector] private CProjectileEffect _effect;
     #endregion
 
@@ -21,6 +24,8 @@ public class SOProjectileData : SOGameData, IPoolabeSO<CProjectileController>
     public float HeightMax => _heightMax;
     public float TravelTime => _travelTime;
     public bool IsFaceingTarget => _isFaceingTarget;
+    public SOSoundRelay LaunchSound => _launchSound;
+    public SOSoundRelay ImpactSound => _impactSound;
     public CProjectileEffect Effect => _effect;
     #endregion
 

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "UpgradeDataSO_", menuName = "Scriptable Objects/UpgradeDataSO")]
+[CreateAssetMenu(fileName = "UpgradeDataSO_", menuName = "Scriptable Objects/GameData" +
+    "" +
+    "/UpgradeDataSO")]
 public class SOUpgradeData : SOGameData
 {
     #region inspector

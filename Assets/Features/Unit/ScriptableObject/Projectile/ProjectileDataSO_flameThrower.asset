@@ -66,6 +66,8 @@ MonoBehaviour:
   _heightMax: 0
   _travelTime: 1.5
   _isFaceingTarget: 1
+  _launchSound: {fileID: 11400000, guid: b0e7f1526c840904486ea39466bd31f6, type: 2}
+  _impactSound: {fileID: 0}
   _effect:
     rid: 6178808320384565332
   references:

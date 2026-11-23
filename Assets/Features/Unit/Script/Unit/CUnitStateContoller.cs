@@ -457,6 +457,11 @@ public class CUnitStateContoller : MonoBehaviour
             originPos.y += _projectileOffset.y;
         }
 
+        if(_unitController.Status.WeaponSound != null)
+        {
+            CSoundManager.PlaySoundRelay(_unitController.Status.WeaponSound, originPos);
+        }
+
         float distance = Mathf.Abs(transform.position.x - targetPos.x);
         target.TakeDamage(_unitController.Status.GetWeaponDamage(distance));
 

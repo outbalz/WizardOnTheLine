@@ -15,6 +15,7 @@ public class SOEntityData : SOGameData, IPoolabeSO<CSkillEntityController>
     [SerializeField] private float _effectTime;
 
     [SerializeField] private bool _isEffectContinuous;
+    [SerializeField] private SOSoundRelay _sound;
 
     [Space]
     [SerializeReference, SubclassSelector] private CEntityEffect _effect;
@@ -26,6 +27,7 @@ public class SOEntityData : SOGameData, IPoolabeSO<CSkillEntityController>
     public float LifeTime => _lifeTime;
     public float EffectTime => _effectTime;
     public bool IsEffectContinuous => _isEffectContinuous;
+    public SOSoundRelay Sound => _sound;
     public CEntityEffect Effect => _effect;
     public CSkillEntityController Prefab => _prefab;
     #endregion
