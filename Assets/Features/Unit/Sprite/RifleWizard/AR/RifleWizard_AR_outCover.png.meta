@@ -1,0 +1,405 @@
+fileFormatVersion: 2
+guid: fa19052de419ec547a07cfb058145845
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8955567174627408128
+    second: RifleWizard_AR_outCover_0
+  - first:
+      213: 2718762439509958062
+    second: RifleWizard_AR_outCover_1
+  - first:
+      213: 1112229531650428725
+    second: RifleWizard_AR_outCover_2
+  - first:
+      213: 105362292911608058
+    second: RifleWizard_AR_outCover_3
+  - first:
+      213: -8479789910313544862
+    second: RifleWizard_AR_outCover_4
+  - first:
+      213: -6011079745438010519
+    second: RifleWizard_AR_outCover_5
+  - first:
+      213: 1946826039263172696
+    second: RifleWizard_AR_outCover_6
+  - first:
+      213: -7422462018803595366
+    second: RifleWizard_AR_outCover_7
+  - first:
+      213: -3600097900803835653
+    second: RifleWizard_AR_outCover_8
+  - first:
+      213: -4656504904807232391
+    second: RifleWizard_AR_outCover_9
+  - first:
+      213: 4769443969321716258
+    second: RifleWizard_AR_outCover_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 009b0dd85e0984c70800000000000000
+      internalID: 8955567174627408128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ead5aabb80cfab520800000000000000
+      internalID: 2718762439509958062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f09bebdde6f6f00800000000000000
+      internalID: 1112229531650428725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af097b97272567100800000000000000
+      internalID: 105362292911608058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263d1d1210cb15a80800000000000000
+      internalID: -8479789910313544862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_5
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9633f90d1da549ca0800000000000000
+      internalID: -6011079745438010519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85813cdc7f3840b10800000000000000
+      internalID: 1946826039263172696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97026aae1e1ef890800000000000000
+      internalID: -7422462018803595366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_8
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf835f98802e90ec0800000000000000
+      internalID: -3600097900803835653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_9
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97cc916d575c06fb0800000000000000
+      internalID: -4656504904807232391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_outCover_10
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22acc8f3508703240800000000000000
+      internalID: 4769443969321716258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f3430aff45c40584b8a5f5977c38199a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":11.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.25,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      RifleWizard_AR_outCover_0: 8955567174627408128
+      RifleWizard_AR_outCover_1: 2718762439509958062
+      RifleWizard_AR_outCover_10: 4769443969321716258
+      RifleWizard_AR_outCover_2: 1112229531650428725
+      RifleWizard_AR_outCover_3: 105362292911608058
+      RifleWizard_AR_outCover_4: -8479789910313544862
+      RifleWizard_AR_outCover_5: -6011079745438010519
+      RifleWizard_AR_outCover_6: 1946826039263172696
+      RifleWizard_AR_outCover_7: -7422462018803595366
+      RifleWizard_AR_outCover_8: -3600097900803835653
+      RifleWizard_AR_outCover_9: -4656504904807232391
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

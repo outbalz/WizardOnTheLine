@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3de041500fbe134fafa02999c7c1e16, type: 3}
+  m_Name: UpgradeDataSO_RifleWizard_AR2
+  m_EditorClassIdentifier: Assembly-CSharp::SOUpgradeData
+  _id: UpgradeDataSO_RifleWizard_AR2
+  _name: UpgradeDataSO_RifleWizard_AR2
+  _upgradeTag: AR
+  _preset: {fileID: 11400000, guid: 55f15897273b40445b54fb8eaf8dd5c6, type: 2}
+  _squadModifier: []
+  _unitModifier: []
+  _squadSkillData: []
+  _unitSkillData: []
+  _upgradeMakerSprite: {fileID: -505754247, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
+  _replacement:
+  - IndexNum: 4
+    RepalceUnitData: {fileID: 11400000, guid: bd2137e7727f5f64680c16a7ff3be273, type: 2}
+  _costChange: 20
+  _potraitSprite: {fileID: 21300000, guid: e5fca55e301425843a1255112f8ac6c0, type: 3}
+  references:
+    version: 2
+    RefIds: []

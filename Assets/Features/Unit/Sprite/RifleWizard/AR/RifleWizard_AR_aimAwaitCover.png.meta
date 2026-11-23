@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: fa0c57bb80b270e419dbb16cd8add5b7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3566430497376328172
+    second: RifleWizard_AR_aimAwaitCover_0
+  - first:
+      213: 3539840745122349545
+    second: RifleWizard_AR_aimAwaitCover_1
+  - first:
+      213: 2981649461353393032
+    second: RifleWizard_AR_aimAwaitCover_2
+  - first:
+      213: -5093046526599626217
+    second: RifleWizard_AR_aimAwaitCover_3
+  - first:
+      213: -5744434637322327639
+    second: RifleWizard_AR_aimAwaitCover_4
+  - first:
+      213: -9140243252504460856
+    second: RifleWizard_AR_aimAwaitCover_5
+  - first:
+      213: -2249617710751348297
+    second: RifleWizard_AR_aimAwaitCover_6
+  - first:
+      213: 4264589699620730772
+    second: RifleWizard_AR_aimAwaitCover_7
+  - first:
+      213: -7271709274936875951
+    second: RifleWizard_AR_aimAwaitCover_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RifleWizard_AR_aimAwaitCover_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 416a3cfbb5e718ec0800000000000000
+      internalID: -3566430497376328172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_aimAwaitCover_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e1c87e176a002130800000000000000
+      internalID: 3539840745122349545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_aimAwaitCover_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88b24bc3362f06920800000000000000
+      internalID: 2981649461353393032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_aimAwaitCover_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7120e7d0b2dd159b0800000000000000
+      internalID: -5093046526599626217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_aimAwaitCover_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9e3f6f12ba740b0800000000000000
+      internalID: -5744434637322327639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_aimAwaitCover_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c18fcd5035572180800000000000000
+      internalID: -9140243252504460856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_aimAwaitCover_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b90d3e6c90c7c0e0800000000000000
+      internalID: -2249617710751348297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_aimAwaitCover_7
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 497feaeacbdde2b30800000000000000
+      internalID: 4264589699620730772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AR_aimAwaitCover_8
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 154697d01f2b51b90800000000000000
+      internalID: -7271709274936875951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: df47523e4ecc9494ca33ce128e41c8f0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":11.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.25,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      RifleWizard_AR_aimAwaitCover_0: -3566430497376328172
+      RifleWizard_AR_aimAwaitCover_1: 3539840745122349545
+      RifleWizard_AR_aimAwaitCover_2: 2981649461353393032
+      RifleWizard_AR_aimAwaitCover_3: -5093046526599626217
+      RifleWizard_AR_aimAwaitCover_4: -5744434637322327639
+      RifleWizard_AR_aimAwaitCover_5: -9140243252504460856
+      RifleWizard_AR_aimAwaitCover_6: -2249617710751348297
+      RifleWizard_AR_aimAwaitCover_7: 4264589699620730772
+      RifleWizard_AR_aimAwaitCover_8: -7271709274936875951
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

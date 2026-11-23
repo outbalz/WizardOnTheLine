@@ -1,0 +1,379 @@
+fileFormatVersion: 2
+guid: 87ba569d16a39ac4295fb59efd6c038f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7062376306080376744
+    second: RifleWizard_AT_takeCover_0
+  - first:
+      213: 1308707459921146170
+    second: RifleWizard_AT_takeCover_1
+  - first:
+      213: -1136716682060538676
+    second: RifleWizard_AT_takeCover_2
+  - first:
+      213: -7155902337730837505
+    second: RifleWizard_AT_takeCover_3
+  - first:
+      213: -1872635775748982803
+    second: RifleWizard_AT_takeCover_4
+  - first:
+      213: -2180578270835836345
+    second: RifleWizard_AT_takeCover_5
+  - first:
+      213: -1990388591121732189
+    second: RifleWizard_AT_takeCover_6
+  - first:
+      213: 3623496281863273274
+    second: RifleWizard_AT_takeCover_7
+  - first:
+      213: 7766124992125858195
+    second: RifleWizard_AT_takeCover_8
+  - first:
+      213: 3719709499772763176
+    second: RifleWizard_AT_takeCover_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RifleWizard_AT_takeCover_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a76e0215d9920260800000000000000
+      internalID: 7062376306080376744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AT_takeCover_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a31f08f3086792210800000000000000
+      internalID: 1308707459921146170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AT_takeCover_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc558343329930f0800000000000000
+      internalID: -1136716682060538676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AT_takeCover_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff38a28ccb021bc90800000000000000
+      internalID: -7155902337730837505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AT_takeCover_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 130
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de73bc00faf0306e0800000000000000
+      internalID: -1872635775748982803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AT_takeCover_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74af4e9ad970db1e0800000000000000
+      internalID: -2180578270835836345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AT_takeCover_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ade2353f18b064e0800000000000000
+      internalID: -1990388591121732189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AT_takeCover_7
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3bb8659bae394230800000000000000
+      internalID: 3623496281863273274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AT_takeCover_8
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 391f1fc9881d6cb60800000000000000
+      internalID: 7766124992125858195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RifleWizard_AT_takeCover_9
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 10
+        width: 150
+        height: 120
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82cf99905101f9330800000000000000
+      internalID: 3719709499772763176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f407ba4a957d3764f8a1e97bbe318fa8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":11.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.25,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      RifleWizard_AT_takeCover_0: 7062376306080376744
+      RifleWizard_AT_takeCover_1: 1308707459921146170
+      RifleWizard_AT_takeCover_2: -1136716682060538676
+      RifleWizard_AT_takeCover_3: -7155902337730837505
+      RifleWizard_AT_takeCover_4: -1872635775748982803
+      RifleWizard_AT_takeCover_5: -2180578270835836345
+      RifleWizard_AT_takeCover_6: -1990388591121732189
+      RifleWizard_AT_takeCover_7: 3623496281863273274
+      RifleWizard_AT_takeCover_8: 7766124992125858195
+      RifleWizard_AT_takeCover_9: 3719709499772763176
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

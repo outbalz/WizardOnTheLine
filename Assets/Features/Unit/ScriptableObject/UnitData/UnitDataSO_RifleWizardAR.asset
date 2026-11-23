@@ -15,4 +15,4 @@ MonoBehaviour:
   _id: UnitDataSO_RifleWizardAR
   _name: UnitDataSO_RifleWizardAR
   _statusData: {fileID: 11400000, guid: 37126c5451f79be4f81bb78d81586718, type: 2}
-  _animatorOverrideController: {fileID: 22100000, guid: ab0cfcaec37803047a13a7c50dc0719a, type: 2}
+  _animatorOverrideController: {fileID: 22100000, guid: 1018c108a7254ef48a0872b56f758240, type: 2}

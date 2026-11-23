@@ -104,7 +104,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 25
+        y: 0
         width: 130
         height: 215
       alignment: 0
@@ -126,7 +126,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 130
-        y: 25
+        y: 0
         width: 130
         height: 215
       alignment: 0
@@ -148,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 260
-        y: 25
+        y: 0
         width: 130
         height: 215
       alignment: 0
@@ -170,7 +170,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 390
-        y: 25
+        y: 0
         width: 130
         height: 215
       alignment: 0
@@ -192,7 +192,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 520
-        y: 25
+        y: 0
         width: 130
         height: 215
       alignment: 0
@@ -214,7 +214,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 650
-        y: 25
+        y: 0
         width: 130
         height: 215
       alignment: 0
@@ -236,7 +236,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 780
-        y: 25
+        y: 0
         width: 130
         height: 215
       alignment: 0
@@ -258,7 +258,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 910
-        y: 25
+        y: 0
         width: 130
         height: 215
       alignment: 0
@@ -280,7 +280,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1040
-        y: 25
+        y: 0
         width: 130
         height: 215
       alignment: 0
@@ -293,6 +293,50 @@ TextureImporter:
       bones: []
       spriteID: f525453537d82d845af1c810a067d243
       internalID: -1778852917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squadIcon 1_9
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 0
+        width: 130
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee8b107d69351d4292f7e21ea304cb1
+      internalID: 337182823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squadIcon 1_10
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 130
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b562541b4b8ad8c45b871ec2bab01f66
+      internalID: -505754247
       vertices: []
       indices: 
       edges: []
@@ -311,10 +355,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":130.0,"y":215.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":11.0,"y":1.0},"gridSpriteSize":{"x":130.0,"y":215.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       squadIcon 1_0: 4345123836142220414
       squadIcon 1_1: -2068534106
+      squadIcon 1_10: -505754247
       squadIcon 1_2: 1679917289
       squadIcon 1_3: 1872895338
       squadIcon 1_4: 1640439205
@@ -322,6 +367,7 @@ TextureImporter:
       squadIcon 1_6: -38586969
       squadIcon 1_7: -822369469
       squadIcon 1_8: -1778852917
+      squadIcon 1_9: 337182823
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
