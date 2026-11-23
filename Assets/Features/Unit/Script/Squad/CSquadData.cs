@@ -38,6 +38,8 @@ public class CSquadData : ISquadReferance
         _upgradeTag = tag;
         _preset = preset;
         _markerSprite = preset.MarkerSprite;
+        _potraitSprite = preset.PotraitSprite;
+        _unitData = new List<SOUnitData>(preset.UnitDatas);
         _squadModifier = new List<CModifier>();
         _unitModifier = new List<CModifier>();
         

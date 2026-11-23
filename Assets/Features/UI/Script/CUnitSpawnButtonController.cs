@@ -35,6 +35,8 @@ public class CUnitSpawnButtonController : MonoBehaviour
 			Dropdown.OptionData option = new Dropdown.OptionData(squadDatas[i].MarkerSprite);
 			_dropdown.options.Add(option);
 		}
+
+		OnDropDownChanged(0);
     }
 
     public void OnButtonClicked()

@@ -7,8 +7,8 @@ public class SOUpgradeData : SOGameData
     #region inspector
     [SerializeField] private string _upgradeTag;
     [SerializeField] private SOSquadDataPreset _preset;
-    [SerializeField] private List<CModifier> _squadModifier;
-    [SerializeField] private List<CModifier> _unitModifier;
+    [SerializeReference, SubclassSelector] private List<CModifier> _squadModifier;
+    [SerializeReference, SubclassSelector] private List<CModifier> _unitModifier;
     [SerializeField] private List<SOSkillData> _squadSkillData;
     [SerializeField] private List<SOSkillData> _unitSkillData;
     [SerializeField] private Sprite _upgradeMakerSprite;

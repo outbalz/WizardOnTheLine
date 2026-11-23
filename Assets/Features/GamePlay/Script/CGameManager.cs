@@ -53,6 +53,12 @@ public class CGameManager : CSingleton<CGameManager>
 		base.Awake();
     }
 
+    private void Start()
+    {
+		CGameProgressManager.Instance.SetPreset();
+		_battleUIManager.InitializeButtons();
+    }
+
     private void Update()
     {
 		_numHolder += _CMPperSec * Time.deltaTime;

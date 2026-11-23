@@ -643,6 +643,7 @@ MonoBehaviour:
   _spawner: {fileID: 0}
   _playerData: {fileID: 11400000, guid: d5f122946661f21479107ff8052b6c46, type: 2}
   _preset: {fileID: 11400000, guid: 55f15897273b40445b54fb8eaf8dd5c6, type: 2}
+  _data: []
   _index: 0
   _dropdown: {fileID: 4161928368103647476}
   _potrait: {fileID: 2306234920644335945}
@@ -1076,7 +1077,19 @@ MonoBehaviour:
       m_Image: {fileID: -38586969, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6254523784223898854}
+        m_TargetAssemblyTypeName: CUnitSpawnButtonController, Assembly-CSharp
+        m_MethodName: OnDropDownChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &8845814272282306025
 GameObject:

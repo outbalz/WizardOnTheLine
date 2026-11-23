@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CBattleUIManager : MonoBehaviour
@@ -56,6 +57,18 @@ public class CBattleUIManager : MonoBehaviour
         else
         {
             _defeatedPanel.SetActive(true);
+        }
+    }
+
+    public void InitializeButtons()
+    {
+        IReadOnlyList<SOSquadDataPreset> squadDatas = CGameProgressManager.Instance.UnlockSquadList;
+        IReadOnlyDictionary<SOSquadDataPreset, List<CSquadData>> squadMap = CGameProgressManager.Instance.SquadMap;
+
+        for (int i = squadDatas.Count -1; i >= 0; i--)
+        {
+            CUnitSpawnButtonController button = Instantiate(_spawnButtonPrefab, _buttonLayout);
+            button.Initialize(squadMap[squadDatas[i]]);
         }
     }
 }
