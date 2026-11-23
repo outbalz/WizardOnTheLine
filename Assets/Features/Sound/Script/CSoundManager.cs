@@ -75,7 +75,7 @@ public class CSoundManager : CSingletonDontDstroyAtLoad<CSoundManager>
 
     private async UniTask ReturnAudioSourceToPool(CancellationToken ct, float time, AudioSource audioSource)
     {
-        await UniTask.WaitForSeconds(time, true, cancellationToken:ct);
+        await UniTask.WaitForSeconds(time, false, cancellationToken:ct);
 
         audioSource.Stop();
         CAudioSourcePool.Instance.ReturnToPool(audioSource);

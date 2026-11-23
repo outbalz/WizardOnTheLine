@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using Cysharp.Threading.Tasks;
+using System.Threading;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CCameraContoller : MonoBehaviour
+public class CCameraContoller : CSingleton<CCameraContoller>
 {
 	#region inspector
 	[SerializeField] private Camera _camera;
@@ -145,4 +147,9 @@ public class CCameraContoller : MonoBehaviour
             _bgController.OnCameraMove(dx);
         }
     }
+
+    public static void ShakeCamera(float strength, float duration)
+    {
+    }
+
 }

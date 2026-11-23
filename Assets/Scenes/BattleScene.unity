@@ -9504,6 +9504,39 @@ MonoBehaviour:
   _minX: -1
   _maxX: 45
   _bgController: {fileID: 675113068}
+  _shakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.6666666
+      outSlope: 0.6666666
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3
+      value: 0.2
+      inSlope: -0.018312532
+      outSlope: -0.018312532
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.29936865
+      outWeight: 0.1966013
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.2857143
+      outSlope: -0.2857143
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1476403842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9516,7 +9549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375d804f630e7524cb1b7d57a966613d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CGameManager
-  _CMPperSec: 20
+  _CMPperSec: 10
   _playerData: {fileID: 11400000, guid: d5f122946661f21479107ff8052b6c46, type: 2}
   _enemyPlayerData: {fileID: 11400000, guid: ca10023107f63ee4fbdf800217fe398c, type: 2}
   _enemyAIManager: {fileID: 1476403843}

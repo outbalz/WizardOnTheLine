@@ -55,6 +55,8 @@ public class CAreaDamageEntityEffect : CEntityEffect
 {
     [SerializeField] private float _damage;
     [SerializeField] private AnimationCurve _damageFallOff;
+    [SerializeField] private float _cameraShakeStrengh;
+    [SerializeField] private float _cameraShakeDuration;
 
     public override void ApplyEffect(CSkillEntityController entity)
     {
@@ -63,6 +65,11 @@ public class CAreaDamageEntityEffect : CEntityEffect
         if (colliders.Length <= 0)
         {
             return;
+        }
+
+        if (_cameraShakeDuration > 0)
+        {
+            CCameraContoller.ShakeCamera(_cameraShakeStrengh, _cameraShakeDuration);
         }
 
         Vector3 pointA = new Vector3(entity.transform.position.x - (entity.Width * 0.5f), entity.transform.position.y - (entity.Height * 0.5f), entity.transform.position.z);

@@ -20,6 +20,7 @@ MonoBehaviour:
   _lifeTime: 5
   _effectTime: 0.2
   _isEffectContinuous: 0
+  _sound: {fileID: 0}
   _effect:
     rid: 6178808320384565328
   references:
@@ -53,3 +54,5 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
+        _cameraShakeStrengh: 0.1
+        _cameraShakeDuration: 0.5
