@@ -10,19 +10,28 @@ public class CGameProgressManager : CSingletonDontDstroyAtLoad<CGameProgressMana
 
     #region private var
     private Dictionary<SOSquadDataPreset, List<CSquadData>> _squadMap = new Dictionary<SOSquadDataPreset, List<CSquadData>>();
-    private SNodeIndex _mapNodeIndex;
-    private List<List<CNodeData>> _mapNodeData = null;
+    private SNodeIndex _mapNodeIndex = new SNodeIndex();
+    private List<List<CNodeData>> _mapNodeData;
     #endregion
 
     #region property
     public IReadOnlyList<SOSquadDataPreset> UnlockSquadList => _unlockSquadList;
     public IReadOnlyDictionary<SOSquadDataPreset, List<CSquadData>> SquadMap => _squadMap;
-    public SNodeIndex MapNodeIndex => _mapNodeIndex;
-    public List<List<CNodeData>> MapNodeData { get { return _mapNodeData; } set { value = _mapNodeData; } }
+    public SNodeIndex MapNodeIndex { get { return _mapNodeIndex; } set { _mapNodeIndex = value; } }
+    public List<List<CNodeData>> MapNodeData { get { return _mapNodeData; } set { _mapNodeData = value; } }
     #endregion
+
+    private void Start()
+    {
+        _mapNodeIndex.Stage = 0;
+        _mapNodeIndex.Layer = 0;
+        _mapNodeIndex.Node = 0;
+    }
 
     public void SetPreset()
     {
+        _squadMap.Clear();
+
         for (int i = 0; i < _unlockSquadList.Count; i++)
         {
             CSquadData squadData = new CSquadData("All", _unlockSquadList[i]);

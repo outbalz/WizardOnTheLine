@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/MapScene.unity
+    guid: 873856eda1fb120409b406a240e8054a
   m_configObjects:
     com.unity.adaptivePerformance.basic.provider_settings: {fileID: 11400000, guid: 6cfb6ce9be899794ba861018c6232392, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 68de632f072fb82429c2776fad58f877, type: 2}

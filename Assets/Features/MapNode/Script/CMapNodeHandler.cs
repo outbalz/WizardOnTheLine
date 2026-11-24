@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class CMapNodeHandler : MonoBehaviour
+public class CMapNodeHandler : CSingleton<CMapNodeHandler>
 {
     #region inspector
     [SerializeField] private CMapNodeController _nodePrefab;
@@ -56,6 +56,8 @@ public class CMapNodeHandler : MonoBehaviour
             for (int j = 0; j < nodeNum; j++)
             {
                 CMapNodeController node = Instantiate<CMapNodeController>(_nodePrefab);
+                node.SetNodeType(_layer[i].GetNodeType());
+
                 SNodeIndex index = new SNodeIndex();
                 index.Stage = _nodeIdex.Stage;
                 index.Layer = i;
@@ -109,8 +111,6 @@ public class CMapNodeHandler : MonoBehaviour
                         prevNode2.NextNode.Add(node);
                     }
                 }
-
-                //TODO 노드타입 확정
 
                 _layer[i].Node.Add(node);
             }
@@ -175,6 +175,12 @@ public class CMapNodeHandler : MonoBehaviour
             for (int j = 0; j < nodeData[i].Count; j++)
             {
                 CMapNodeController node = Instantiate<CMapNodeController>(_nodePrefab);
+                SONodeTypeData typeData = nodeData[i][j].NodeType;
+
+                node.SetNodeType(typeData);
+                node.IsVisited = nodeData[i][j].IsVisited;
+                node.IsActive = nodeData[i][j].IsActive;
+
                 node.transform.position = nodeData[i][j].Pos;
 
                 SNodeIndex index = new SNodeIndex();
@@ -199,7 +205,7 @@ public class CMapNodeHandler : MonoBehaviour
         }
     }
 
-    private void SaveMapNodeData()
+    public void SaveMapNodeData()
     {
         List<List<CNodeData>> nodeDatas = new List<List<CNodeData>>();
 
@@ -217,6 +223,8 @@ public class CMapNodeHandler : MonoBehaviour
         }
 
         CGameProgressManager.Instance.MapNodeData = nodeDatas;
+
+
     }
 }
 
@@ -227,11 +235,17 @@ public class CMapNodeLayer
     [SerializeField] private int _nodeNumMin;
     [SerializeField] private int _nodeNumMax;
     [SerializeField] private float _with;
+    [SerializeField] private CWeightedRandom<SONodeTypeData> _nodeWeightedRandom;
 
     public List<CMapNodeController> Node => _node;
     public int NodeNumMin => _nodeNumMin;
     public int NodeNumMax => _nodeNumMax;
     public float With => _with;
+
+    public SONodeTypeData GetNodeType()
+    {
+        return _nodeWeightedRandom.GetRandomItem();
+    }
 }
 
 [System.Serializable]
@@ -248,7 +262,9 @@ public class CNodeData
     public int Index;
     public List<int> PrevNode;
     public List<int> NextNode;
+    public SONodeTypeData NodeType;
     public bool IsVisited;
+    public bool IsActive;
 
     public CNodeData(CMapNodeController node)
     {
@@ -267,5 +283,9 @@ public class CNodeData
         {
             NextNode.Add(node.NextNode[i].Index.Node);
         }
+
+        NodeType = node.TypeData;
+        IsVisited = node.IsVisited;
+        IsActive = node.IsActive;
     }
 }
