@@ -108,7 +108,7 @@ public class CEnemyAIManager : MonoBehaviour
                 _spawner.SpawnSquad(_squadPrest[randomIndex], CGameManager.Instance.EnemyPlayerData);
             }
 
-            int nextSec = Random.Range(5, 15);
+            int nextSec = Random.Range(1, 3);
             await UniTask.WaitForSeconds(nextSec);
         }
         

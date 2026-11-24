@@ -16,10 +16,10 @@ MonoBehaviour:
   _name: UnitStatusDataSO_CombatAlchemist_SMG
   _movementSpeed: 2.5
   _weaponRange: 5.5
-  _weaponDamage: 7
+  _weaponDamage: 4
   _weaponAimTimeMin: 0.1
   _weaponAimTimeMax: 0.2
-  _weaponCoolDown: 1
+  _weaponCoolDown: 0.5
   _weaponDamageFalloff:
     serializedVersion: 2
     m_Curve:
@@ -54,5 +54,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _weaponSound: {fileID: 11400000, guid: 658e25c24f6b862459eb28805b1a22bc, type: 2}
-  _maxHp: 50
+  _maxHp: 60
   _projectile: {fileID: 0}

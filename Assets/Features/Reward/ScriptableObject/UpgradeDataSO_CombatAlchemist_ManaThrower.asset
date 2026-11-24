@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3de041500fbe134fafa02999c7c1e16, type: 3}
-  m_Name: UpgradeDataSO_CombatAlchemist_ManaThrower1
+  m_Name: UpgradeDataSO_CombatAlchemist_ManaThrower
   m_EditorClassIdentifier: Assembly-CSharp::SOUpgradeData
   _id: UpgradeDataSO_CombatAlchemist_ManaThrower1
   _name: UpgradeDataSO_CombatAlchemist_ManaThrower1

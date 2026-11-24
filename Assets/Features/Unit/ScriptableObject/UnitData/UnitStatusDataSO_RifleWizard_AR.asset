@@ -15,11 +15,11 @@ MonoBehaviour:
   _id: UnitStatusDataSO_RifleWizard
   _name: UnitStatusDataSO_RifleWizard
   _movementSpeed: 2.5
-  _weaponRange: 10
+  _weaponRange: 10.2
   _weaponDamage: 10
   _weaponAimTimeMin: 0.1
   _weaponAimTimeMax: 0.2
-  _weaponCoolDown: 1
+  _weaponCoolDown: 0.5
   _weaponDamageFalloff:
     serializedVersion: 2
     m_Curve:

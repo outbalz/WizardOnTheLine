@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3de041500fbe134fafa02999c7c1e16, type: 3}
+  m_Name: UpgradeDataSO_CombatAlchemist_MaxHp
+  m_EditorClassIdentifier: Assembly-CSharp::SOUpgradeData
+  _id: UpgradeDataSO_CombatAlchemist_MaxHP
+  _name: UpgradeDataSO_CombatAlchemist_MaxHP
+  _upgradeTag: All
+  _preset: {fileID: 11400000, guid: 6c29cf250b5fa8941b226f75178bab43, type: 2}
+  _squadModifier: []
+  _unitModifier:
+  - rid: 5559904278799974404
+  _squadSkillData: []
+  _unitSkillData: []
+  _upgradeMakerSprite: {fileID: 0}
+  _replacement: []
+  _costChange: 0
+  _potraitSprite: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5559904278799974404
+      type: {class: CAddModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _modifier: 10
+        _modifierName: MaxHP

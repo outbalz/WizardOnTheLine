@@ -83,6 +83,7 @@ public class CSquadData : ISquadReferance
 
                 if(replacement.IndexNum > _unitData.Count -1)
                 {
+                    _unitData.Add(replacement.RepalceUnitData);
                     continue;
                 }
 

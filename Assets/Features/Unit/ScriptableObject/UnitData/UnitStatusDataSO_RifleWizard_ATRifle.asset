@@ -15,8 +15,8 @@ MonoBehaviour:
   _id: UnitStatusDataSO_RifleWizard_ATRifle
   _name: UnitStatusDataSO_RifleWizard_ATRifle
   _movementSpeed: 2.5
-  _weaponRange: 10
-  _weaponDamage: 30
+  _weaponRange: 10.5
+  _weaponDamage: 50
   _weaponAimTimeMin: 1
   _weaponAimTimeMax: 1.5
   _weaponCoolDown: 4.5

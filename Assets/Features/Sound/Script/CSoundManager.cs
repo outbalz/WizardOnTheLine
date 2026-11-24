@@ -6,7 +6,8 @@ using UnityEngine;
 public class CSoundManager : CSingletonDontDstroyAtLoad<CSoundManager>
 {
     private Dictionary<AudioSource, CancellationTokenSource> _audioSourcesCTSMap = new Dictionary<AudioSource, CancellationTokenSource>();
-    private List<CancellationTokenSource> _soundRelrayCTS = new List<CancellationTokenSource>();
+    private Queue<CancellationTokenSource> _soundRelrayCTS = new Queue<CancellationTokenSource>();
+    private Dictionary<SOSoundRelay,float> _soundPlayTimeMap = new Dictionary<SOSoundRelay,float>();
 
     public static void PlaySound(AudioClip clip, Vector3 pos)
     {
@@ -41,9 +42,35 @@ public class CSoundManager : CSingletonDontDstroyAtLoad<CSoundManager>
 
     public static void PlaySoundRelay(SOSoundRelay soundRelay, Vector3 pos)
     {
+        if (Instance._soundPlayTimeMap.ContainsKey(soundRelay))
+        {
+            if(Time.time - Instance._soundPlayTimeMap[soundRelay] < 0.05f)
+            {
+                return;
+            }
+        }
+
+        if(Instance._soundRelrayCTS.Count >= 50)
+        {
+            CancellationTokenSource cancelCts = Instance._soundRelrayCTS.Dequeue();
+            cancelCts.Cancel();
+            cancelCts.Dispose();
+            cancelCts = null;
+        }
+
         CancellationTokenSource cts = new CancellationTokenSource();
-        Instance._soundRelrayCTS.Add(cts);
+        Instance._soundRelrayCTS.Enqueue(cts);
         Instance.SoundRelayUpdate(cts.Token, soundRelay, pos).Forget();
+
+        if (Instance._soundPlayTimeMap.ContainsKey(soundRelay))
+        {
+            Instance._soundPlayTimeMap[soundRelay] = Time.time;
+        }
+
+        else
+        {
+            Instance._soundPlayTimeMap.Add(soundRelay, Time.time);
+        }
     }
 
     private async UniTask SoundRelayUpdate(CancellationToken ct, SOSoundRelay soundRelay, Vector3 pos)
@@ -96,9 +123,11 @@ public class CSoundManager : CSingletonDontDstroyAtLoad<CSoundManager>
     {
         for (int i = 0; i < _soundRelrayCTS.Count; i++)
         {
-            _soundRelrayCTS[i].Cancel();
-            _soundRelrayCTS[i].Dispose();
-            _soundRelrayCTS[i] = null;
+            CancellationTokenSource cts = _soundRelrayCTS.Dequeue();
+
+            cts.Cancel();
+            cts.Dispose();
+            cts = null;
         }
 
         foreach(CancellationTokenSource cts in _audioSourcesCTSMap.Values)
