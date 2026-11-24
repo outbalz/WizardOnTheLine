@@ -138,9 +138,9 @@ public class CCameraContoller : CSingleton<CCameraContoller>
 
         if (pos != _camera.transform.position)
         {
-            float dx = pos.x - _camera.transform.position.x;
+            float moveAmount = pos.x - _camera.transform.position.x;
             _camera.transform.position = pos;
-            _bgController.OnCameraMove(dx);
+            _bgController.OnCameraMove(moveAmount);
         }
     }
 

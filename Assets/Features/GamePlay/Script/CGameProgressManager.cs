@@ -10,11 +10,15 @@ public class CGameProgressManager : CSingletonDontDstroyAtLoad<CGameProgressMana
 
     #region private var
     private Dictionary<SOSquadDataPreset, List<CSquadData>> _squadMap = new Dictionary<SOSquadDataPreset, List<CSquadData>>();
+    private SNodeIndex _mapNodeIndex;
+    private List<List<CNodeData>> _mapNodeData = null;
     #endregion
 
     #region property
     public IReadOnlyList<SOSquadDataPreset> UnlockSquadList => _unlockSquadList;
     public IReadOnlyDictionary<SOSquadDataPreset, List<CSquadData>> SquadMap => _squadMap;
+    public SNodeIndex MapNodeIndex => _mapNodeIndex;
+    public List<List<CNodeData>> MapNodeData { get { return _mapNodeData; } set { value = _mapNodeData; } }
     #endregion
 
     public void SetPreset()

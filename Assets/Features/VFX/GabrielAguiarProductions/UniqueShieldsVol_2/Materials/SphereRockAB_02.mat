@@ -91,6 +91,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
+    - _AlphaToMask: 0
     - _BUILTIN_AlphaClip: 0
     - _BUILTIN_Blend: 2
     - _BUILTIN_CullMode: 0
@@ -112,6 +113,7 @@ Material:
     - _DistortionAmount: 0
     - _DistortionStrength: 0
     - _DstBlend: 10
+    - _DstBlendAlpha: 10
     - _ErosionFeather: 0.5
     - _ErosionThreshold: 0
     - _Lerp_Colors: 1
@@ -123,6 +125,7 @@ Material:
     - _SoftParticle: 20
     - _SoftParticles: 0.3
     - _SrcBlend: 5
+    - _SrcBlendAlpha: 1
     - _Surface: 1
     - _UV_Fade_Mask_Intensity: 1
     - _UseUVFade: 1

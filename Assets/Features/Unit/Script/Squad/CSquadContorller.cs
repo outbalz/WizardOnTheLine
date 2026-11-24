@@ -112,7 +112,7 @@ public class CSquadContorller : MonoBehaviour
         float mapHeight = CUtil.MAP_HIGHT_MAX - CUtil.MAP_HIGHT_MIN;
 
         float spawnRange = mapHeight - spawnHeigt;
-        float spawnPontYOffset = Random.Range(0, spawnRange - 0.5f);
+        float spawnPontYOffset = Random.Range(0, spawnRange - 0.7f);
 
         for (int i = 0; i < squadData.SquadSize; i++)
         {
