@@ -37,7 +37,7 @@ public class CWeightedRandom<T> where T : class
         {
             weightedWeight += RandomWeightList[i].Weight;
 
-            if (weightedWeight <= ranNum)
+            if (weightedWeight > ranNum)
             {
                 return RandomWeightList[i].Item;
             }
@@ -60,14 +60,14 @@ public class CWeightedRandom<T> where T : class
             totalWeight += RandomWeightList[i].Weight;
         }
 
-        float ranNum = Random.Range(0, totalWeight);
+        float ranNum = Random.Range(0f, totalWeight);
         float weightedWeight = 0;
 
         for (int i = 0; i < RandomWeightList.Count; i++)
         {
             weightedWeight += RandomWeightList[i].Weight;
 
-            if (weightedWeight <= ranNum)
+            if (weightedWeight > ranNum)
             {
                 T item = RandomWeightList[i].Item;
                 RandomWeightList.RemoveAt(i);

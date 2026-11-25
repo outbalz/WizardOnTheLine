@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SkillDataSO_FireBall
   m_EditorClassIdentifier: Assembly-CSharp::SOSkillData
   _id: SkillDataSO_FireBall
-  _name: SkillDataSO_FireBall
+  _name: RifleWizardFireBall
   _cost: 0
   _coolDown: -1
   _range: -1
@@ -30,4 +30,4 @@ MonoBehaviour:
         _randonRangeY: 0
         _summonAmount: 1
         _summonInterval: 0
-        _modifierName: FireBall
+        _modifierName: RifleWizardFireBall

@@ -29,7 +29,7 @@ public class CRewardPanelConroller : MonoBehaviour
 
     public void CreatRewardButton(int amound)
     {
-        for (int i = 1; i < amound; i++)
+        for (int i = 0; i < amound; i++)
         {
             Button rewardButton = Instantiate<Button>(_rewardButtonPrefab, _rewardButtonLayout);
 

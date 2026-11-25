@@ -64,7 +64,7 @@ public class CSkillCasterController : MonoBehaviour
 		/*
 		if (skillData.Range != -1)
 		{
-			float range = _modifierHandler.GetModifiedValue(skillData.ID + "Range" ,skillData.Range);
+			float range = _modifierHandler.GetModifiedValue(skillData.Name + "Range" ,skillData.Range);
 
 			float distance = Mathf.Abs(transform.position.x - targetPos.x);
 
@@ -78,7 +78,7 @@ public class CSkillCasterController : MonoBehaviour
 
 		if (skillData.Cost > 0)
 		{
-			float cost = _modifierHandler.GetModifiedValue(skillData.ID + "Cost", skillData.Cost);
+			float cost = _modifierHandler.GetModifiedValue(skillData.Name + "Cost", skillData.Cost);
 
 			if (_player == CGameManager.Instance.PlayerData)
 			{
@@ -103,7 +103,7 @@ public class CSkillCasterController : MonoBehaviour
 
 		if (skillData.CoolDown != -1)
 		{
-			float coolDown = _modifierHandler.GetModifiedValue(skillData.ID + "CoolDown", skillData.CoolDown);
+			float coolDown = _modifierHandler.GetModifiedValue(skillData.Name + "CoolDown", skillData.CoolDown);
 
 			_skillDatasMap[skillData] = coolDown;
 

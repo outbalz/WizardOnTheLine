@@ -43,7 +43,7 @@ public class CUnitHPHandler : MonoBehaviour, ITargetable
             return;
         }
 
-		_hp = MaxHp;
+        _hp = MaxHp;
     }
 
     public void TakeDamage(float damage)

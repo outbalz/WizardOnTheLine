@@ -39,12 +39,12 @@ MonoBehaviour:
     - rid: 5559904278799974400
       type: {class: CMultiflyModifier, ns: , asm: Assembly-CSharp}
       data:
-        _modifier: 0.3
+        _modifier: 0.7
         _modifierName: WeaponAimTime
     - rid: 5559904278799974403
       type: {class: CMultiflyModifier, ns: , asm: Assembly-CSharp}
       data:
-        _modifier: 0.3
+        _modifier: 0.7
         _modifierName: WeaponCoolDown
     - rid: 5559904290768421128
       type: {class: CUpgradeMaxStackCondition, ns: , asm: Assembly-CSharp}

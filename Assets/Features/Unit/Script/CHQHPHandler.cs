@@ -22,6 +22,11 @@ public class CHQHPHandler : MonoBehaviour, ITargetable
 
     public void TakeDamage(float damage)
     {
+        if(_hp <= 0)
+        {
+            return;
+        }
+
         _hp -= damage;
 
         _hpSlider.maxValue = _maxHP;
@@ -32,6 +37,7 @@ public class CHQHPHandler : MonoBehaviour, ITargetable
             _hp = 0;
             
             _destroyEvent.Invoke();
+            enabled = false;
         }
 
         _hpSlider.SetValueWithoutNotify(_hp);
