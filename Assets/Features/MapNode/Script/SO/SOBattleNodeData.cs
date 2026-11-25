@@ -7,15 +7,20 @@ public class SOBattleNodeData : SONodeTypeData
 {
     [SerializeField] private SOPlayerData _enemyPlayer;
     [SerializeField] private float _difficulty;
+    [SerializeField] private SOSceneData _sceneData;
 
     public float Difficulty => _difficulty;
     public SOPlayerData EnemyPlayer => _enemyPlayer;
 
     public override void OnNodeClick()
     {
-        //TODO Load battle scene
+        if(_sceneData == null)
+        {
+            Debug.LogWarning("_sceneData is not assigned in the inspector.");
+            return;
+        }
 
-        //For test
-        SceneManager.LoadScene(0);
+        CSceneTransitionTriggerContoller.Instance.SetTargetScene(_sceneData);
+        CSceneTransitionTriggerContoller.Instance.TriggerSceneTransiton();
     }
 }

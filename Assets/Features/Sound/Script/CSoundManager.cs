@@ -104,6 +104,11 @@ public class CSoundManager : CSingletonDontDstroyAtLoad<CSoundManager>
     {
         await UniTask.WaitForSeconds(time, false, cancellationToken:ct);
 
+        if (ct.IsCancellationRequested || audioSource == null)
+        {
+            return;
+        }
+
         audioSource.Stop();
         CAudioSourcePool.Instance.ReturnToPool(audioSource);
 
@@ -121,6 +126,13 @@ public class CSoundManager : CSingletonDontDstroyAtLoad<CSoundManager>
 
     protected override void OnDestroy()
     {
+
+        CancelAll();
+        base.OnDestroy();
+    }
+
+    public void CancelAll()
+    {
         for (int i = 0; i < _soundRelrayCTS.Count; i++)
         {
             CancellationTokenSource cts = _soundRelrayCTS.Dequeue();
@@ -134,8 +146,6 @@ public class CSoundManager : CSingletonDontDstroyAtLoad<CSoundManager>
         {
             cts.Cancel();
         }
-
-        base.OnDestroy();
     }
 }
 

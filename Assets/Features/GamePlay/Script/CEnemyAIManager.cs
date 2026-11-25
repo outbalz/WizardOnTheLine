@@ -40,22 +40,15 @@ public class CEnemyAIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        if (_SpawnCTS != null)
-        {
-            _SpawnCTS.Cancel();
-            _SpawnCTS.Dispose();
-            _SpawnCTS = null;
-        }
-
-        if(_tacticCTS != null)
-        {
-            _tacticCTS.Cancel();
-            _tacticCTS.Dispose();
-            _tacticCTS = null;
-        }
+        CancelAll();
     }
 
     private void OnDestroy()
+    {
+        CancelAll();
+    }
+
+    public void CancelAll()
     {
         if (_SpawnCTS != null)
         {
@@ -109,14 +102,14 @@ public class CEnemyAIManager : MonoBehaviour
             }
 
             int nextSec = Random.Range(1, 3);
-            await UniTask.WaitForSeconds(nextSec);
+            await UniTask.WaitForSeconds(nextSec, cancellationToken:ct);
         }
         
     }
 
     private async UniTask TacticsCheck(CancellationToken ct)
     {
-        await UniTask.WaitForSeconds(20);
+        await UniTask.WaitForSeconds(20, cancellationToken:ct);
 
         while (!ct.IsCancellationRequested)
         {
@@ -138,7 +131,11 @@ public class CEnemyAIManager : MonoBehaviour
 
             if(squads.Count <= 0)
             {
-                await UniTask.WaitForSeconds(nextSec);
+                await UniTask.WaitForSeconds(nextSec, cancellationToken: ct);
+                if (ct.IsCancellationRequested)
+                {
+                    return;
+                }
                 continue;
             }
 
@@ -206,7 +203,12 @@ public class CEnemyAIManager : MonoBehaviour
 
                     int reconTime = Random.Range(10, 20);
 
-                    await UniTask.WaitForSeconds(reconTime);
+                    await UniTask.WaitForSeconds(reconTime, cancellationToken: ct);
+
+                    if (ct.IsCancellationRequested)
+                    {
+                        return;
+                    }
 
                     moveOder.oderType = SOderContext.EOderType.Move;
 
@@ -248,7 +250,7 @@ public class CEnemyAIManager : MonoBehaviour
                     break;
             }
 
-            await UniTask.WaitForSeconds(nextSec);
+            await UniTask.WaitForSeconds(nextSec, cancellationToken: ct);
         }
     }
 

@@ -33,10 +33,10 @@ public class CGameManager : CSingleton<CGameManager>
 	public Dictionary<SOPlayerData, List<CSquadContorller>> SquadListMap => _squadListMap;
 	public float PlayerCMP => _playerCMP;
 	public CSquadSpawner Spawner => _spawner;
-    #endregion
+	#endregion
 
-    protected override void Awake()
-    {
+	protected override void Awake()
+	{
 
 		if (_playerData == null || _enemyPlayerData == null)
 		{
@@ -52,16 +52,16 @@ public class CGameManager : CSingleton<CGameManager>
 		Time.timeScale = 2;
 
 		base.Awake();
-    }
+	}
 
-    private void Start()
-    {
+	private void Start()
+	{
 		CGameProgressManager.Instance.SetPreset();
 		_battleUIManager.InitializeButtons();
-    }
+	}
 
-    private void Update()
-    {
+	private void Update()
+	{
 		_numHolder += _CMPperSec * Time.deltaTime;
 		_enemyCMP += _CMPperSec * _difficultyMultiplyer * Time.deltaTime;
 
@@ -74,7 +74,7 @@ public class CGameManager : CSingleton<CGameManager>
 
 			_battleUIManager.UpdateText(_playerCMP);
 		}
-    }
+	}
 
 	public bool SpendPlayerCMP(float amount)
 	{
@@ -84,9 +84,9 @@ public class CGameManager : CSingleton<CGameManager>
 		}
 
 		_playerCMP -= amount;
-        _battleUIManager.UpdateText(_playerCMP);
+		_battleUIManager.UpdateText(_playerCMP);
 
-        return true;
+		return true;
 	}
 
 	public bool SpendEnemyCMP(float amount)
@@ -95,7 +95,7 @@ public class CGameManager : CSingleton<CGameManager>
 		{
 			return false;
 		}
-		
+
 		_enemyCMP -= amount;
 		return true;
 	}
@@ -103,15 +103,15 @@ public class CGameManager : CSingleton<CGameManager>
 
 	public void GameOver(bool isVictory)
 	{
-		/*
-		Time.timeScale = 0;
+		SetTimeScale(0);
 		_enemyAIManager.enabled = false;
 		_NoPostCam.gameObject.SetActive(false);
 
 		_battleUIManager.GameOver(isVictory);
-		*/
+	}
 
-		//For test
-		SceneManager.LoadScene(1);
+	public void SetTimeScale(float timeScale)
+	{
+		Time.timeScale = timeScale;		
 	}
 }

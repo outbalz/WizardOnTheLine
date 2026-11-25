@@ -53,6 +53,11 @@ public class CEtitySummonSkillEffect : CSkillEffect
 
 		for (int i = 0; i < amount; i++)
 		{
+			if(caster == null)
+			{
+				return;
+			}
+
 			Vector2 ranPos = targetPos;
 			ranPos.x += Random.Range(-ranX, ranX);
 			ranPos.y += Random.Range(-ranY, ranY);
@@ -63,6 +68,11 @@ public class CEtitySummonSkillEffect : CSkillEffect
 			entity.gameObject.SetActive(true);
 
 			await UniTask.WaitForSeconds(_summonInterval);
+
+			if(caster == null)
+			{
+				return;
+			}
 		}
 	}
 }
@@ -95,6 +105,11 @@ public class CProjectileSummonSkillEffect : CSkillEffect
 
         for (int i = 0; i < amount; i++)
         {
+			if(caster == null)
+			{
+				return;
+			}
+
             Vector2 ranPos = targetPos;
             ranPos.x += Random.Range(-ranX, ranX);
             ranPos.y += Random.Range(-ranY, ranY);
@@ -106,6 +121,11 @@ public class CProjectileSummonSkillEffect : CSkillEffect
             projectile.gameObject.SetActive(true);
 
             await UniTask.WaitForSeconds(_summonInterval);
+
+			if(caster == null)
+			{
+				return;
+			}
         }
     }
 }
