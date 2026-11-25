@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UpgradeDataSO_CombatAlchemist_addMamber
   m_EditorClassIdentifier: Assembly-CSharp::SOUpgradeData
   _id: UpgradeDataSO_CombatAlchemist_addManber
-  _name: UpgradeDataSO_CombatAlchemist_addMamber
+  _name: "\uBD84\uB300 \uD655\uC7A5"
   _upgradeTag: All
   _preset: {fileID: 11400000, guid: 6c29cf250b5fa8941b226f75178bab43, type: 2}
   _squadModifier: []
@@ -26,6 +26,17 @@ MonoBehaviour:
     RepalceUnitData: {fileID: 11400000, guid: b2d608ba4f599d140a0948f71b490a44, type: 2}
   _costChange: 0
   _potraitSprite: {fileID: 0}
+  _upgradeRewardSprite: {fileID: 21300000, guid: 82d4a2e9f62e71445b80f022220a4f89, type: 3}
+  _unitName: "\uC804\uD22C\uC5F0\uAE08\uC220\uC0AC"
+  _unitSubName: Combat Alchemist
+  _description: "\uBD84\uB300\uB2F9 +1 \uBD84\uB300\uC6D0"
+  _unlockCondition:
+  - rid: 5559904290768421123
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5559904290768421123
+      type: {class: CUpgradeMaxStackCondition, ns: , asm: Assembly-CSharp}
+      data:
+        _upgrade: {fileID: 11400000}
+        _maxStack: 1

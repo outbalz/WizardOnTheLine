@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c5af591dbf43a47848854201f4bbfa, type: 3}
+  m_Name: SORewardPoolData
+  m_EditorClassIdentifier: Assembly-CSharp::SORewardPoolData
+  _upgradeRewardPool:
+  - Item: {fileID: 11400000, guid: 869693331a25ec2498112924cd962577, type: 2}
+    Weight: 1
+  - Item: {fileID: 11400000, guid: b14282be0e3d8824db4706424259628a, type: 2}
+    Weight: 1
+  - Item: {fileID: 11400000, guid: a3b38e07acec2a34dbf49e6b4583f0f0, type: 2}
+    Weight: 1
+  - Item: {fileID: 11400000, guid: 1c6ebb72f0c8df04b9ea1cbbaf2edd62, type: 2}
+    Weight: 1
+  - Item: {fileID: 11400000, guid: c6cb51719c1d57841a0c5af084b80cbd, type: 2}
+    Weight: 1
+  - Item: {fileID: 11400000, guid: 445a3d257388e3d41a21755443bde958, type: 2}
+    Weight: 1
+  - Item: {fileID: 11400000, guid: 95b1e03e20533d84ea1003671f2c0dcd, type: 2}
+    Weight: 1
+  - Item: {fileID: 11400000, guid: 5184638f38716fe409a401489594eac6, type: 2}
+    Weight: 1
+  - Item: {fileID: 11400000, guid: 05b539d4d38a2324797434fc93e95eb1, type: 2}
+    Weight: 1

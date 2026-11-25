@@ -16,6 +16,7 @@ public class CGameProgressManager : CSingletonDontDstroyAtLoad<CGameProgressMana
 
     #region property
     public IReadOnlyList<SOSquadDataPreset> UnlockSquadList => _unlockSquadList;
+    public List<SOUpgradeData> UpgradeList => _upgradeList;
     public IReadOnlyDictionary<SOSquadDataPreset, List<CSquadData>> SquadMap => _squadMap;
     public SNodeIndex MapNodeIndex { get { return _mapNodeIndex; } set { _mapNodeIndex = value; } }
     public List<List<CNodeData>> MapNodeData { get { return _mapNodeData; } set { _mapNodeData = value; } }

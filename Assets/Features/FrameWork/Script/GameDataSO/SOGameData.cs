@@ -11,7 +11,7 @@ public abstract class SOGameData : ScriptableObject
 
     #region property
     public string ID => _id;
-	public string Name => _name;
+	public virtual string Name => _name;
     #endregion
 
     protected virtual void OnValidate()

@@ -18,7 +18,9 @@ public class CGameManager : CSingleton<CGameManager>
 
 	[Space]
 	[SerializeField] private CBattleUIManager _battleUIManager;
-	[SerializeField] private Camera _NoPostCam;
+	//[SerializeField] private Camera _NoPostCam;
+
+	[SerializeField] private CRewardPanelConroller _rewardPanel;
 	#endregion
 
 	#region private var
@@ -26,6 +28,7 @@ public class CGameManager : CSingleton<CGameManager>
 	private float _enemyCMP = 200f;
 	private float _numHolder = 0;
 	private Dictionary<SOPlayerData, List<CSquadContorller>> _squadListMap = new Dictionary<SOPlayerData, List<CSquadContorller>>();
+	private int _reward = 1;
 	#endregion
 
 	#region property
@@ -61,10 +64,11 @@ public class CGameManager : CSingleton<CGameManager>
 		_battleUIManager.InitializeButtons();
 	}
 
-	public void SetBattleSetting(float difficulty, SOPlayerData enemyPlayerData)
+	public void SetBattleSetting(float difficulty, SOPlayerData enemyPlayerData, int reward = 1)
 	{
 		_mapDifficultyMultiplyer = difficulty;
 		_enemyPlayerData = enemyPlayerData;
+		_reward = reward;
 	}
 
 	private void Update()
@@ -112,13 +116,14 @@ public class CGameManager : CSingleton<CGameManager>
 	{
 		SetTimeScale(0);
 		_enemyAIManager.enabled = false;
-		_NoPostCam.gameObject.SetActive(false);
+		//_NoPostCam.gameObject.SetActive(false);
 
 		_battleUIManager.GameOver(isVictory);
+		_rewardPanel.CreatRewardButton(_reward);
 	}
 
 	public void SetTimeScale(float timeScale)
 	{
-		Time.timeScale = timeScale;		
+		Time.timeScale = timeScale;
 	}
 }

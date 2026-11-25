@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UpgradeDataSO_RifleWizard_AR2
   m_EditorClassIdentifier: Assembly-CSharp::SOUpgradeData
   _id: UpgradeDataSO_RifleWizard_AR2
-  _name: UpgradeDataSO_RifleWizard_AR2
+  _name: "\uCD94\uAC00 \uC790\uB3D9\uC18C\uCD1D"
   _upgradeTag: AR
   _preset: {fileID: 11400000, guid: 55f15897273b40445b54fb8eaf8dd5c6, type: 2}
   _squadModifier: []
@@ -22,10 +22,28 @@ MonoBehaviour:
   _unitSkillData: []
   _upgradeMakerSprite: {fileID: -505754247, guid: 52865c094e3ce4147886f12099f906f7, type: 3}
   _replacement:
-  - IndexNum: 4
+  - IndexNum: 1
     RepalceUnitData: {fileID: 11400000, guid: bd2137e7727f5f64680c16a7ff3be273, type: 2}
   _costChange: 30
   _potraitSprite: {fileID: 21300000, guid: e5fca55e301425843a1255112f8ac6c0, type: 3}
+  _upgradeRewardSprite: {fileID: 21300000, guid: e5fca55e301425843a1255112f8ac6c0, type: 3}
+  _unitName: "\uB9C8\uCD1D\uC218"
+  _unitSubName: Rifle Wizard
+  _description: "\uC790\uB3D9\uC18C\uCD1D \uC5C5\uB4DC\uB798\uC774\uB4DC\n\uB9C8\uCD1D\uC218
+    \uBD84\uB300\uB2F9\n+1 \uC790\uB3D9\uC18C\uCD1D"
+  _unlockCondition:
+  - rid: 5559904290768421130
+  - rid: 5559904290768421131
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5559904290768421130
+      type: {class: CUpgradeMaxStackCondition, ns: , asm: Assembly-CSharp}
+      data:
+        _upgrade: {fileID: 11400000}
+        _maxStack: 1
+    - rid: 5559904290768421131
+      type: {class: CUpgradeReqirementCondition, ns: , asm: Assembly-CSharp}
+      data:
+        _upgrade: {fileID: 11400000, guid: 445a3d257388e3d41a21755443bde958, type: 2}
+        _reqireStack: 1

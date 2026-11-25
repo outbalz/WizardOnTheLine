@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UpgradeDataSO_CombatAlchemist_ManaThrower
   m_EditorClassIdentifier: Assembly-CSharp::SOUpgradeData
   _id: UpgradeDataSO_CombatAlchemist_ManaThrower1
-  _name: UpgradeDataSO_CombatAlchemist_ManaThrower1
+  _name: "\uB9C8\uB098\uBC29\uC0AC\uAE30 \uC9C0\uAE09"
   _upgradeTag: ManaThrower
   _preset: {fileID: 11400000, guid: 6c29cf250b5fa8941b226f75178bab43, type: 2}
   _squadModifier: []
@@ -26,6 +26,18 @@ MonoBehaviour:
     RepalceUnitData: {fileID: 11400000, guid: 287352f0ba0bc0e41a067da1516f303a, type: 2}
   _costChange: 30
   _potraitSprite: {fileID: 21300000, guid: 41faab29b0f60b640bdba65cb63446d9, type: 3}
+  _upgradeRewardSprite: {fileID: 21300000, guid: 41faab29b0f60b640bdba65cb63446d9, type: 3}
+  _unitName: "\uC804\uD22C\uC5F0\uAE08\uC220\uC0AC"
+  _unitSubName: Combat Alchemist
+  _description: "\uC804\uD22C\uC5F0\uAE08\uC220\uC0AC \uBD84\uB300\n\uB9C8\uB098\uBC29\uC0AC\uAE30
+    \uC5C5\uADF8\uB808\uC774\uB4DC \uD574\uAE08"
+  _unlockCondition:
+  - rid: 5559904290768421124
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5559904290768421124
+      type: {class: CUpgradeMaxStackCondition, ns: , asm: Assembly-CSharp}
+      data:
+        _upgrade: {fileID: 11400000}
+        _maxStack: 1

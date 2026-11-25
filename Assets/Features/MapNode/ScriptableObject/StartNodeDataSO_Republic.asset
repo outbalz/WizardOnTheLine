@@ -15,5 +15,5 @@ MonoBehaviour:
   _id: StartNodeDataSO_Republic
   _name: StartNodeDataSO_Republic
   _nodeSpite: {fileID: 21300000, guid: 0051ab7705a4f374b8959ace1dcf29e0, type: 3}
-  _nodeVisitedSpite: {fileID: -907064929, guid: 17be3ef22b4702d46bd64d3503f547b5, type: 3}
+  _nodeVisitedSpite: {fileID: 21300000, guid: 0051ab7705a4f374b8959ace1dcf29e0, type: 3}
   _type: 0

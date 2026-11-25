@@ -10,7 +10,7 @@ public static class CUtil
 }
 
 [System.Serializable]
-public class CWeightedRandom<T>
+public class CWeightedRandom<T> where T : class
 {
     [System.Serializable]
     public struct SRandomWeight
@@ -45,4 +45,51 @@ public class CWeightedRandom<T>
 
         return RandomWeightList[RandomWeightList.Count - 1].Item;
     }
+
+    public T GetRandomItemThenRemoveFormPool()
+    {
+        if(RandomWeightList.Count <= 0)
+        {
+            return null;
+        }
+
+        float totalWeight = 0;
+
+        for (int i = 0; i < RandomWeightList.Count; i++)
+        {
+            totalWeight += RandomWeightList[i].Weight;
+        }
+
+        float ranNum = Random.Range(0, totalWeight);
+        float weightedWeight = 0;
+
+        for (int i = 0; i < RandomWeightList.Count; i++)
+        {
+            weightedWeight += RandomWeightList[i].Weight;
+
+            if (weightedWeight <= ranNum)
+            {
+                T item = RandomWeightList[i].Item;
+                RandomWeightList.RemoveAt(i);
+                return item;
+            }
+        }
+
+
+        T lastItem = RandomWeightList[RandomWeightList.Count - 1].Item;
+        RandomWeightList.RemoveAt(RandomWeightList.Count - 1);
+        return lastItem;
+    }
+
+    public void RemoveItemFormPool(T item)
+    {
+        for (int i = RandomWeightList.Count -1; i >= 0; i--)
+        {
+            if (RandomWeightList[i].Item == item)
+            {
+                RandomWeightList.RemoveAt(i);
+            }
+        }
+    }
+
 }

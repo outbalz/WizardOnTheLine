@@ -18,3 +18,61 @@ public class CNotUseableCondition : CCondition
         return false;
     }
 }
+
+[Serializable]
+public class CUpgradeMaxStackCondition : CCondition
+{
+    [SerializeField] private SOUpgradeData _upgrade;
+    [SerializeField] private int _maxStack;
+
+    public override bool CheckCondition()
+    {
+        IReadOnlyList<SOUpgradeData> upgradeList = CGameProgressManager.Instance.UpgradeList;
+
+        int stack = 0;
+
+        for (int i = 0; i < upgradeList.Count; i++)
+        {
+            if (upgradeList[i] == _upgrade)
+            {
+                stack++;
+
+                if(stack >= _maxStack)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+}
+
+[Serializable]
+public class CUpgradeReqirementCondition : CCondition
+{
+    [SerializeField] private SOUpgradeData _upgrade;
+    [SerializeField] private int _reqireStack;
+
+    public override bool CheckCondition()
+    {
+        IReadOnlyList<SOUpgradeData> upgradeList = CGameProgressManager.Instance.UpgradeList;
+
+        int stack = 0;
+
+        for (int i = 0; i < upgradeList.Count; i++)
+        {
+            if (upgradeList[i] == _upgrade)
+            {
+                stack++;
+
+                if (stack >= _reqireStack)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+}
