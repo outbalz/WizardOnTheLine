@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SOBossNodeData
   _id: BossNodeDataSO_TestBoss
   _name: BossNodeDataSO_TestBoss
-  _nodeSpite: {fileID: -492924088061234918, guid: 2a0cd1e4d6165c34f927af6a7ded3bf3, type: 3}
-  _nodeVisitedSpite: {fileID: -492924088061234918, guid: 2a0cd1e4d6165c34f927af6a7ded3bf3, type: 3}
+  _nodeSpite: {fileID: -4541125625588044608, guid: b0f2b6283b9cd044396dfe7865cacc1e, type: 3}
+  _nodeVisitedSpite: {fileID: -1718991571299551934, guid: b0f2b6283b9cd044396dfe7865cacc1e, type: 3}
   _type: 4
   _enemyPlayer: {fileID: 11400000, guid: ca10023107f63ee4fbdf800217fe398c, type: 2}
   _difficulty: 0

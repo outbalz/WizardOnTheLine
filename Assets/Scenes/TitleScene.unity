@@ -8782,6 +8782,7 @@ GameObject:
   - component: {fileID: 1881812831}
   - component: {fileID: 1881812833}
   - component: {fileID: 1881812834}
+  - component: {fileID: 1881812835}
   m_Layer: 0
   m_Name: GameManagerDonDestroyOnLoad
   m_TagString: Untagged
@@ -8804,17 +8805,7 @@ MonoBehaviour:
   _unlockSquadList:
   - {fileID: 11400000, guid: 55f15897273b40445b54fb8eaf8dd5c6, type: 2}
   - {fileID: 11400000, guid: 6c29cf250b5fa8941b226f75178bab43, type: 2}
-  _upgradeList:
-  - {fileID: 11400000, guid: b14282be0e3d8824db4706424259628a, type: 2}
-  - {fileID: 11400000, guid: 445a3d257388e3d41a21755443bde958, type: 2}
-  - {fileID: 11400000, guid: 95b1e03e20533d84ea1003671f2c0dcd, type: 2}
-  - {fileID: 11400000, guid: 5184638f38716fe409a401489594eac6, type: 2}
-  - {fileID: 11400000, guid: 05b539d4d38a2324797434fc93e95eb1, type: 2}
-  - {fileID: 11400000, guid: c6cb51719c1d57841a0c5af084b80cbd, type: 2}
-  - {fileID: 11400000, guid: c6cb51719c1d57841a0c5af084b80cbd, type: 2}
-  - {fileID: 11400000, guid: a3b38e07acec2a34dbf49e6b4583f0f0, type: 2}
-  - {fileID: 11400000, guid: 1c6ebb72f0c8df04b9ea1cbbaf2edd62, type: 2}
-  - {fileID: 11400000, guid: 869693331a25ec2498112924cd962577, type: 2}
+  _upgradeList: []
 --- !u!4 &1881812832
 Transform:
   m_ObjectHideFlags: 0
@@ -8859,6 +8850,19 @@ MonoBehaviour:
   _transitionUI: {fileID: 1681728591}
   _loadingBar: {fileID: 1421588247}
   _currentScene: {fileID: 0}
+--- !u!114 &1881812835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881812830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f315435cd502703408eff0c0069bfc40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CCursorManager
+  _cursorTexture: {fileID: 2800000, guid: bc8ca31831e4d9c468dff92a0a860338, type: 3}
 --- !u!1 &1882263778
 GameObject:
   m_ObjectHideFlags: 0
