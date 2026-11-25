@@ -49,10 +49,6 @@ public class CMapNodeController : MonoBehaviour
             return;
         }
 
-        if (prevNode.IsVisited && prevNode.IsActive)
-        {
-            _isActive = true;
-        }
 
         _previousNode.Add(prevNode);
         
@@ -61,6 +57,22 @@ public class CMapNodeController : MonoBehaviour
         line.positionCount = 2;
         line.SetPosition(0, prevNode.transform.position);
         line.SetPosition(1, transform.position);
+        Color color = Color.white;
+
+        if (prevNode.IsVisited && prevNode.IsActive)
+        {
+            _isActive = true;
+        }
+
+        else if(!prevNode.IsVisited || !_isVisited)
+        {
+            color.r = 0.3f;
+            color.g = 0.3f;
+            color.b = 0.3f;
+        }
+
+        line.startColor = color;
+        line.endColor = color;
     }
 
     public void SetNodeType(SONodeTypeData data)
@@ -92,6 +104,7 @@ public class CMapNodeController : MonoBehaviour
         {
             return;
         }
+
 
         if(_typeData == null)
         {
