@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -21,6 +22,7 @@ public class CSeceneManager : CSingletonDontDstroyAtLoad<CSeceneManager>
 
     #region property
     public static SOSceneData CurrentScene => Instance._currentScene;
+    public static event Action OnLoadComplete;
     #endregion
 
 
@@ -31,8 +33,7 @@ public class CSeceneManager : CSingletonDontDstroyAtLoad<CSeceneManager>
         {
             Debug.LogWarning("Missing _loadingbar");
         }
-        /*
-        */
+
         _isLoading = false;
     }
 
@@ -128,8 +129,10 @@ public class CSeceneManager : CSingletonDontDstroyAtLoad<CSeceneManager>
             await _transitionUI.FadeTo(ct, 0f, fadeDuration);
         }
 
-
+        await UniTask.Yield();
         Debug.Log($"{sceneName}");
+        OnLoadComplete?.Invoke();
+        OnLoadComplete = null;
 
         _isLoading = false;
 

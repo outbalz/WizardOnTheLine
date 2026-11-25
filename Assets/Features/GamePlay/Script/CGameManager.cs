@@ -13,7 +13,8 @@ public class CGameManager : CSingleton<CGameManager>
 	[SerializeField] private CSquadSpawner _spawner;
 
 	[Space]
-	[SerializeField] private float _difficultyMultiplyer;
+	[SerializeField] private float _mapDifficultyMultiplyer;
+	[SerializeField] private float _gameDifficultyMultiplyer = 1;
 
 	[Space]
 	[SerializeField] private CBattleUIManager _battleUIManager;
@@ -60,10 +61,16 @@ public class CGameManager : CSingleton<CGameManager>
 		_battleUIManager.InitializeButtons();
 	}
 
+	public void SetBattleSetting(float difficulty, SOPlayerData enemyPlayerData)
+	{
+		_mapDifficultyMultiplyer = difficulty;
+		_enemyPlayerData = enemyPlayerData;
+	}
+
 	private void Update()
 	{
 		_numHolder += _CMPperSec * Time.deltaTime;
-		_enemyCMP += _CMPperSec * _difficultyMultiplyer * Time.deltaTime;
+		_enemyCMP += _CMPperSec * _mapDifficultyMultiplyer * _gameDifficultyMultiplyer * Time.deltaTime;
 
 		if (_numHolder >= 1)
 		{

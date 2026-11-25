@@ -15,7 +15,8 @@ MonoBehaviour:
   _id: BattleNodeDataSO_NomalBattle
   _name: BattleNodeDataSO_NomalBattle
   _nodeSpite: {fileID: -456140089, guid: 8f475ec6a39ef26459c0afa2cecba2c4, type: 3}
-  _nodeVisitedSpite: {fileID: -456140089, guid: 8f475ec6a39ef26459c0afa2cecba2c4, type: 3}
+  _nodeVisitedSpite: {fileID: 5692100837873982411, guid: cda6df7d78e38d8449ef9806890577da, type: 3}
   _type: 1
   _enemyPlayer: {fileID: 11400000, guid: ca10023107f63ee4fbdf800217fe398c, type: 2}
   _difficulty: 1
+  _sceneData: {fileID: 11400000, guid: c1bc060c07c98e843b800b8d6a2beb1e, type: 2}

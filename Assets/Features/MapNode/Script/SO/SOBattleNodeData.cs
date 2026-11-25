@@ -20,6 +20,11 @@ public class SOBattleNodeData : SONodeTypeData
             return;
         }
 
+        CSeceneManager.OnLoadComplete += () =>
+        {
+            CGameManager.Instance.SetBattleSetting(_difficulty, _enemyPlayer);
+        };
+
         CSceneTransitionTriggerContoller.Instance.SetTargetScene(_sceneData);
         CSceneTransitionTriggerContoller.Instance.TriggerSceneTransiton();
     }
