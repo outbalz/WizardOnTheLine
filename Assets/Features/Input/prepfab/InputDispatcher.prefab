@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4761887865712996773}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -52,6 +52,8 @@ MonoBehaviour:
   - rid: 6178808272421912668
   - rid: 6178808272421912669
   - rid: 6178808272421912670
+  - rid: 5559904319355748476
+  - rid: 5559904319355748477
   references:
     version: 2
     RefIds:
@@ -75,6 +77,16 @@ MonoBehaviour:
       data:
         _reference: {fileID: 8816471114339809100, guid: 200e6164e90dfc2499f3177eebf29beb, type: 3}
         _actionName: Scroll
+    - rid: 5559904319355748476
+      type: {class: CInputActionData, ns: , asm: Assembly-CSharp}
+      data:
+        _reference: {fileID: 6645679028184204249, guid: 200e6164e90dfc2499f3177eebf29beb, type: 3}
+        _actionName: D
+    - rid: 5559904319355748477
+      type: {class: CInputActionData, ns: , asm: Assembly-CSharp}
+      data:
+        _reference: {fileID: 3748922603747158041, guid: 200e6164e90dfc2499f3177eebf29beb, type: 3}
+        _actionName: F
     - rid: 6178808272421912668
       type: {class: CInputActionData, ns: , asm: Assembly-CSharp}
       data:

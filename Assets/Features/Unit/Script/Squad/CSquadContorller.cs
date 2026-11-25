@@ -170,6 +170,12 @@ public class CSquadContorller : MonoBehaviour
 
                 return true;
             case SOderContext.EOderType.Stop:
+                for (int i = 0; i < _squadMembers.Count; i++)
+                {
+                    context.targetPos = _squadMembers[i].transform.position;
+                    _squadMembers[i].StateContoller.GiveOder(context);
+                }
+
                 break;
             case SOderContext.EOderType.Retreat:
                 break;

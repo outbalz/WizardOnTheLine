@@ -29,6 +29,7 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
     #region property
     public IReadOnlyList<CSquadContorller> SelectedSquad => _selectedSquad;
+    public bool IsMouseOverUi = false;
     #endregion
 
     private void Start()
@@ -158,6 +159,11 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
             return;
         }
 
+        if (IsMouseOverUi)
+        {
+            return;
+        }
+
         _mousePositionAction.OnPerformedAction += OnMousePosPerfomed;
         
         Vector2 mousePosition = _mousePositionAction.Value;
@@ -176,6 +182,11 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
         if (_mouseCommand.CommadState != CMouseCommandController.EMouseCommadState.Universal)
         {
             _mouseCommand.SetCommanState(CMouseCommandController.EMouseCommadState.Universal);
+            return;
+        }
+
+        if (IsMouseOverUi)
+        {
             return;
         }
 

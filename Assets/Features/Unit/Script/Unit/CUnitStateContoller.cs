@@ -141,6 +141,8 @@ public class CUnitStateContoller : MonoBehaviour
                 CarryOutOder();
                 break;
             case SOderContext.EOderType.Stop:
+                _currentOder = context;
+                CarryOutOder();
                 break;
             case SOderContext.EOderType.Retreat:
                 break;
@@ -524,6 +526,8 @@ public class CUnitStateContoller : MonoBehaviour
                 _unitController.TargetFinder.GiveTagetSreachOder(EngageTarget);
                 break;
             case SOderContext.EOderType.Stop:
+                _unitController.Movement.CancelMoveOder();
+                OderComplet();
                 break;
             case SOderContext.EOderType.Retreat:
                 break;

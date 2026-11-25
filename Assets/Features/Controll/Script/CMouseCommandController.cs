@@ -24,12 +24,18 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
     private readonly string _mouseClickActionName = "MouseClick";
     private readonly string _mouseRightClickActionName = "MouseRigtCilck";
     private readonly string _AKeyActionName = "A";
+    private readonly string _SKeyActionName = "S";
+    private readonly string _DKeyActionName = "D";
+    private readonly string _FKeyActionName = "F";
 
     private EMouseCommadState _commadState = EMouseCommadState.Universal;
     private CInputVectorActionData _mousePositionAction;
     private CInputActionData _mouseClickAction;
     private CInputActionData _mouseRightClickAction;
     private CInputActionData _AKeyAction;
+    private CInputActionData _SKeyAction;
+    private CInputActionData _DKeyAction;
+    private CInputActionData _FKeyAction;
     private bool _isBinded = false;
     #endregion
 
@@ -95,6 +101,27 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
             return;
         }
 
+        if (!(CInputDispatcher.Instance.InputActionMap.TryGetValue(_SKeyActionName, out _SKeyAction)))
+        {
+            Debug.LogError($"Mouse click action '{_SKeyAction}' not found in InputActionMap.");
+            enabled = false;
+            return;
+        }
+
+        if (!(CInputDispatcher.Instance.InputActionMap.TryGetValue(_DKeyActionName, out _DKeyAction)))
+        {
+            Debug.LogError($"Mouse click action '{_DKeyAction}' not found in InputActionMap.");
+            enabled = false;
+            return;
+        }
+
+        if (!(CInputDispatcher.Instance.InputActionMap.TryGetValue(_FKeyActionName, out _FKeyAction)))
+        {
+            Debug.LogError($"Mouse click action '{_FKeyAction}' not found in InputActionMap.");
+            enabled = false;
+            return;
+        }
+
         BindAction();
     }
 
@@ -130,6 +157,9 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
         _mouseClickAction.OnPerformedAction += OnLeftClickCommand;
         _mouseRightClickAction.OnPerformedAction += OnRightClickCommand;
         _AKeyAction.OnPerformedAction += OnAKeyPerfomed;
+        _SKeyAction.OnPerformedAction += OnSKeyPerfomed;
+        _DKeyAction.OnPerformedAction += OnDKeyPerfomed;
+        _FKeyAction.OnPerformedAction += OnFKeyPerfomed;
 
         _isBinded = true;
     }
@@ -149,6 +179,9 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
         _mouseClickAction.OnPerformedAction -= OnLeftClickCommand;
         _mouseRightClickAction.OnPerformedAction -= OnRightClickCommand;
         _AKeyAction.OnPerformedAction -= OnAKeyPerfomed;
+        _SKeyAction.OnPerformedAction -= OnSKeyPerfomed;
+        _DKeyAction.OnPerformedAction -= OnDKeyPerfomed;
+        _FKeyAction.OnPerformedAction -= OnFKeyPerfomed;
 
         _isBinded = false;
     }
@@ -175,6 +208,11 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
         switch (_commadState)
         {
             case EMouseCommadState.Move:
+
+                oder.oderType = SOderContext.EOderType.Move;
+                oder.targetPos = worldPosition;
+
+                GiveOderToSelectedSquad(oder);
                 break;
             case EMouseCommadState.AttackMove:
 
@@ -223,9 +261,28 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
         }
     }
 
-    private void OnAKeyPerfomed()
+    public void OnAKeyPerfomed()
     {
         _commadState = EMouseCommadState.AttackMove;
+    }
+
+    public void OnSKeyPerfomed()
+    {
+        SOderContext stopOder = new SOderContext();
+        stopOder.oderType = SOderContext.EOderType.Stop;
+
+        GiveOderToSelectedSquad(stopOder);
+    }
+
+    public void OnDKeyPerfomed()
+    {
+        _commadState = EMouseCommadState.Move;
+    }
+
+
+    public void OnFKeyPerfomed()
+    {
+        //TODO FallBack
     }
 
     public void SetCommanState(EMouseCommadState state)
