@@ -35,7 +35,7 @@ public abstract class CSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
         else if(_instance != this)
         {
-            if (gameObject.GetComponentCount() > 1)
+            if (gameObject.GetComponentCount() > 2)
             {
                 Destroy(this);
             }
