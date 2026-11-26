@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07cd509833d7744d891933098a8a6f5, type: 3}
+  m_Name: SquadDataPresetSO_TankBoss
+  m_EditorClassIdentifier: Assembly-CSharp::SOSquadDataPreset
+  _id: SquadDataPresetSO_TankBoss
+  _name: SquadDataPresetSO_TankBoss
+  _unitData:
+  - {fileID: 11400000, guid: 87a49333122e91e4e9aa97a14a6146af, type: 2}
+  _squadSkill: []
+  _unitSkill: []
+  _markerSprite: {fileID: -4541125625588044608, guid: b0f2b6283b9cd044396dfe7865cacc1e, type: 3}
+  _cost: 0
+  _potraitSprite: {fileID: 0}

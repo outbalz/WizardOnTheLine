@@ -12646,6 +12646,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _mouseCommand: {fileID: 1476403840}
+  _doubleClickInterval: 0.4
   IsMouseOverUi: 0
 --- !u!4 &1476403839
 Transform:
