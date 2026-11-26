@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SkillDataSO_LightningMortar
   m_EditorClassIdentifier: Assembly-CSharp::SOSkillData
   _id: SkillDataSO_LightningMortar
-  _name: SkillDataSO_LightningMortar
+  _name: LightningMortar
   _cost: 100
   _coolDown: -1
   _range: -1

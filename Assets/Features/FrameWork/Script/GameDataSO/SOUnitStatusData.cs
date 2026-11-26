@@ -42,13 +42,14 @@ public class SOUnitStatusData : SOGameData
             return 0;
         }
 
+        /*
         if(distance > _weaponRange)
         {
             return 0;
         }
-
+        */
         float t = distance/_weaponRange;
-        float damege = _weaponDamage * _weaponDamageFalloff.Evaluate(t);
+        float damege = _weaponDamage * _weaponDamageFalloff.Evaluate(Mathf.Clamp01(t));
 
         return damege;
     }

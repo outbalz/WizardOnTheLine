@@ -18,8 +18,8 @@ MonoBehaviour:
   _preset: {fileID: 11400000, guid: 55f15897273b40445b54fb8eaf8dd5c6, type: 2}
   _squadModifier: []
   _unitModifier:
-  - rid: 5559904278799974400
-  - rid: 5559904278799974403
+  - rid: 6178808436684488835
+  - rid: 6178808436684488836
   _squadSkillData: []
   _unitSkillData: []
   _upgradeMakerSprite: {fileID: 0}
@@ -30,24 +30,24 @@ MonoBehaviour:
   _unitName: "\uB9C8\uCD1D\uC218"
   _unitSubName: Rifle Wizard
   _description: "\uBAA8\uB4E0 \uB9C8\uCD1D\uC218 \uC720\uB2DB\n\uC870\uC900 \uC9C0\uC5F0\uC2DC\uAC04
-    - 30%\n\uBB34\uAE30 \uC7AC\uC0AC\uC6A9 \uB300\uAE30\uC2DC\uAC04 -30%"
+    - 20%\n\uBB34\uAE30 \uC7AC\uC0AC\uC6A9 \uB300\uAE30\uC2DC\uAC04 -20%"
   _unlockCondition:
   - rid: 5559904290768421128
   references:
     version: 2
     RefIds:
-    - rid: 5559904278799974400
-      type: {class: CMultiflyModifier, ns: , asm: Assembly-CSharp}
-      data:
-        _modifier: 0.7
-        _modifierName: WeaponAimTime
-    - rid: 5559904278799974403
-      type: {class: CMultiflyModifier, ns: , asm: Assembly-CSharp}
-      data:
-        _modifier: 0.7
-        _modifierName: WeaponCoolDown
     - rid: 5559904290768421128
       type: {class: CUpgradeMaxStackCondition, ns: , asm: Assembly-CSharp}
       data:
         _upgrade: {fileID: 11400000}
         _maxStack: 3
+    - rid: 6178808436684488835
+      type: {class: CAddModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _modifier: -0.2
+        _modifierName: WeaponAimTime_Additive
+    - rid: 6178808436684488836
+      type: {class: CAddModifier, ns: , asm: Assembly-CSharp}
+      data:
+        _modifier: -0.2
+        _modifierName: WeaponCoolDown_Additive

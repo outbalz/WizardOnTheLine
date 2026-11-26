@@ -189,6 +189,11 @@ public class CSquadContorller : MonoBehaviour
                 {
                     context.targetPos = _squadMembers[i].transform.position;
                     context.targetPos.x = CUtil.MAP_HIGHT_MIN;
+
+                    CMultiflyModifier retreatModifier = new CMultiflyModifier("MovementSpeed", 1.5f);
+
+                    _squadMembers[i].Modifier.ApplyModifierWithCheck(retreatModifier);
+
                     _squadMembers[i].StateContoller.GiveOder(context);
                     _squadMembers[i].SelectUint(false);
                 }

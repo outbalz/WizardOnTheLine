@@ -7,6 +7,7 @@ public class SOBattleNodeData : SONodeTypeData
 {
     [SerializeField] private SOPlayerData _enemyPlayer;
     [SerializeField] private float _difficulty;
+    [SerializeField] private int _rewardamount = 1;
     [SerializeField] private SOSceneData _sceneData;
 
     public float Difficulty => _difficulty;
@@ -22,7 +23,7 @@ public class SOBattleNodeData : SONodeTypeData
 
         CSeceneManager.OnLoadComplete += () =>
         {
-            CGameManager.Instance.SetBattleSetting(_difficulty, _enemyPlayer);
+            CGameManager.Instance.SetBattleSetting(_difficulty, _enemyPlayer, _rewardamount);
         };
 
         CSceneTransitionTriggerContoller.Instance.SetTargetScene(_sceneData);

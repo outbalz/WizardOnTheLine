@@ -76,9 +76,6 @@ public class CRewardPanelConroller : MonoBehaviour
             return;
         }
 
-        if (_rewards[index] is SOUpgradeData upgradeData)
-        {
-            CGameProgressManager.Instance.UpgradeList.Add(upgradeData);
-        }
+        CGameProgressManager.Instance.GetReward(_rewards[index]);
     }
 }

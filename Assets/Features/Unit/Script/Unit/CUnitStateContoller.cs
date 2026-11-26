@@ -419,11 +419,22 @@ public class CUnitStateContoller : MonoBehaviour
             {
                 _weaponCooldown -= Time.deltaTime;
                 await UniTask.Yield();
+
+                if (ct.IsCancellationRequested)
+                {
+                    return;
+                }
+
                 continue;
             }
 
             aimTime -= Time.deltaTime;
             await UniTask.Yield();
+        }
+
+        if (ct.IsCancellationRequested)
+        {
+            return;
         }
 
         EngageWeapon();
@@ -546,7 +557,7 @@ public class CUnitStateContoller : MonoBehaviour
     {
         if(_currentOder.oderType == SOderContext.EOderType.Retreat)
         {
-            float hpMultplier = _unitController.HP.HP/_unitController.Status.MaxHP;
+            float hpMultplier = 0.6f + ( (_unitController.HP.HP/_unitController.Status.MaxHP) * 0.4f);
 
 
             float refundCost = (_unitController.Squad.SquadReferance.Cost / _unitController.Squad.SquadReferance.SquadSize) * hpMultplier;

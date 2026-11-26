@@ -16,6 +16,7 @@ public interface IRewardable
 public class SORewardPoolData : ScriptableObject
 {
     [SerializeField] private List<CWeightedRandom<SOUpgradeData>.SRandomWeight> _upgradeRewardPool;
+    [SerializeField] private List<CWeightedRandom<SOSkillUpgradeData>.SRandomWeight> _skillUpgradeRewardPool;
 
     public CWeightedRandom<IRewardable> GetRewardPool()
     {
@@ -41,6 +42,30 @@ public class SORewardPoolData : ScriptableObject
                 CWeightedRandom<IRewardable>.SRandomWeight weightedReward = new CWeightedRandom<IRewardable>.SRandomWeight();
                 weightedReward.Item = reward;
                 weightedReward.Weight = _upgradeRewardPool[i].Weight;
+
+                rewardPool.Add(weightedReward);
+            }
+        }
+
+        for (int i = 0; i < _skillUpgradeRewardPool.Count; i++)
+        {
+            IRewardable reward = _skillUpgradeRewardPool[i].Item;
+            bool condition = true;
+
+            for (int j = 0; j < reward.UnlockCondition.Length; j++)
+            {
+                if (!reward.UnlockCondition[j].CheckCondition())
+                {
+                    condition = false;
+                    break;
+                }
+            }
+
+            if (condition)
+            {
+                CWeightedRandom<IRewardable>.SRandomWeight weightedReward = new CWeightedRandom<IRewardable>.SRandomWeight();
+                weightedReward.Item = reward;
+                weightedReward.Weight = _skillUpgradeRewardPool[i].Weight;
 
                 rewardPool.Add(weightedReward);
             }

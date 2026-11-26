@@ -11,6 +11,7 @@ public class CGameManager : CSingleton<CGameManager>
 	[SerializeField] private SOPlayerData _enemyPlayerData;
 	[SerializeField] private CEnemyAIManager _enemyAIManager;
 	[SerializeField] private CSquadSpawner _spawner;
+	[SerializeField] private CSkillCasterController _skillCaster;
 
 	[Space]
 	[SerializeField] private float _mapDifficultyMultiplyer;
@@ -37,6 +38,7 @@ public class CGameManager : CSingleton<CGameManager>
 	public Dictionary<SOPlayerData, List<CSquadContorller>> SquadListMap => _squadListMap;
 	public float PlayerCMP { get { return _playerCMP; } set { _playerCMP = value; _battleUIManager.UpdateText(_playerCMP); } }
 	public CSquadSpawner Spawner => _spawner;
+	public CSkillCasterController SkillCaster => _skillCaster;
 	#endregion
 
 	protected override void Awake()
@@ -60,13 +62,14 @@ public class CGameManager : CSingleton<CGameManager>
 
 	private void Start()
 	{
-		CGameProgressManager.Instance.SetPreset();
+		CGameProgressManager.Instance.SetUpgrade();
 		_battleUIManager.InitializeButtons();
 	}
 
 	public void SetBattleSetting(float difficulty, SOPlayerData enemyPlayerData, int reward = 1)
 	{
 		_mapDifficultyMultiplyer = difficulty;
+		_gameDifficultyMultiplyer = CGameProgressManager.Instance.GameDifficulty;
 		_enemyPlayerData = enemyPlayerData;
 		_reward = reward;
 	}
@@ -120,6 +123,11 @@ public class CGameManager : CSingleton<CGameManager>
 
 		_battleUIManager.GameOver(isVictory);
 		_rewardPanel.CreatRewardButton(_reward);
+
+		if (!isVictory)
+		{
+			CGameProgressManager.Instance.ResetSave();
+		}
 	}
 
 	public void SetTimeScale(float timeScale)

@@ -24,7 +24,7 @@ MonoBehaviour:
   _replacement:
   - IndexNum: 1
     RepalceUnitData: {fileID: 11400000, guid: 287352f0ba0bc0e41a067da1516f303a, type: 2}
-  _costChange: 30
+  _costChange: 40
   _potraitSprite: {fileID: 21300000, guid: 41faab29b0f60b640bdba65cb63446d9, type: 3}
   _upgradeRewardSprite: {fileID: 21300000, guid: 41faab29b0f60b640bdba65cb63446d9, type: 3}
   _unitName: "\uC804\uD22C\uC5F0\uAE08\uC220\uC0AC"

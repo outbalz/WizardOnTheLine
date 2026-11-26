@@ -22,7 +22,7 @@ public class CSquadSpawner : MonoBehaviour
         CGameManager.Instance.SquadListMap[playerData].Add(squad);
     }
 
-    //for test====================
+    //for Debug====================
     #region debug
     [SerializeField] private SOSquadDataPreset _debugPrest;
     #endregion
@@ -30,7 +30,10 @@ public class CSquadSpawner : MonoBehaviour
     [ContextMenu("SpawnSquad")]
     public void SpawnTest()
     {
-        SpawnSquad(_debugPrest, _playerData);
+        for (int i = 0; i < 10; i++)
+        {
+            SpawnSquad(_debugPrest, _playerData);
+        }
     }
     //=============================
 }

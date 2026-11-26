@@ -51,6 +51,8 @@ public class CEtitySummonSkillEffect : CSkillEffect
 
 		int amount = Mathf.RoundToInt(caster.ModifierHandler.GetModifiedValue(_modifierName + "Amount", _summonAmount));
 
+		float summonInterval = caster.ModifierHandler.GetModifiedValue(_modifierName + "Interval", _summonInterval);
+
 		for (int i = 0; i < amount; i++)
 		{
 			if(caster == null)
@@ -67,7 +69,7 @@ public class CEtitySummonSkillEffect : CSkillEffect
 			entity.Initialized(caster);
 			entity.gameObject.SetActive(true);
 
-			await UniTask.WaitForSeconds(_summonInterval);
+			await UniTask.WaitForSeconds(summonInterval);
 
 			if(caster == null)
 			{

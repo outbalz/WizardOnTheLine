@@ -37,3 +37,10 @@ MonoBehaviour:
     Weight: 1
   - Item: {fileID: 11400000, guid: 61b0ce6e838aeaf4c8f2868afe3cf7c9, type: 2}
     Weight: 1
+  _skillUpgradeRewardPool:
+  - Item: {fileID: 11400000, guid: 197d262e87694d34bac4f0257bff9ab6, type: 2}
+    Weight: 1
+  - Item: {fileID: 11400000, guid: 95df8032063d7ed429aa6e1ea5d13659, type: 2}
+    Weight: 1
+  - Item: {fileID: 11400000, guid: da1858555b19f7b418da29b178ee7688, type: 2}
+    Weight: 1
