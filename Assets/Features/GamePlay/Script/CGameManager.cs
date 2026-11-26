@@ -24,7 +24,7 @@ public class CGameManager : CSingleton<CGameManager>
 	#endregion
 
 	#region private var
-	private float _playerCMP = 20000f;
+	private float _playerCMP = 200;
 	private float _enemyCMP = 200f;
 	private float _numHolder = 0;
 	private Dictionary<SOPlayerData, List<CSquadContorller>> _squadListMap = new Dictionary<SOPlayerData, List<CSquadContorller>>();
@@ -35,7 +35,7 @@ public class CGameManager : CSingleton<CGameManager>
 	public SOPlayerData PlayerData => _playerData;
 	public SOPlayerData EnemyPlayerData => _enemyPlayerData;
 	public Dictionary<SOPlayerData, List<CSquadContorller>> SquadListMap => _squadListMap;
-	public float PlayerCMP => _playerCMP;
+	public float PlayerCMP { get { return _playerCMP; } set { _playerCMP = value; _battleUIManager.UpdateText(_playerCMP); } }
 	public CSquadSpawner Spawner => _spawner;
 	#endregion
 
@@ -53,7 +53,7 @@ public class CGameManager : CSingleton<CGameManager>
 		_squadListMap.Add(_enemyPlayerData, new List<CSquadContorller>());
 
 		//Cursor.lockState = CursorLockMode.Confined;
-		Time.timeScale = 2;
+		//Time.timeScale = 2;
 
 		base.Awake();
 	}

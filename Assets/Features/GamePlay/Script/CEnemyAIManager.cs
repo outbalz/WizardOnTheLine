@@ -267,6 +267,11 @@ public class CEnemyAIManager : MonoBehaviour
 
         for (int i = 0; i < playerSquads.Count; i++)
         {
+            if(playerSquads[i].SquadMembers.Count <= 0)
+            {
+                continue;
+            }
+
             if (playerSquads[i].SquadMembers[0].transform.position.x > frontLinePos)
             {
                 frontLinePos = playerSquads[i].SquadMembers[0].transform.position.x;

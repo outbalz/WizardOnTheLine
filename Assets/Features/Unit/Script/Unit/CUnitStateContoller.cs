@@ -145,6 +145,11 @@ public class CUnitStateContoller : MonoBehaviour
                 CarryOutOder();
                 break;
             case SOderContext.EOderType.Retreat:
+                context.targetPos.x = CUtil.MAP_WITH_MIN;
+                _currentOder = context;
+
+                ChangeState(EUnitState.Move);
+                CarryOutOder();
                 break;
             default:
                 break;
@@ -530,6 +535,7 @@ public class CUnitStateContoller : MonoBehaviour
                 OderComplet();
                 break;
             case SOderContext.EOderType.Retreat:
+                _unitController.Movement.GiveMoveOder(_currentOder.targetPos.x);
                 break;
             default:
                 break;
@@ -538,6 +544,22 @@ public class CUnitStateContoller : MonoBehaviour
 
     public void OderComplet()
     {
+        if(_currentOder.oderType == SOderContext.EOderType.Retreat)
+        {
+            float hpMultplier = _unitController.HP.HP/_unitController.Status.MaxHP;
+
+
+            float refundCost = (_unitController.Squad.SquadReferance.Cost / _unitController.Squad.SquadReferance.SquadSize) * hpMultplier;
+
+            CGameManager.Instance.PlayerCMP += refundCost;
+
+            //Debug.Log($"{_unitController.Squad.SquadReferance.Cost} / {_unitController.Squad.SquadReferance.SquadSize} * {hpMultplier} = {refundCost}");
+            //Debug.Log(_unitController.Squad.SquadReferance.SquadSize);
+
+            _unitController.KillUnit();
+            return;
+        }
+
         _currentOder.oderType = SOderContext.EOderType.None;
         ChangeState(EUnitState.Idle);
     }

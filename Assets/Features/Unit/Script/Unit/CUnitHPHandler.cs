@@ -48,6 +48,11 @@ public class CUnitHPHandler : MonoBehaviour, ITargetable
 
     public void TakeDamage(float damage)
     {
+        if(_hp <= 0)
+        {
+            return;
+        }
+
         _hp -= damage;
         //Debug.Log($"{_hp} - {damage}");
 

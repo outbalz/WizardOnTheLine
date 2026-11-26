@@ -15373,7 +15373,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f315435cd502703408eff0c0069bfc40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CCursorManager
-  _cursorTexture: {fileID: 0}
+  _universalCursor: {fileID: 2800000, guid: bc8ca31831e4d9c468dff92a0a860338, type: 3}
+  _attckCursor: {fileID: 2800000, guid: c07657c8d2a643c478ef6feb3e5a2e20, type: 3}
+  _moveCursor: {fileID: 2800000, guid: e66224a8d01098b429741872d9db9897, type: 3}
+  _skillCursor: {fileID: 2800000, guid: 93ac369c0489703449ebc29747101ed0, type: 3}
 --- !u!1 &1882263778
 GameObject:
   m_ObjectHideFlags: 0

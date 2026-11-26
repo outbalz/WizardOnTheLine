@@ -28,6 +28,7 @@ public class CSquadContorller : MonoBehaviour
 	#region private var
     private SOPlayerData _playerData;
 	private List<CUnitController> _squadMembers = new List<CUnitController>();
+    private ISquadReferance _squadReferance;
     #endregion
 
     #region property
@@ -36,6 +37,8 @@ public class CSquadContorller : MonoBehaviour
     public List<CUnitController> SquadMembers => _squadMembers;
     public CSquadSkillCasterController SkillCaster => _skillCasterController;
     public CModifierHandler SquadModifierHandler => _squadModifierHandler;
+    public ISquadReferance SquadReferance => _squadReferance;
+    public bool IsSelectable = true;
     public event System.Action OnSquadDeath;
     #endregion
 
@@ -154,6 +157,9 @@ public class CSquadContorller : MonoBehaviour
 
         _skillCasterController.enabled = true;
         _skillCasterController.InitializeSquadSkill(squadData);
+
+        _squadReferance = squadData;
+        IsSelectable = true;
     }
 
     public bool GiveOder(SOderContext context)
@@ -178,6 +184,20 @@ public class CSquadContorller : MonoBehaviour
 
                 break;
             case SOderContext.EOderType.Retreat:
+                IsSelectable = false;
+                for (int i = 0; i < _squadMembers.Count; i++)
+                {
+                    context.targetPos = _squadMembers[i].transform.position;
+                    context.targetPos.x = CUtil.MAP_HIGHT_MIN;
+                    _squadMembers[i].StateContoller.GiveOder(context);
+                    _squadMembers[i].SelectUint(false);
+                }
+
+                IsSelectable = false;
+
+                SelectSquad(false);
+                _markerController.gameObject.SetActive(false);
+
                 break;
             default:
                 break;
@@ -205,6 +225,7 @@ public class CSquadContorller : MonoBehaviour
 
         OnSquadDeath?.Invoke();
         OnSquadDeath = null;
+        _squadReferance = null;
     }
 
     private void SetSquadMaxHP()

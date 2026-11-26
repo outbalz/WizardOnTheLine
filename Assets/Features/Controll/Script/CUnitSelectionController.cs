@@ -238,6 +238,10 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
                         if (marker != null)
                         {
+                            if (!marker.Squad.IsSelectable)
+                            {
+                                continue;
+                            }
                             minY = marker.transform.position.y;
                             minYSquad = marker.Squad;
                             isSquadMarkerSelected = true;
@@ -266,6 +270,10 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
 
                             if (unit != null)
                             {
+                                if (!unit.Squad.IsSelectable) 
+                                { 
+                                    continue; 
+                                }
                                 minY = unit.transform.position.y;
                                 minYSquad = unit.Squad;
                             }
@@ -306,6 +314,11 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
                     continue;
                 }
 
+                if (!unit.Squad.IsSelectable)
+                {
+                    continue;
+                }
+
                 unit.Squad.SelectSquad(true);
                 _selectedSquad.Add(unit.Squad);
                 _selectedSquadHash.Add(unit.Squad);
@@ -321,6 +334,11 @@ public class CUnitSelectionController : CSingleton<CUnitSelectionController>
                 }
 
                 if(_selectedSquadHash.Contains(marker.Squad))
+                {
+                    continue;
+                }
+
+                if (!marker.Squad.IsSelectable)
                 {
                     continue;
                 }

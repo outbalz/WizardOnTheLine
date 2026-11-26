@@ -6,6 +6,7 @@ public class CSquadMarkerController : MonoBehaviour
 	#region inspector
 	//[SerializeField] private SpriteRenderer _renderer;
 	[SerializeField] private Image _image;
+	[SerializeField] private Image _hpImage;
 	[SerializeField] private Color32 _color;
 	[SerializeField] private CSquadContorller _squad;
 	[SerializeField] private float _offsetY;
@@ -69,8 +70,9 @@ public class CSquadMarkerController : MonoBehaviour
 		//_renderer.sprite = preset.MarkerSprite;
 		_image.sprite = referance.MarkerSprite;
         _color = _squad.PlayerData.PlayerColor;
+		//
+		_hpImage.color = _color;
 
-		_hpSlider.fillRect.GetComponent<Image>().color = _color;
 		SelectMarker(false);
     }
 
@@ -105,7 +107,7 @@ public class CSquadMarkerController : MonoBehaviour
 
 	public void SelectMarker(bool isSelected)
 	{
-		Color32 color = _color;
+		Color32 color = Color.white;
 
 		if (isSelected)
 		{

@@ -279,7 +279,7 @@ TextureImporter:
       name: squadIcon 1_8
       rect:
         serializedVersion: 2
-        x: 1040
+        x: 1039
         y: 0
         width: 130
         height: 215
@@ -323,7 +323,7 @@ TextureImporter:
       name: squadIcon 1_10
       rect:
         serializedVersion: 2
-        x: 1300
+        x: 1299
         y: 0
         width: 130
         height: 215

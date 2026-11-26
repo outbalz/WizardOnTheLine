@@ -186,11 +186,6 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
         _isBinded = false;
     }
 
-    private void ChangeCommandState(EMouseCommadState state)
-    {
-        _commadState = state;
-    }
-
     private void OnLeftClickCommand()
     {
         if(_commadState == EMouseCommadState.Universal)
@@ -234,7 +229,7 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
     {
         if (_commadState != EMouseCommadState.Universal)
         {
-            ChangeCommandState(EMouseCommadState.Universal);
+            SetCommanState(EMouseCommadState.Universal);
             return;
         }
 
@@ -263,7 +258,7 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
 
     public void OnAKeyPerfomed()
     {
-        _commadState = EMouseCommadState.AttackMove;
+        SetCommanState(EMouseCommadState.AttackMove);
     }
 
     public void OnSKeyPerfomed()
@@ -276,17 +271,39 @@ public class CMouseCommandController : CSingleton<CMouseCommandController>
 
     public void OnDKeyPerfomed()
     {
-        _commadState = EMouseCommadState.Move;
+        SetCommanState(EMouseCommadState.Move);
     }
 
 
     public void OnFKeyPerfomed()
     {
-        //TODO FallBack
+        SOderContext oder = new SOderContext();
+        oder.oderType = SOderContext.EOderType.Retreat;
+        oder.targetPos.x = CUtil.MAP_WITH_MIN;
+
+        GiveOderToSelectedSquad(oder);
     }
 
     public void SetCommanState(EMouseCommadState state)
     {
         _commadState = state;
+
+        switch (state)
+        {
+            case EMouseCommadState.Universal:
+                CCursorManager.SetCursor(CCursorManager.ECursorType.Universal);
+                break;
+            case EMouseCommadState.Move:
+                CCursorManager.SetCursor(CCursorManager.ECursorType.Move);
+                break;
+            case EMouseCommadState.AttackMove:
+                CCursorManager.SetCursor(CCursorManager.ECursorType.Attack);
+                break;
+            case EMouseCommadState.Skill:
+                CCursorManager.SetCursor(CCursorManager.ECursorType.Skill);
+                break;
+            default:
+                break;
+        }
     }
 }
