@@ -22,7 +22,7 @@ MonoBehaviour:
   _unitSkillData: []
   _upgradeMakerSprite: {fileID: 0}
   _replacement:
-  - IndexNum: 4
+  - IndexNum: 6
     RepalceUnitData: {fileID: 11400000, guid: b2d608ba4f599d140a0948f71b490a44, type: 2}
   _costChange: 10
   _potraitSprite: {fileID: 0}

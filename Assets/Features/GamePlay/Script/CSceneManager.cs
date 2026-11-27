@@ -130,13 +130,17 @@ public class CSeceneManager : CSingletonDontDstroyAtLoad<CSeceneManager>
         }
 
         await UniTask.Yield();
+
         Debug.Log($"{sceneName}");
-        OnLoadComplete?.Invoke();
-        OnLoadComplete = null;
 
         _isLoading = false;
 
 
     }
 
+    public void OnLoadCompleteInvoke()
+    {
+        OnLoadComplete?.Invoke();
+        OnLoadComplete = null;
+    }
 }

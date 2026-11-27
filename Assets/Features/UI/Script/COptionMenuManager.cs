@@ -14,7 +14,7 @@ public class COptionMenuManager : CSingletonDontDstroyAtLoad<COptionMenuManager>
 
     #region private var
     private bool _isOptitonMenuOpen = false;
-    private float _previousTimescale;
+    private float _previousTimescale = 1;
     private readonly string _ESCActionName = "ESC";
     private CInputActionData _ESCActionData;
     private bool _isBinded = false;
@@ -39,6 +39,8 @@ public class COptionMenuManager : CSingletonDontDstroyAtLoad<COptionMenuManager>
         }
 
         _previousTimescale = Time.timeScale;
+
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void Start()
@@ -183,6 +185,7 @@ public class COptionMenuManager : CSingletonDontDstroyAtLoad<COptionMenuManager>
 
         Time.timeScale = _previousTimescale;
         _optionMenu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void OpenOptitonMenu()
@@ -190,6 +193,7 @@ public class COptionMenuManager : CSingletonDontDstroyAtLoad<COptionMenuManager>
         _previousTimescale = Time.timeScale;
         Time.timeScale = 0;
         _optionMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void LoadTileSecene()

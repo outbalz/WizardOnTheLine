@@ -27,10 +27,6 @@ public class CBackgroundController : MonoBehaviour
     [SerializeField] private float _overlap = 0.05f;
     #endregion
 
-    #region private var
-    #endregion
-
-
     private void Awake()
     {
 

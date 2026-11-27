@@ -5000,7 +5000,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c6cb51719c1d57841a0c5af084b80cbd, type: 2}
     - {fileID: 11400000, guid: 9ddd76b8608851548a97ac7e5781c06b, type: 2}
   - StartDiecText: "\uC804\uD22C\uC5F0\uAE08\uC220\uC0AC \uBD84\uB300\uC6D0 +1\n\"\uB9C8\uB098\uBC29\uC0AC\uAE30
-      \uC9C0\uAE09\"  \uD574\uAE08\n(\uB9C8\uB098\uBC29\uC0AC\uAE30 \uC804\uD22C\uC5F0\uAE09\uC220\uC0AC
+      \uC9C0\uAE09\"  \uD574\uAE08\n(\uB9C8\uB098\uBC29\uC0AC\uAE30 \uC804\uD22C\uC5F0\uAE08\uC220\uC0AC
       \uD638\uCD9C \uD574\uAE08)"
     StartUpgrade:
     - {fileID: 11400000, guid: b14282be0e3d8824db4706424259628a, type: 2}
@@ -15231,7 +15231,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1881812836}
         m_TargetAssemblyTypeName: COptionMenuManager, Assembly-CSharp
-        m_MethodName: SetResolution
+        m_MethodName: SetFullscreenMode
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

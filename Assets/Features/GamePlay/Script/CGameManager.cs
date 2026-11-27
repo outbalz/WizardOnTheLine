@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Cysharp.Threading.Tasks.Triggers;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -65,7 +66,9 @@ public class CGameManager : CSingleton<CGameManager>
 	{
 		CGameProgressManager.Instance.SetUpgrade();
 		_battleUIManager.InitializeButtons();
-	}
+
+		CSeceneManager.Instance.OnLoadCompleteInvoke();
+    }
 
 	public void SetBattleSetting(float difficulty, SOPlayerData enemyPlayerData, int reward = 1)
 	{
@@ -73,6 +76,8 @@ public class CGameManager : CSingleton<CGameManager>
 		_gameDifficultyMultiplyer = CGameProgressManager.Instance.GameDifficulty;
 		_enemyPlayerData = enemyPlayerData;
 		_reward = reward;
+
+		SetTimeScale(1);
 	}
 
 	private void Update()
