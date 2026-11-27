@@ -21,6 +21,8 @@ public abstract class CSingleton<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
+    public static bool HasInstance => _instance != null;
+
     public static T Create()
     {
         return CSingleton<T>.Instance;

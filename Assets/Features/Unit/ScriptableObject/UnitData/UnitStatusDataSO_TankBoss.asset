@@ -19,7 +19,7 @@ MonoBehaviour:
   _weaponDamage: 0
   _weaponAimTimeMin: 1
   _weaponAimTimeMax: 1.5
-  _weaponCoolDown: 6.5
+  _weaponCoolDown: 3.5
   _weaponDamageFalloff:
     serializedVersion: 2
     m_Curve:
@@ -44,6 +44,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _armorPiercing: 0
   _weaponSound: {fileID: 0}
   _maxHp: 500
+  _armor: 10
   _projectile: {fileID: 11400000, guid: 9244894d17dcdb64385710c222421cbb, type: 2}

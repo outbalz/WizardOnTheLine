@@ -54,6 +54,7 @@ MonoBehaviour:
   - rid: 6178808272421912670
   - rid: 5559904319355748476
   - rid: 5559904319355748477
+  - rid: 5559904359477149808
   references:
     version: 2
     RefIds:
@@ -87,6 +88,11 @@ MonoBehaviour:
       data:
         _reference: {fileID: 3748922603747158041, guid: 200e6164e90dfc2499f3177eebf29beb, type: 3}
         _actionName: F
+    - rid: 5559904359477149808
+      type: {class: CInputActionData, ns: , asm: Assembly-CSharp}
+      data:
+        _reference: {fileID: 5524885566068953958, guid: 200e6164e90dfc2499f3177eebf29beb, type: 3}
+        _actionName: ESC
     - rid: 6178808272421912668
       type: {class: CInputActionData, ns: , asm: Assembly-CSharp}
       data:

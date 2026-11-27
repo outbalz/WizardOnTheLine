@@ -43,4 +43,8 @@ public class CHQHPHandler : MonoBehaviour, ITargetable
         _hpSlider.SetValueWithoutNotify(_hp);
     }
 
+    public void TakeDamage(float damage, float armorPiercing)
+    {
+        TakeDamage(damage);
+    }
 }

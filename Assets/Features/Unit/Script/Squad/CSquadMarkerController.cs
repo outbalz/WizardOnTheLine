@@ -67,10 +67,11 @@ public class CSquadMarkerController : MonoBehaviour
 		AssignSquadLeader();
 
         gameObject.layer = _squad.PlayerData.UnitLayer;
-		//_renderer.sprite = preset.MarkerSprite;
-		_image.sprite = referance.MarkerSprite;
+		if (referance.MarkerSprite != null)
+		{
+			_image.sprite = referance.MarkerSprite;
+		}
         _color = _squad.PlayerData.PlayerColor;
-		//
 		_hpImage.color = _color;
 
 		SelectMarker(false);

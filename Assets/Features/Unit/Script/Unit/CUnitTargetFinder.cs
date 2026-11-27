@@ -6,6 +6,7 @@ using UnityEngine;
 public interface ITargetable
 {
     public void TakeDamage(float damage);
+    public void TakeDamage(float damage, float armorPiercing);
     public Transform transform { get;}
 }
 

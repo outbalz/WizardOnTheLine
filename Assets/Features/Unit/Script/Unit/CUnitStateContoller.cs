@@ -481,7 +481,7 @@ public class CUnitStateContoller : MonoBehaviour
         }
 
         float distance = Mathf.Abs(transform.position.x - targetPos.x);
-        target.TakeDamage(_unitController.Status.GetWeaponDamage(distance));
+        target.TakeDamage(_unitController.Status.GetWeaponDamage(distance), _unitController.Status.ArmorPiercing);
 
         if(_unitController.Status.Projectile != null)
         {

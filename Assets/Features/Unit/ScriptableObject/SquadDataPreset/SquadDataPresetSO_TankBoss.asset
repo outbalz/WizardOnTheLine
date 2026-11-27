@@ -18,6 +18,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 87a49333122e91e4e9aa97a14a6146af, type: 2}
   _squadSkill: []
   _unitSkill: []
-  _markerSprite: {fileID: -4541125625588044608, guid: b0f2b6283b9cd044396dfe7865cacc1e, type: 3}
+  _markerSprite: {fileID: 1633862307103153656, guid: 482bb2282b5d14b40af8a3724396e477, type: 3}
   _cost: 0
   _potraitSprite: {fileID: 0}

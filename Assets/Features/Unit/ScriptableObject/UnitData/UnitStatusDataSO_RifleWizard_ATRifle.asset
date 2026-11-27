@@ -53,6 +53,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _armorPiercing: 5
   _weaponSound: {fileID: 11400000, guid: fbd7b5ad7b15433458b7036c744e40b3, type: 2}
-  _maxHp: 50
+  _maxHp: 40
+  _armor: 0
   _projectile: {fileID: 0}

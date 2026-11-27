@@ -30,6 +30,7 @@ MonoBehaviour:
       type: {class: CAreaDamageEntityEffect, ns: , asm: Assembly-CSharp}
       data:
         _damage: 50
+        _armorPiercing: 5
         _damageFallOff:
           serializedVersion: 2
           m_Curve:
@@ -54,5 +55,3 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        _cameraShakeStrengh: 0.1
-        _cameraShakeDuration: 0.5

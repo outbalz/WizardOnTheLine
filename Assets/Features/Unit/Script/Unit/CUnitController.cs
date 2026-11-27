@@ -151,16 +151,6 @@ public class CUnitController : MonoBehaviour
 	public void KillUnit()
 	{
 		_collider.enabled = false;
-		_squad.SquadMembers.Remove(this);
-
-		if(_squad.SquadMembers.Count > 0)
-		{
-			_squad.SkillCaster.SetUnitSkillCasters();
-		}
-
-		_skillCaster.ClearSkill();
-		_modifierHandler.ClearModifier();
-
 
 		if (_usePool)
 		{
@@ -171,5 +161,15 @@ public class CUnitController : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
+
+		_squad.SquadMembers.Remove(this);
+
+		if(_squad.SquadMembers.Count > 0)
+		{
+			_squad.SkillCaster.SetUnitSkillCasters();
+		}
+
+		_skillCaster.ClearSkill();
+		_modifierHandler.ClearModifier();
 	}
 }

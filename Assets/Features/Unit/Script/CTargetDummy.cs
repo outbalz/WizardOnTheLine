@@ -11,4 +11,9 @@ public class CTargetDummy : MonoBehaviour, ITargetable
     {
         return transform.position;
     }
+
+    public void TakeDamage(float damage, float armorPiercing)
+    {
+        Debug.Log($"{damage}/{armorPiercing}");
+    }
 }

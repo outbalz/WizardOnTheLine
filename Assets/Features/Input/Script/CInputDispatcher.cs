@@ -49,7 +49,7 @@ public class CInputFloatActionData : CInputActionData
 
 
 [DefaultExecutionOrder(-10)]
-public class CInputDispatcher : CSingleton<CInputDispatcher>
+public class CInputDispatcher : CSingletonDontDstroyAtLoad<CInputDispatcher>
 {
     #region inspector
     [SerializeReference, SubclassSelector] private List<CInputActionData> _inputActions;

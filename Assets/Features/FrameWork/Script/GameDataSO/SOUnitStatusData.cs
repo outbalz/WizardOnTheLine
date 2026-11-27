@@ -14,10 +14,12 @@ public class SOUnitStatusData : SOGameData
     [SerializeField, Min(0f)] private float _weaponAimTimeMax;
     [SerializeField, Min(0f)] private float _weaponCoolDown;
     [SerializeField] private AnimationCurve _weaponDamageFalloff = AnimationCurve.Linear(0, 1, 1, 0);
+    [SerializeField, Min(0f)] private float _armorPiercing;
     [SerializeField] private SOSoundRelay _weaponSound;
 
     [Header("HP")]
     [SerializeField, Min(1f)] private float _maxHp;
+    [SerializeField] private float _armor;
 
     [Header("Projectile")]
     [SerializeField] private SOProjectileData _projectile;
@@ -30,7 +32,9 @@ public class SOUnitStatusData : SOGameData
     public float WeaponAimTimeMin => _weaponAimTimeMin;
     public float WeaponAimTimeMax => _weaponAimTimeMax;
     public float WeaponCoolDown => _weaponCoolDown;
+    public float ArmorPiercing => _armorPiercing;
     public float MaxHp => _maxHp;
+    public float Armor => _armor;
     public SOSoundRelay WeaponSound => _weaponSound;
     public SOProjectileData Projectile => _projectile;
     #endregion

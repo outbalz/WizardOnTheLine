@@ -71,6 +71,7 @@ public abstract class CProjectileAreaEffect : CProjectileEffect
 public class CProjectileAreaDamageEffect : CProjectileAreaEffect
 {
     [SerializeField] private float _damage;
+    [SerializeField] private float _armorPiercing;
     [SerializeField] private AnimationCurve _damageFallOff;
 
     public override void ApplyEffect(Vector2 targetPos)
@@ -108,7 +109,7 @@ public class CProjectileAreaDamageEffect : CProjectileAreaEffect
 
             if (target != null)
             {
-                target.TakeDamage(damage);
+                target.TakeDamage(damage, _armorPiercing);
             }
         }
     }

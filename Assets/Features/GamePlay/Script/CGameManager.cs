@@ -25,8 +25,8 @@ public class CGameManager : CSingleton<CGameManager>
 	#endregion
 
 	#region private var
-	private float _playerCMP = 200;
-	private float _enemyCMP = 200f;
+	private float _playerCMP = 400;
+	private float _enemyCMP = 400f;
 	private float _numHolder = 0;
 	private Dictionary<SOPlayerData, List<CSquadContorller>> _squadListMap = new Dictionary<SOPlayerData, List<CSquadContorller>>();
 	private int _reward = 1;
@@ -119,6 +119,7 @@ public class CGameManager : CSingleton<CGameManager>
 	public void GameOver(bool isVictory)
 	{
 		SetTimeScale(0);
+		COptionMenuManager.Instance.TimeScale = 0;
 		_enemyAIManager.enabled = false;
 		//_NoPostCam.gameObject.SetActive(false);
 

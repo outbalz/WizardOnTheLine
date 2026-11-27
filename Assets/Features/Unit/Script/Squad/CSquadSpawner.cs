@@ -24,7 +24,7 @@ public class CSquadSpawner : MonoBehaviour
 
     public void SpawnSquad(ISquadReferance data, SOPlayerData playerData, CSquadContorller sqadPrefab)
     {
-        CSquadContorller squad = Instantiate(sqadPrefab, transform.position, Quaternion.identity);
+        CSquadContorller squad = Instantiate(sqadPrefab, new Vector3(transform.position.x, -2, transform.position.z), Quaternion.identity);
         squad.InitializeSquad(data, playerData);
         squad.gameObject.SetActive(true);
 

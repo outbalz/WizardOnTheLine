@@ -286,6 +286,8 @@ MonoBehaviour:
   _squadRadiusX: 0.1
   _skillCasterController: {fileID: 4840410861320625928}
   _squadModifierHandler: {fileID: 1161093224126705254}
+  _squadMembers: []
+  _usePreAssginedSquad: 0
   IsSelectable: 1
 --- !u!114 &4840410861320625928
 MonoBehaviour:

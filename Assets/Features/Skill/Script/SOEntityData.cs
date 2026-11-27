@@ -55,6 +55,7 @@ public abstract class CEntityEffect
 public class CAreaDamageEntityEffect : CEntityEffect
 {
     [SerializeField] private float _damage;
+    [SerializeField] private float _armorPiercing;
     [SerializeField] private AnimationCurve _damageFallOff;
 
     public override void ApplyEffect(CSkillEntityController entity)
@@ -92,7 +93,7 @@ public class CAreaDamageEntityEffect : CEntityEffect
 
             if (target != null)
             {
-                target.TakeDamage(damage);
+                target.TakeDamage(damage, _armorPiercing);
             }
         }
     }

@@ -48,6 +48,11 @@ public class CGameStartManager : MonoBehaviour
         _startSelectionDropdown.SetValueWithoutNotify(_selectedIndex);
     }
 
+    public void OpenOptionMenu()
+    {
+        COptionMenuManager.Instance.OpenOptitonMenu();
+    }
+
     public void GameStart()
     {
         CGameProgressManager.Instance.ResetSave();
