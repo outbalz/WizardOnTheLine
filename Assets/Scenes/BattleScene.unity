@@ -3638,6 +3638,7 @@ MonoBehaviour:
   _so:
   - {fileID: 11400000, guid: b96f6cd217779c341b8d5ef407922325, type: 2}
   - {fileID: 11400000, guid: da82fdc7e68be1946b21653943d674fa, type: 2}
+  - {fileID: 11400000, guid: 9244894d17dcdb64385710c222421cbb, type: 2}
   _prewarmCount: 0
   _poolRoot: {fileID: 0}
 --- !u!1 &619394800
@@ -13536,18 +13537,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1476403845}
-        m_TargetAssemblyTypeName: CSceneTransitionTriggerContoller, Assembly-CSharp
-        m_MethodName: SetTargetScene
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 0fc834d11f863654ea314ef7d8c3f987, type: 2}
-          m_ObjectArgumentAssemblyTypeName: SOSceneData, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1476403842}
         m_TargetAssemblyTypeName: CGameManager, Assembly-CSharp
         m_MethodName: SetTimeScale

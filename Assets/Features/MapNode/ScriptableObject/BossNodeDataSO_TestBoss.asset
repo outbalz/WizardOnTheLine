@@ -18,4 +18,9 @@ MonoBehaviour:
   _nodeVisitedSpite: {fileID: -1718991571299551934, guid: b0f2b6283b9cd044396dfe7865cacc1e, type: 3}
   _type: 4
   _enemyPlayer: {fileID: 11400000, guid: ca10023107f63ee4fbdf800217fe398c, type: 2}
-  _difficulty: 0
+  _difficulty: 3
+  _rewardamount: 3
+  _sceneData: {fileID: 11400000, guid: c1bc060c07c98e843b800b8d6a2beb1e, type: 2}
+  _endingSceneData: {fileID: 11400000, guid: 795dc751e4c8f1b499e769901318a9c9, type: 2}
+  _bossSquadData: {fileID: 11400000, guid: 615e272ceda6b114cae2bc2b82a2a37e, type: 2}
+  _bossePrefab: {fileID: 2882226384194628754, guid: ae3c341c8c1b11b428fc95919a725b08, type: 3}

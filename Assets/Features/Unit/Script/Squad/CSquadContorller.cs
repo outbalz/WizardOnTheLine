@@ -23,11 +23,12 @@ public class CSquadContorller : MonoBehaviour
     [SerializeField] private float _squadRadiusX;
     [SerializeField] private CSquadSkillCasterController _skillCasterController;
     [SerializeField] private CModifierHandler _squadModifierHandler;
+	[SerializeField] private List<CUnitController> _squadMembers = new List<CUnitController>();
+    [SerializeField] private bool _usePreAssginedSquad = false;
 	#endregion
 
 	#region private var
     private SOPlayerData _playerData;
-	private List<CUnitController> _squadMembers = new List<CUnitController>();
     private ISquadReferance _squadReferance;
     #endregion
 
@@ -96,48 +97,83 @@ public class CSquadContorller : MonoBehaviour
         }
         _playerData = playerData;
 
-        _squadMembers.Clear();
-
-        float spawnPointY = CUtil.MAP_HIGHT_MAX;
-
-        Vector2[] spawnPos = new Vector2[squadData.SquadSize];
-
-        for (int i = 0; i < squadData.SquadSize; i++)
+        if (!_usePreAssginedSquad)
         {
-            float spawnPointX = transform.position.x;
-            spawnPointX += Random.Range(-_squadRadiusX, _squadRadiusX);
-            spawnPointY -= Random.Range(0.3f, 0.7f);
+            _squadMembers.Clear();
+            float spawnPointY = CUtil.MAP_HIGHT_MAX;
 
-            spawnPos[i] = new Vector2(spawnPointX, spawnPointY);
-        }
+            Vector2[] spawnPos = new Vector2[squadData.SquadSize];
 
-        float spawnHeigt = spawnPos[0].y - spawnPointY;
-        float mapHeight = CUtil.MAP_HIGHT_MAX - CUtil.MAP_HIGHT_MIN;
-
-        float spawnRange = mapHeight - spawnHeigt;
-        float spawnPontYOffset = Random.Range(0, spawnRange - 0.7f);
-
-        for (int i = 0; i < squadData.SquadSize; i++)
-        {
-            spawnPos[i].y -= spawnPontYOffset;
-        }
-
-
-        for (int i = 0; i < squadData.SquadSize; i++)
-        {
-            CUnitController unit = CUnitFactory.Instance.Creat(this, squadData.UnitDatas[i], spawnPos[i]);
-
-            if (squadData.UnitModifier != null && squadData.UnitModifier.Count > 0)
+            for (int i = 0; i < squadData.SquadSize; i++)
             {
-                for (int j = 0; j < squadData.UnitModifier.Count; j++)
-                {
-                    unit.Modifier.ApplyModifierWithCheck(squadData.UnitModifier[j]);
-                    unit.HP.InitializeHP();
-                }
+                float spawnPointX = transform.position.x;
+                spawnPointX += Random.Range(-_squadRadiusX, _squadRadiusX);
+                spawnPointY -= Random.Range(0.3f, 0.7f);
+
+                spawnPos[i] = new Vector2(spawnPointX, spawnPointY);
             }
 
-            _squadMembers.Add(unit);
+            float spawnHeigt = spawnPos[0].y - spawnPointY;
+            float mapHeight = CUtil.MAP_HIGHT_MAX - CUtil.MAP_HIGHT_MIN;
 
+            float spawnRange = mapHeight - spawnHeigt;
+            float spawnPontYOffset = Random.Range(0, spawnRange - 0.7f);
+
+            for (int i = 0; i < squadData.SquadSize; i++)
+            {
+                spawnPos[i].y -= spawnPontYOffset;
+            }
+
+
+            for (int i = 0; i < squadData.SquadSize; i++)
+            {
+                CUnitController unit = CUnitFactory.Instance.Creat(this, squadData.UnitDatas[i], spawnPos[i]);
+
+                if (squadData.UnitModifier != null && squadData.UnitModifier.Count > 0)
+                {
+                    for (int j = 0; j < squadData.UnitModifier.Count; j++)
+                    {
+                        unit.Modifier.ApplyModifierWithCheck(squadData.UnitModifier[j]);
+                        unit.HP.InitializeHP();
+                    }
+                }
+
+                _squadMembers.Add(unit);
+
+            }
+        }
+
+        else
+        {
+            for(int i = 0;i < _squadMembers.Count; i++)
+            {
+                CUnitController unit = _squadMembers[i];
+
+                if (squadData.UnitDatas[i] != null)
+                {
+                    unit.InitializeUnit(this, squadData.UnitDatas[i]);
+                }
+
+                else if (squadData.UnitDatas[0] != null)
+                {
+                    unit.InitializeUnit(this, squadData.UnitDatas[0]);
+                }
+                else
+                {
+                    Debug.LogWarning("UnitDatas is null.");
+                }
+
+                if (squadData.UnitModifier != null && squadData.UnitModifier.Count > 0)
+                {
+                    for (int j = 0; j < squadData.UnitModifier.Count; j++)
+                    {
+                        unit.Modifier.ApplyModifierWithCheck(squadData.UnitModifier[j]);
+                        unit.HP.InitializeHP();
+                    }
+                }
+
+                unit.gameObject.SetActive(true);
+            }
         }
 
         ExceptionCheck();
@@ -224,13 +260,22 @@ public class CSquadContorller : MonoBehaviour
     public void KillSquad()
     {
         _skillCasterController.enabled = false;
-        CSquadPool.Instance.ReturnToPool(this);
 
         CGameManager.Instance.SquadListMap[_playerData].Remove(this);
 
         OnSquadDeath?.Invoke();
         OnSquadDeath = null;
         _squadReferance = null;
+
+        if (!_usePreAssginedSquad)
+        {
+            CSquadPool.Instance.ReturnToPool(this);
+        }
+
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void SetSquadMaxHP()

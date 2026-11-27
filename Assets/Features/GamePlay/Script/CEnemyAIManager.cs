@@ -26,6 +26,10 @@ public class CEnemyAIManager : MonoBehaviour
     private CancellationTokenSource _tacticCTS;
     #endregion
 
+    #region porperty
+    public CSquadSpawner Spawner => _spawner;
+    #endregion
+
 
     private void Start()
     {

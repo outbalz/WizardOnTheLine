@@ -22,6 +22,22 @@ public class CSquadSpawner : MonoBehaviour
         CGameManager.Instance.SquadListMap[playerData].Add(squad);
     }
 
+    public void SpawnSquad(ISquadReferance data, SOPlayerData playerData, CSquadContorller sqadPrefab)
+    {
+        CSquadContorller squad = Instantiate(sqadPrefab, transform.position, Quaternion.identity);
+        squad.InitializeSquad(data, playerData);
+        squad.gameObject.SetActive(true);
+
+        SOderContext moveOderContext = new SOderContext();
+        moveOderContext.oderType = SOderContext.EOderType.AttackMove;
+        moveOderContext.targetPos = transform.position;
+        moveOderContext.targetPos.x += _moveOderOffset;
+
+        squad.GiveOder(moveOderContext);
+
+        CGameManager.Instance.SquadListMap[playerData].Add(squad);
+    }
+
     //for Debug====================
     #region debug
     [SerializeField] private SOSquadDataPreset _debugPrest;

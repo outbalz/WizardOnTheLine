@@ -17,9 +17,9 @@ MonoBehaviour:
   _movementSpeed: 2.7
   _weaponRange: 12
   _weaponDamage: 0
-  _weaponAimTimeMin: 0
-  _weaponAimTimeMax: 0
-  _weaponCoolDown: 0
+  _weaponAimTimeMin: 1
+  _weaponAimTimeMax: 1.5
+  _weaponCoolDown: 6.5
   _weaponDamageFalloff:
     serializedVersion: 2
     m_Curve:
@@ -46,4 +46,4 @@ MonoBehaviour:
     m_RotationOrder: 4
   _weaponSound: {fileID: 0}
   _maxHp: 500
-  _projectile: {fileID: 0}
+  _projectile: {fileID: 11400000, guid: 9244894d17dcdb64385710c222421cbb, type: 2}

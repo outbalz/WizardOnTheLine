@@ -35,6 +35,7 @@ public class CGameManager : CSingleton<CGameManager>
 	#region property
 	public SOPlayerData PlayerData => _playerData;
 	public SOPlayerData EnemyPlayerData => _enemyPlayerData;
+	public CEnemyAIManager EnemyAIManager => _enemyAIManager;
 	public Dictionary<SOPlayerData, List<CSquadContorller>> SquadListMap => _squadListMap;
 	public float PlayerCMP { get { return _playerCMP; } set { _playerCMP = value; _battleUIManager.UpdateText(_playerCMP); } }
 	public CSquadSpawner Spawner => _spawner;

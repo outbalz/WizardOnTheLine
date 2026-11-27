@@ -11,6 +11,7 @@ public class CUnitController : MonoBehaviour
 	[SerializeField] private CUnitTargetFinder _targetFinder;
 	[SerializeField] private CUnitHPHandler _hpHandler;
 	[SerializeField] private CSkillCasterController _skillCaster;
+	[SerializeField] private bool _usePool = true;
 
 	[SerializeField] private Collider2D _collider;
 
@@ -160,6 +161,15 @@ public class CUnitController : MonoBehaviour
 		_skillCaster.ClearSkill();
 		_modifierHandler.ClearModifier();
 
-		CUnitPool.Instance.ReturnToPool(this);
+
+		if (_usePool)
+		{
+			CUnitPool.Instance.ReturnToPool(this);
+		}
+
+		else
+		{
+			Destroy(gameObject);
+		}
 	}
 }
